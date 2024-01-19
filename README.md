@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
-## Development server
+## Todo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Styles
 
-## Code scaffolding
+- [ ] https://css-tricks.com/grainy-gradients/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ovider (netlify, surge, now, etc.)
 
-## Build
+## Links
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Projects:
+https://www.figma.com/proto/gPi3fSlgJnr0WUnnwo0KWn/MK?page-id=0%3A1&node-id=102-4&viewport=241%2C48%2C0.13&scaling=scale-down&starting-point-node-id=138%3A2
 
-## Running unit tests
+Styles:
+https://animate.style/
+https://speckyboy.com/css-border-effects/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Diagonal rectangle
+https://stackoverflow.com/questions/44373416/divide-a-rectangle-into-2-triangles-along-diagonal-using-css
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+https://formspree.io/plans
+https://www.emailjs.com/docs/user-guide/adding-captcha-verification/

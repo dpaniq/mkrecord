@@ -1,0 +1,43 @@
+#about {
+  margin: 0;
+  .trapezoid-reverse {
+    // background-color: tomato;
+  }
+
+  .text {
+    color: $color_whitesmoke;
+
+    p {
+      font-size: 30px;
+    }
+  }
+
+  div.preview {
+    img {
+      position: absolute;
+      min-width: 500px;
+      max-height: 500px;
+      box-shadow: -20px 3px 12px 4px rgba(0, 0, 0, 0.69),
+        inset -20px 3px 12px 4px rgba(0, 0, 0, 0.69);
+      transform: rotate(15deg);
+      animation: leaves 1.5s ease-in-out infinite alternate;
+    }
+  }
+  div.preview img:nth-child(1) {
+    transform: rotate(-50deg);
+    /* // margin-left: -150px;
+    // box-shadow: -20px 3px 12px 4px black; */
+  }
+  div.preview img:nth-child(2) {
+    transform: rotate(-25deg);
+  }
+  div.preview img:nth-child(3) {
+    transform: rotate(-0deg);
+  }
+  div.preview img:nth-child(4) {
+    transform: rotate(25deg);
+  }
+  div.preview img:nth-child(5) {
+    transform: rotate(50deg);
+  }
+}

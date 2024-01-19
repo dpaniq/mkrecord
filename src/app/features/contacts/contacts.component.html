@@ -1,0 +1,22 @@
+<form
+  id="contacts"
+  (submit)="$event.preventDefault()"
+>
+  <fieldset>
+    <label for="email">Email:</label>
+    <input
+      type="text"
+      placeholder="email@example.lv"
+      id="email"
+      required
+    />
+    <label for="text">Text message:</label>
+    <textarea
+      id="text"
+      cols="30"
+      rows="7"
+      placeholder="..."
+    ></textarea>
+  </fieldset>
+  <button type="button">Send</button>
+</form>
