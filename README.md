@@ -7,8 +7,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Styles
 
 - [ ] https://css-tricks.com/grainy-gradients/
+- [ ] Make a column of gif on menu item:hover for a whole page
 
-ovider (netlify, surge, now, etc.)
+### MK-visit
+
+- [ ] Run MK-visit and film instersting moments shortly
 
 ## Links
 
