@@ -1,22 +1,31 @@
+<h1 class="page-header">Contact me</h1>
 <form
   id="contacts"
+  [formGroup]="formGroup"
   (submit)="$event.preventDefault()"
 >
   <fieldset>
     <label for="email">Email:</label>
     <input
-      type="text"
-      placeholder="email@example.lv"
-      id="email"
+      type="email"
+      placeholder="email@example.com"
       required
+      formControlName="email"
     />
     <label for="text">Text message:</label>
     <textarea
-      id="text"
       cols="30"
       rows="7"
       placeholder="..."
-    ></textarea>
+      formControlName="text"
+    >
+    </textarea>
   </fieldset>
-  <button type="button">Send</button>
+  <button
+    [disabled]="formGroup.invalid"
+    class="form-btn"
+    type="submit"
+  >
+    Send
+  </button>
 </form>

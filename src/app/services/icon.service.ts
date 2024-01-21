@@ -8,6 +8,24 @@ export class IconService {
   #domSanitizer = inject(DomSanitizer);
 
   constructor() {
+    const brandSvgs: { name: string; path: string }[] = [
+      {
+        name: 'mkWhite',
+        path: 'brand/mk-white.svg',
+      },
+      {
+        name: 'mkBlack',
+        path: 'brand/mk-black.svg',
+      },
+    ];
+
+    for (const { name, path } of brandSvgs) {
+      this.#matIconRegistry.addSvgIcon(
+        name,
+        this.#domSanitizer.bypassSecurityTrustResourceUrl(`assets/${path}`),
+      );
+    }
+
     const svgs: { name: string; path: string }[] = [
       {
         name: 'telegram',

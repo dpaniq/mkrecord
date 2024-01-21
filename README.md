@@ -7,6 +7,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Styles
 
 - [ ] https://css-tricks.com/grainy-gradients/
+      Main background black
+
+```
+
+  /* filter: contrast(100%) brightness(1000%); */
+  background: linear-gradient(44deg, rgba(0, 0, 0, 1), rgba(19, 17, 17, 0.329)),
+    url(/assets/background/noise.svg);
+
+```
+
 - [ ] Make a column of gif on menu item:hover for a whole page
 
 ### MK-visit

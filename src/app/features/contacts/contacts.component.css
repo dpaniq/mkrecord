@@ -1,0 +1,28 @@
+form#contacts {
+  margin: 32px 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 25px;
+
+  fieldset {
+    display: grid;
+  }
+
+  input,
+  textarea {
+    border: 0;
+    margin: 26px 0;
+    padding: 10px 16px;
+    line-height: 40px;
+    color: tomato;
+    background: var(--color_whitesmoke_darken_4);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}

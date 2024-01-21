@@ -6,6 +6,24 @@
 // document.removeEventListener('fullscreenchange', fullScreenChange);
 // document.addEventListener('fullscreenchange', fullScreenChange);
 
+// TODO video
+/**
+ * 
+      <video
+        id="vid"
+        controls
+        [autoplay]="false"
+        [muted]="true"
+        loop="true"
+        controlsList="nodownload noremoteplayback noplaybackrate pictureinpicture"
+      >
+        <source
+          src="assets/video/test.mp4"
+          type="video/mp4"
+        />
+      </video>
+ */
+
 export function fullScreenChange(event: any) {
   console.log('HEY');
   console.log(event);

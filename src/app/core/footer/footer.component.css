@@ -1,25 +1,34 @@
-:host {
-  --footer-color: rgb(15, 15, 15);
-  --footer-color2: #7005e9;
-}
+@import '../../../styles/colors.css';
 
 footer {
   position: sticky;
   padding: 25px 0 25px;
   width: 100%;
   bottom: 0;
-  border-top: none;
-  border-right: none;
-  border-left: none;
   text-align: center;
 
   p {
-    color: var(--color_whitesmoke_darken_3);
+    padding: 5px 0;
+    font-size: 12px;
+    color: var(--color_whitesmoke_darken_1);
+
+    .brand {
+      color: tomato;
+      font-weight: 300;
+    }
+
+    a {
+      font-weight: 300;
+      color: var(--color_whitesmoke_darken_2);
+
+      &:hover {
+        color: tomato;
+      }
+    }
   }
 
-  /* Contacts */
-  .contacts {
-    .contacts-group {
+  .social {
+    .social-group {
       display: inline-flex;
       flex-direction: column;
       align-items: center;
@@ -27,68 +36,10 @@ footer {
       color: rgb(214, 85, 62);
       padding: 10px;
       font-weight: 300;
-
-      img {
-        color: rgb(214, 85, 62);
-        fill: rgb(214, 85, 62);
-        stroke-width: 1px;
-      }
-
-      &:hover {
-        cursor: pointer;
-        color: tomato;
-
-        img {
-          fill: tomato;
-        }
-      }
-    }
-  }
-}
-
-form#contacts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  font-size: 25px;
-  color: whitesmoke;
-
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    line-height: 50px;
-    margin: 10px 0;
-    background-color: var(--footer-color);
-    border: 0;
-    color: whitesmoke;
-    padding: 10px 15px;
-    &:hover {
-      color: tomato;
-      background-color: var(--footer-color2);
     }
   }
 
-  textarea {
-    resize: vertical;
-  }
-
-  button {
-    width: 150px;
-    background-color: var(--footer-color);
-    border: 0;
-    color: whitesmoke;
-    padding: 10px 15px;
-    &:hover {
-      color: tomato;
-      background-color: var(--footer-color2);
-    }
+  a:hover ::ng-deep mat-icon svg {
+    fill: tomato;
   }
 }

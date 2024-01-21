@@ -1,6 +1,7 @@
 * {
-  font-family: 'Roboto', sans-serif;
   font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  color: var(--color_whitesmoke);
 }
 
 html,
@@ -23,8 +24,8 @@ body::-webkit-scrollbar-thumb {
 
 body {
   margin: 0;
-  background-color: #282c34;
-  background-color: black;
+  z-index: -999;
+  background-color: rgb(0, 0, 0, 1);
 }
 
 a {
@@ -34,6 +35,35 @@ a {
   &:focus,
   &:visited {
     all: unset;
+  }
+
+  &:hover {
+    color: tomato;
+  }
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &::first-letter {
+    color: tomato;
+  }
+
+  &.page-header {
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+      0.25turn,
+      rgba(56, 2, 155, 0),
+      rgba(255, 99, 71, 0.7),
+      rgba(56, 2, 155, 0)
+    );
+    border-image-slice: 1;
   }
 }
 
@@ -54,4 +84,40 @@ h5 {
 }
 h6 {
   font-size: 16px;
+}
+
+p {
+  color: var(--color_whitesmoke);
+}
+
+/* Forms */
+input,
+textarea {
+  box-shadow: inset 0px 0px 1px 1px var(--color_whitesmoke_darken_4);
+}
+
+button {
+  border: 1px solid var(--color_whitesmoke);
+  width: 150px;
+  background-color: var(--footer-color);
+  color: whitesmoke;
+  padding: 10px 15px;
+
+  &.form-btn {
+    border-bottom: 1px solid tomato;
+    border-left: 1px solid tomato;
+  }
+
+  &:hover {
+    color: tomato;
+    background-color: var(--footer-color2);
+    border: 1px solid tomato;
+  }
+
+  &:disabled {
+    color: var(--color_whitesmoke_darken_3);
+    border: 1px solid var(--color_whitesmoke_darken_3);
+    cursor: not-allowed;
+    background-color: var(--color_whitesmoke_darken_4);
+  }
 }
