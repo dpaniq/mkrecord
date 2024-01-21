@@ -169,70 +169,7 @@ video {
   );
 }
 
-.toSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 0;
-
-  &:last-child {
-    padding: 0;
-    margin: 0;
-  }
-
-  & > .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & > .content {
-      max-width: 1200px;
-      position: relative;
-
-      img {
-        filter: grayscale(100%);
-      }
-
-      img:hover {
-        mix-blend-mode: normal;
-        filter: none;
-      }
-
-      .block {
-        position: relative;
-        height: 600px;
-        display: grid;
-        grid-column: 1;
-        grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
-
-        > div {
-          position: relative;
-          text-align: left;
-        }
-
-        .text {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-
-          h1 {
-            margin: 0;
-            padding: 0;
-            font-size: 45px;
-            color: var(--color_whitesmoke);
-            line-height: 50px;
-            font-weight: 900;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* Noisy / grainy */
+/* TODO (needed, used) Noisy / grainy */
 .noise {
   filter: contrast(170%) brightness(1000%) invert(100%);
   background: linear-gradient(45deg, rgb(33 33 36 / 75%), rgb(0 0 0 / 75%)),

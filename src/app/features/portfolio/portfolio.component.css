@@ -1,21 +1,21 @@
 #portfolio {
-  padding: 100px 0;
   /* margin: 50px 0; */
   & > .container {
     & > .content {
+      margin: 100px 200px;
       max-width: 100% !important;
     }
   }
 
   .portfolio {
     overflow: hidden;
-    min-height: 900px;
+    height: 500px;
     /* border: 1px dashed tomato; */
 
     div.preview {
       position: relative;
       width: 20%;
-      max-width: 900px;
+      max-width: 400px;
       /* min-width: 25%;
       border-left: 1px dashed tomato; */
       transition:
@@ -33,8 +33,27 @@
     }
 
     div.preview:hover {
-      width: 60%;
-      height: 900px;
+      width: 50%;
+      /* height: 900px; */
     }
+  }
+}
+
+.year {
+  text-align: center;
+
+  &:nth-child(3) {
+    color: blue;
+    font-size: 900px;
+  }
+}
+
+.date {
+  text-align: right;
+  color: white;
+  padding: 0 36px;
+  font-size: 24px;
+  &.year {
+    color: tomato;
   }
 }
