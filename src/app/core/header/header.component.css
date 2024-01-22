@@ -7,6 +7,7 @@ header {
   padding: 35px 0 !important;
   z-index: 9999;
   border-top: 1px solid tomato;
+  background-image: url('/assets/');
 
   nav {
     position: relative;
@@ -25,9 +26,25 @@ header {
 
       li {
         margin-right: 20px;
-        a.active {
-          color: tomato;
-          border-bottom: 1px solid;
+        color: var(--color_whitesmoke_darken_2);
+
+        a {
+          filter: blur(1px);
+          text-shadow: 0 0 20px tomato;
+          &.active {
+            color: tomato;
+            /* border-bottom: 1px solid; */
+            filter: none;
+            font-weight: 300;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(
+              0.25turn,
+              rgba(56, 2, 155, 0),
+              rgba(255, 99, 71, 0.7),
+              rgba(56, 2, 155, 0)
+            );
+            border-image-slice: 1;
+          }
         }
       }
     }
@@ -44,6 +61,10 @@ header {
   height: 100px;
   padding: 5px 100px;
   text-align: center; */
+
+  filter: blur(1px);
+  text-shadow: 0 0 20px tomato;
+  mix-blend-mode: color-burn;
 
   em {
     color: tomato;

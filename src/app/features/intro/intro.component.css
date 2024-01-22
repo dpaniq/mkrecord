@@ -13,10 +13,9 @@
     font-weight: 900;
     color: var(--color_whitesmoke);
     line-height: 50px;
+    /* border-bottom: 10px solid tomato; */
+    text-shadow: 2px 2px var(--color_whitesmoke);
     text-decoration: underline tomato;
-    text-shadow:
-      5px -16px 20px black,
-      5px -16px 20px black;
   }
 
   p {

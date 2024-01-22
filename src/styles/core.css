@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   font-weight: 100;
   font-family: 'Roboto', sans-serif;
   color: var(--color_whitesmoke);
@@ -53,18 +54,6 @@ h6 {
   &::first-letter {
     color: tomato;
   }
-
-  &.page-header {
-    text-align: center;
-    border-bottom: 2px solid transparent;
-    border-image: linear-gradient(
-      0.25turn,
-      rgba(56, 2, 155, 0),
-      rgba(255, 99, 71, 0.7),
-      rgba(56, 2, 155, 0)
-    );
-    border-image-slice: 1;
-  }
 }
 
 h1 {
@@ -104,14 +93,15 @@ button {
   padding: 10px 15px;
 
   &.form-btn {
-    border-bottom: 1px solid tomato;
-    border-left: 1px solid tomato;
+    border: 1px solid var(--color_whitesmoke);
   }
 
   &:hover {
     color: tomato;
-    background-color: var(--footer-color2);
     border: 1px solid tomato;
+    transition:
+      border ease 0.2s,
+      color ease 0.2s;
   }
 
   &:disabled {

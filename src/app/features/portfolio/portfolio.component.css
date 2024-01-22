@@ -1,59 +1,88 @@
-#portfolio {
+section {
   /* margin: 50px 0; */
   & > .container {
+    display: flex;
+
     & > .content {
-      margin: 100px 200px;
-      max-width: 100% !important;
-    }
-  }
-
-  .portfolio {
-    overflow: hidden;
-    height: 500px;
-    /* border: 1px dashed tomato; */
-
-    div.preview {
       position: relative;
-      width: 20%;
-      max-width: 400px;
-      /* min-width: 25%;
-      border-left: 1px dashed tomato; */
-      transition:
-        width 1s,
-        height 1s;
-      transition-delay: 0.5s;
+      margin: 20px 200px;
+      max-width: 100% !important;
 
-      img {
-        z-index: 11;
-        height: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        box-shadow: inset 0 0 100px 50px black;
+      span.date {
+        z-index: 1000;
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        transform: rotate(-3deg);
+        padding: 0 36px;
+        font-size: 24px;
+        color: var(--color_whitesmoke_darken_2);
+        filter: blur(1px);
+        text-shadow: 0 0 20px tomato;
+        .year {
+          font-weight: 200;
+        }
+      }
+
+      .substrate {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--color_whitesmoke_darken_4);
+        /* clip-path: polygon(0 0, 100% 15.5%, 100% 100%, 0 95%, 0 100%); */
+        box-shadow: inset 0 0 10px 30px rgb(255, 0, 0);
+        pointer-events: none;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--color_whitesmoke_darken_4);
+        /* clip-path: polygon(0 0, 100% 15.5%, 100% 100%, 0 95%, 0 100%); */
+        box-shadow:
+          inset 0 0 50px 30px black,
+          inset -10px 0 50px 30px black;
+        pointer-events: none;
+      }
+
+      .portfolio {
+        overflow: hidden;
+        height: 500px;
+
+        div.preview {
+          position: relative;
+          width: 20%;
+          max-width: 400px;
+          /* min-width: 25%;
+      border-left: 1px dashed tomato; */
+          transition:
+            width 1s,
+            height 1s;
+          transition-delay: 0.5s;
+          filter: grayscale(1) blur(1px);
+
+          img {
+            z-index: 11;
+            height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+          }
+
+          &:hover {
+            cursor: pointer;
+            width: 50%;
+            filter: none;
+            transition:
+              filter ease 2s,
+              width ease 2s;
+          }
+        }
       }
     }
-
-    div.preview:hover {
-      width: 50%;
-      /* height: 900px; */
-    }
-  }
-}
-
-.year {
-  text-align: center;
-
-  &:nth-child(3) {
-    color: blue;
-    font-size: 900px;
-  }
-}
-
-.date {
-  text-align: right;
-  color: white;
-  padding: 0 36px;
-  font-size: 24px;
-  &.year {
-    color: tomato;
   }
 }
