@@ -25,12 +25,13 @@ header {
       gap: 30px;
 
       li {
-        margin-right: 20px;
         color: var(--color_whitesmoke_darken_2);
 
         a {
           filter: blur(1px);
           text-shadow: 0 0 20px tomato;
+          text-align: center;
+
           &.active {
             color: tomato;
             /* border-bottom: 1px solid; */

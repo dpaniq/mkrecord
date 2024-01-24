@@ -1,0 +1,17 @@
+app-header {
+  height: 10vh;
+}
+
+main {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+app-footer {
+  height: 20vh;
+}
+
+/* TODO mobile; use  https://tproger.ru/articles/novye-edinicy-izmereniya-svh-lvh-dvh-dlya-adaptivnoj-verstki */

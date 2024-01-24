@@ -1,19 +1,89 @@
+@import url('../../../styles/colors.css');
+
+:host {
+  position: relative;
+}
+
 section {
   /* margin: 50px 0; */
-  & > .container {
-    display: flex;
+  overflow: hidden;
+  width: 800px;
 
-    & > .content {
+  .navigation {
+    z-index: 9999;
+    position: absolute;
+    top: 36%;
+    color: color-mix(in srgb, tomato 20%, black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      z-index: -9;
+      border: 0;
+
+      &:disabled {
+        opacity: 0.4;
+        mix-blend-mode: color;
+      }
+    }
+
+    .mat-icon {
+      font-size: 70px;
+      width: max-content;
+      height: max-content;
+    }
+
+    &.left {
+      left: -100px;
+      transform: scaleX(-1);
+    }
+
+    &.right {
+      right: -100px;
+    }
+  }
+
+  .scroll-container {
+    display: flex;
+    /* slides */
+    gap: 0 2px;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--color_black_1);
+      background-color: color-mix(in srgb, tomato 20%, black);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color-mix(in srgb, tomato 40%, black);
+      outline: 1px solid black;
+    }
+
+    &:hover {
+      overflow-x: auto;
+    }
+
+    .content {
+      scroll-snap-align: start;
       position: relative;
-      margin: 20px 200px;
-      max-width: 100% !important;
+      max-width: max-content;
+      z-index: 10;
 
       span.date {
         z-index: 1000;
         position: absolute;
         top: 15px;
         left: 10px;
-        transform: rotate(-3deg);
+        transform: rotate(-3.5deg);
         padding: 0 36px;
         font-size: 24px;
         color: var(--color_whitesmoke_darken_2);
@@ -31,7 +101,6 @@ section {
         left: 0;
         right: 0;
         background: var(--color_whitesmoke_darken_4);
-        /* clip-path: polygon(0 0, 100% 15.5%, 100% 100%, 0 95%, 0 100%); */
         box-shadow: inset 0 0 10px 30px rgb(255, 0, 0);
         pointer-events: none;
       }
@@ -43,7 +112,7 @@ section {
         left: 0;
         right: 0;
         background: var(--color_whitesmoke_darken_4);
-        /* clip-path: polygon(0 0, 100% 15.5%, 100% 100%, 0 95%, 0 100%); */
+
         box-shadow:
           inset 0 0 50px 30px black,
           inset -10px 0 50px 30px black;
@@ -52,19 +121,19 @@ section {
 
       .portfolio {
         overflow: hidden;
-        height: 500px;
+        height: 600px;
+        width: 800px;
 
         div.preview {
           position: relative;
           width: 20%;
           max-width: 400px;
-          /* min-width: 25%;
-      border-left: 1px dashed tomato; */
+
+          filter: grayscale(1) blur(1px);
+          transition-delay: 0.5s;
           transition:
             width 1s,
             height 1s;
-          transition-delay: 0.5s;
-          filter: grayscale(1) blur(1px);
 
           img {
             z-index: 11;

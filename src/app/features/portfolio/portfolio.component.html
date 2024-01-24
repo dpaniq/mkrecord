@@ -1,83 +1,71 @@
 <section>
-  <div class="container">
-    <div class="content width__wv">
-      <span class="date">Road dream pack</span>
+  <span class="navigation left">
+    <button
+      (click)="onScrollLeft()"
+      (keydown)="setScroll($event)"
+      [disabled]="disabledLeft"
+    >
+      <mat-icon fontIcon="navigate_next"></mat-icon>
+    </button>
+  </span>
 
-      <div class="substrate"></div>
+  <span class="navigation right">
+    <button
+      (click)="onScrollRight()"
+      (keydown)="setScroll($event)"
+      [disabled]="disabledRight"
+    >
+      <mat-icon fontIcon="navigate_next"></mat-icon>
+    </button>
+  </span>
 
-      <div class="grid-row portfolio trapezoid-reverse">
-        <div class="preview">
-          <img
-            src="assets/img/gif/sky.webp"
-            loading="lazy"
-          />
+  <div
+    #scrollContainer
+    class="scroll-container"
+  >
+    @for (_ of [1, 2, 3, 5]; track _; let idx = $index, even = $even) {
+      <div class="content width__wv">
+        <span class="date">Road dream pack</span>
+
+        <!-- <div class="substrate"></div> -->
+
+        <div
+          class="grid-row portfolio"
+          [ngClass]="{ trapezoid: !even, 'trapezoid-reverse': even }"
+        >
+          <div class="preview">
+            <img
+              src="assets/img/gif/sky.webp"
+              loading="lazy"
+            />
+          </div>
+          <div class="preview">
+            <img
+              src="assets/img/gif/american-gods.gif"
+              loading="lazy"
+            />
+          </div>
+          <div class="preview">
+            <img
+              src="assets/img/gif/joker.webp"
+              loading="lazy"
+            />
+          </div>
+          <div class="preview">
+            <img
+              src="assets/img/gif/coin.gif"
+              loading="lazy"
+            />
+          </div>
+          <div class="preview">
+            <img
+              src="assets/img/gif/american-gods-2.gif"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/american-gods.gif"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/joker.webp"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/coin.gif"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/american-gods-2.gif"
-            loading="lazy"
-          />
-        </div>
+        <!-- <div class="overlay"></div> -->
       </div>
-      <div class="overlay"></div>
-    </div>
-
-    <div class="content width__wv">
-      <span class="date">Road dream pack</span>
-
-      <div class="substrate"></div>
-
-      <div class="grid-row portfolio trapezoid-reverse">
-        <div class="preview">
-          <img
-            src="assets/img/gif/sky.webp"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/american-gods.gif"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/joker.webp"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/coin.gif"
-            loading="lazy"
-          />
-        </div>
-        <div class="preview">
-          <img
-            src="assets/img/gif/american-gods-2.gif"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      <div class="overlay"></div>
-    </div>
+    }
   </div>
 </section>
