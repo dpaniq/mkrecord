@@ -1,29 +1,9 @@
 <section>
-  <span class="navigation left">
-    <button
-      (click)="onScrollLeft()"
-      (keydown)="setScroll($event)"
-      [disabled]="disabledLeft"
-    >
-      <mat-icon fontIcon="navigate_next"></mat-icon>
-    </button>
-  </span>
-
-  <span class="navigation right">
-    <button
-      (click)="onScrollRight()"
-      (keydown)="setScroll($event)"
-      [disabled]="disabledRight"
-    >
-      <mat-icon fontIcon="navigate_next"></mat-icon>
-    </button>
-  </span>
-
   <div
     #scrollContainer
     class="scroll-container"
   >
-    @for (_ of [1, 2, 3, 5]; track _; let idx = $index, even = $even) {
+    @for (_ of [1, 2]; track _; let idx = $index, even = $even) {
       <div class="content width__wv">
         <span class="date">Road dream pack</span>
 
@@ -67,5 +47,27 @@
         <!-- <div class="overlay"></div> -->
       </div>
     }
+  </div>
+
+  <div class="navigation">
+    <button
+      class="left"
+      (click)="onScrollLeft()"
+      (keydown)="setScroll($event)"
+      [disabled]="disabledLeft"
+    >
+      Arrow left
+      <mat-icon fontIcon="navigate_next"></mat-icon>
+    </button>
+
+    <button
+      class="right"
+      (click)="onScrollRight()"
+      (keydown)="setScroll($event)"
+      [disabled]="disabledRight"
+    >
+      <mat-icon fontIcon="navigate_next"></mat-icon>
+      Arrow right
+    </button>
   </div>
 </section>

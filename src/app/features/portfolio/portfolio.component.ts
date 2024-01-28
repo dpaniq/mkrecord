@@ -39,34 +39,52 @@ export class PortfolioComponent implements AfterViewInit {
     }
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    const container = this.scrollContainer.nativeElement as HTMLElement;
+    const scrollWidth = container.scrollWidth;
+    const scrolled = container.scrollLeft;
+    console.log('initial:', { scrollWidth, scrolled });
+  }
 
   onScrollLeft() {
-    // Offset / OffsetWidth
     const container = this.scrollContainer.nativeElement as HTMLElement;
-    const scrollX = container.scrollLeft;
+    const scrolled = container.scrollLeft;
 
-    const scrollPosition = container.scrollWidth;
+    // Ensure scrolled is a multiple of ITEM_WIDTH to avoid misalignment
+    const finalWidth = Math.max(
+      0,
+      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH - ITEM_WIDTH,
+    );
+    container.scrollLeft = finalWidth;
 
-    const result = scrollX - ITEM_WIDTH;
-    if (result <= scrollPosition) {
-      this.disabledLeft = true;
-    }
+    this.disabledLeft = finalWidth === 0;
     this.disabledRight = false;
-    container.scrollLeft = result;
+
+    console.log({ scrolled, finalWidth });
   }
 
   onScrollRight() {
     const container = this.scrollContainer.nativeElement as HTMLElement;
+    const scrollWidth = container.scrollWidth;
+    const scrolled = container.scrollLeft;
+    const lastIndex = Math.floor(scrollWidth / ITEM_WIDTH) - 1;
 
-    const scrollPosition = container.scrollWidth;
-    const scrollX = container.scrollLeft;
+    // Ensure scrolled is a multiple of ITEM_WIDTH to avoid misalignment
+    const finalWidth = Math.min(
+      scrollWidth - container.clientWidth,
+      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH + ITEM_WIDTH,
+    );
+    container.scrollLeft = finalWidth;
 
-    const result = scrollX + ITEM_WIDTH;
-    if (result >= scrollPosition) {
-      this.disabledRight = true;
-    }
+    this.disabledRight = finalWidth === scrollWidth - container.clientWidth;
     this.disabledLeft = false;
-    container.scrollLeft = result;
+
+    console.log({ scrolled, finalWidth, lastIndex });
+  }
+
+  isCloseTo(number1: number, number2: number, tolerance = ITEM_WIDTH + 100) {
+    // Проверяем, находится ли разница между числами в пределах заданной погрешности
+    console.log(number1, number2, Math.abs(number1 - number2) <= tolerance);
+    return Math.abs(number1 - number2) <= tolerance;
   }
 }

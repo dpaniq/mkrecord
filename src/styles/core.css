@@ -29,6 +29,16 @@ body {
   background-color: rgb(0, 0, 0, 1);
 }
 
+body:has(app-info) {
+  background-image: url('../assets/img/png/video-everglow.jpg');
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  background-size: cover;
+  background-position-y:
+    top 30%,
+    bottom 20%;
+}
+
 a {
   color: var(--color_whitesmoke);
   text-decoration: none;
