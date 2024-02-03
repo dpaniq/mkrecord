@@ -22,12 +22,12 @@ export const ROUTES: Routes = [
         m => m.PortfolioPageComponent,
       ),
   },
-  {
-    path: 'about',
-    title: 'About',
-    loadComponent: () =>
-      import('./pages/about-page.component').then(m => m.AboutPageComponent),
-  },
+  // {
+  //   path: 'about',
+  //   title: 'About',
+  //   loadComponent: () =>
+  //     import('./pages/about-page.component').then(m => m.AboutPageComponent),
+  // },
   {
     path: 'contacts',
     title: 'Contacts',

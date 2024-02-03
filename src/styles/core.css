@@ -25,18 +25,42 @@ body::-webkit-scrollbar-thumb {
 
 body {
   margin: 0;
-  z-index: -999;
-  background-color: rgb(0, 0, 0, 1);
+  /* background-color: rgb(0, 0, 0, 1); */
+  background-image: url('../assets/bg/video_lines.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: none;
+  backdrop-filter: grayscale(1) opacity(1) brightness(50%);
 }
 
-body:has(app-info) {
-  background-image: url('../assets/img/png/video-everglow.jpg');
-  background-repeat: no-repeat;
-  background-blend-mode: luminosity;
+/* 
+
+https://pixexid.com/image/a-minimalist-composition-with-a-single-white-line-on-a-black-background-9vxer53u
+*/
+body:has(app-home-page) {
+  /* background-image: url('../assets/bg/bg2.gif'); */
+  /* background-image: url('../assets/bg/video_lines.gif'); */
+  /* background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExODU4OWVkY2U4ODg5NGU2YzZkYTNlMzkzNjQzMWM3OWQ3YjVlYmJkMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/j3PbynAZgdGnpzh3Ua/giphy.gif'); */
+
+  /* background-repeat: no-repeat;
   background-size: cover;
-  background-position-y:
-    top 30%,
-    bottom 20%;
+  backdrop-filter: blur(1px) grayscale(1); */
+}
+
+body:has(app-info-page) {
+  /* background-image: url('../assets/img/png/video-everglow.jpg'); */
+  /* background-image: url('../assets/bg/video_lines.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: none; */
+}
+
+body:has(app-about-page) {
+  /* background-image: url('../assets/img/png/video-everglow.jpg'); */
+  /* background-image: url('../assets/bg/video_lines.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: none; */
 }
 
 a {
@@ -61,9 +85,11 @@ h3,
 h4,
 h5,
 h6 {
-  &::first-letter {
+  color: whitesmoke;
+
+  /* &::first-letter {
     color: tomato;
-  }
+  } */
 }
 
 h1 {
@@ -86,7 +112,9 @@ h6 {
 }
 
 p {
-  color: var(--color_whitesmoke);
+  color: whitesmoke;
+  font-weight: 300;
+  text-wrap: balance;
 }
 
 /* Forms */

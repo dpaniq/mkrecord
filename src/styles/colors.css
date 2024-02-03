@@ -30,4 +30,8 @@
   --text7: color-mix(in srgb, var(--color-charcoal) 70%, white);
   --text8: color-mix(in srgb, var(--color-charcoal) 80%, white);
   --text9: color-mix(in srgb, var(--color-charcoal) 90%, white);
+
+  --color1: #acacac;
+  --color2: #494949;
+  --color3: #1d1d1d;
 }

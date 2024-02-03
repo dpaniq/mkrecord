@@ -19,7 +19,11 @@ form#contacts {
     padding: 10px 16px;
     line-height: 40px;
     color: tomato;
-    background: var(--color_whitesmoke_darken_4);
+    background: rgba(0, 0, 0, 0.8);
+
+    &::placeholder {
+      color: whitesmoke;
+    }
   }
 
   textarea {

@@ -1,18 +1,17 @@
 <section>
+  <!-- <p>SDELAI TRAPEZOID PO STORONAM A NE PO TOP BOTTOM</p> -->
+
   <div
     #scrollContainer
     class="scroll-container"
   >
     @for (_ of [1, 2]; track _; let idx = $index, even = $even) {
       <div class="content width__wv">
-        <span class="date">Road dream pack</span>
+        <!-- <span class="date">Road dream pack</span> -->
 
         <!-- <div class="substrate"></div> -->
 
-        <div
-          class="grid-row portfolio"
-          [ngClass]="{ trapezoid: !even, 'trapezoid-reverse': even }"
-        >
+        <div class="grid-row portfolio">
           <div class="preview">
             <img
               src="assets/img/gif/sky.webp"
@@ -56,7 +55,7 @@
       (keydown)="setScroll($event)"
       [disabled]="disabledLeft"
     >
-      Arrow left
+      <!-- Arrow left -->
       <mat-icon fontIcon="navigate_next"></mat-icon>
     </button>
 
@@ -67,7 +66,7 @@
       [disabled]="disabledRight"
     >
       <mat-icon fontIcon="navigate_next"></mat-icon>
-      Arrow right
+      <!-- Arrow right -->
     </button>
   </div>
 </section>

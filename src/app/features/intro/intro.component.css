@@ -1,32 +1,51 @@
 /* Text intro */
 .text-intro {
-  font-family: 'Roboto', sans-serif;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 40px;
 
   h1 {
-    margin: 7px 0;
-    padding: 0;
-    font-size: 70px;
+    /* &::first-letter {
+      all: unset;
+    } */
+    width: max-content;
+    font-size: 150px;
     font-weight: 900;
-    color: var(--color_whitesmoke);
-    line-height: 50px;
-    /* border-bottom: 10px solid tomato; */
-    text-shadow: 2px 2px var(--color_whitesmoke);
-    text-decoration: underline tomato;
+    /* color: tomato; */
+    color: transparent;
+    /* color: black; */
+    line-height: 144px;
+    text-decoration: 10px underline whitesmoke;
+    /* text-shadow: 0 0 2px tomato; */
+    -webkit-text-stroke: 1px whitesmoke;
+    /* mix-blend-mode: screen; */
+    /* background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif); */
+    /* background-blend-mode: color; */
+    background-size: cover;
+    /* color: transparent; */
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    /* text-shadow: 2px 2px 1px black; */
+    /* filter: grayscale(1); */
+    filter: drop-shadow(1px 1px 0px tomato);
+    &.name {
+      margin-left: 97px;
+    }
   }
 
   p {
     text-align: right;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 4px 0 0 50px;
     color: var(--color_whitesmoke);
+    text-shadow: 1px 1px whitesmoke;
   }
 }
 
 /* Preview image */
 .preview {
   position: relative;
+  transform: rotate(-30deg);
+  opacity: 0.3;
 
   img {
     z-index: 100;

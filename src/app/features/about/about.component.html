@@ -1,36 +1,15 @@
-<div class="wrapper bg-container black trapezoid-reverse">
-  <section id="about">
-    <div class="">
-      <div class="block">
-        <div class="preview">
-          @for (img of images(); track img) {
-            <img
-              [src]="img"
-              alt="Solid logo"
-            />
-          }
-
-          <div class="preview-overlay">
-            <span class="material-symbols-outlined"> play_circle </span>
-          </div>
-        </div>
-        <div>
-          <div class="text">
-            <h1>Hey,</h1>
-            <h1>I`m Marek</h1>
-            <p>I`m an independent creative filmmaker, editor and storyteller</p>
-          </div>
-        </div>
+<section>
+  <div class="block">
+    <div class="preview">
+      @for (img of images(); track img) {
+        <img
+          [src]="img"
+          loading="lazy"
+        />
+      }
+      <div class="preview-overlay">
+        <span class="material-symbols-outlined"> play_circle </span>
       </div>
-
-      <!-- {/* <Separator
-    position="bottomRight"
-    styles={{
-      'position': 'absolute',
-      'bottom': 0,
-      'background-color': Colors.gray,
-    }}
-  /> */} -->
     </div>
-  </section>
-</div>
+  </div>
+</section>

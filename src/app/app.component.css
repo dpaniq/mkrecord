@@ -1,5 +1,5 @@
 app-header {
-  height: 10vh;
+  height: 15vh;
 }
 
 main {
@@ -8,10 +8,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 app-footer {
-  height: 20vh;
+  height: 15vh;
 }
 
 /* TODO mobile; use  https://tproger.ru/articles/novye-edinicy-izmereniya-svh-lvh-dvh-dlya-adaptivnoj-verstki */

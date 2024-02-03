@@ -1,11 +1,12 @@
-#about {
+section {
   margin: 0;
-  .trapezoid-reverse {
-    // background-color: tomato;
-  }
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
   .text {
-    color: $color_whitesmoke;
+    /* color: $color_whitesmoke; */
+    color: whitesmoke;
 
     p {
       font-size: 30px;
@@ -15,24 +16,37 @@
   div.preview {
     img {
       position: absolute;
-      min-width: 500px;
-      max-height: 500px;
-      box-shadow: -20px 3px 12px 4px rgba(0, 0, 0, 0.69),
+      min-width: 300px;
+      max-height: 300px;
+      box-shadow:
+        -20px 3px 12px 4px rgba(0, 0, 0, 0.69),
         inset -20px 3px 12px 4px rgba(0, 0, 0, 0.69);
       transform: rotate(15deg);
-      animation: leaves 1.5s ease-in-out infinite alternate;
+      animation: leaves 2.5s ease-in-out infinite alternate;
+      filter: grayscale(1);
+
+      &:hover {
+        filter: none;
+        cursor: pointer;
+        transition: all;
+      }
     }
   }
+
   div.preview img:nth-child(1) {
     transform: rotate(-50deg);
     /* // margin-left: -150px;
     // box-shadow: -20px 3px 12px 4px black; */
+    z-index: 1;
   }
   div.preview img:nth-child(2) {
     transform: rotate(-25deg);
+    z-index: 2;
   }
   div.preview img:nth-child(3) {
-    transform: rotate(-0deg);
+    transform: rotate(5deg);
+    z-index: 3;
+    cursor: alias;
   }
   div.preview img:nth-child(4) {
     transform: rotate(25deg);
