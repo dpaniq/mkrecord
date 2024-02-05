@@ -29,4 +29,10 @@ form#contacts {
   textarea {
     resize: vertical;
   }
+
+  button[type='submit'] {
+    &:hover {
+      border: 1px solid tomato;
+    }
+  }
 }

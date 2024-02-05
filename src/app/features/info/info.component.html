@@ -2,7 +2,7 @@
   <div class="regalias-container">
     <h2>Regalias</h2>
     <div class="regalias">
-      @for (regalia of regalias; track regalia.subject) {
+      @for (regalia of regalias[lang()]; track regalia.subject) {
         <div class="regalia">
           <h5>{{ regalia.subject | uppercase }}</h5>
           <p>{{ regalia.text | lowercase }}</p>
@@ -15,7 +15,7 @@
     <h2>Experience</h2>
 
     <div class="experiences">
-      @for (exp of experiences; track exp.subject) {
+      @for (exp of experiences[lang()]; track exp.subject) {
         <div class="experience">
           <h5>{{ exp.subject | uppercase }}</h5>
           <p>{{ exp.text | lowercase }}</p>

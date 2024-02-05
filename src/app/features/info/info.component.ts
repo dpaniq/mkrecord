@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { REGALIAS, EXPERIENCES } from './constants';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { I18nService } from '../../shared/i18n.service';
 
 @Component({
   selector: 'app-info',
@@ -11,6 +12,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './info.component.css',
 })
 export class InfoComponent {
-  regalias = REGALIAS;
-  experiences = EXPERIENCES;
+  readonly lang = this.i18nService.langSignal;
+  readonly regalias = REGALIAS;
+  readonly experiences = EXPERIENCES;
+
+  constructor(private i18nService: I18nService) {}
 }

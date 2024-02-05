@@ -1,9 +1,4 @@
 <header>
-  <!-- <div id="logotype">
-    <a routerLink="/">
-      <mat-icon svgIcon="mkWhite"></mat-icon>
-    </a>
-  </div> -->
   <nav>
     <ul>
       <li>
@@ -13,7 +8,7 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           ariaCurrentWhenActive="page"
-          >Home</a
+          >{{ navigation.home[lang()] }}</a
         >
       </li>
       <li>
@@ -21,24 +16,17 @@
           routerLink="/portfolio"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          >Portfolio</a
+          >{{ navigation.portfolio[lang()] }}</a
         >
       </li>
-      <!-- <li>
-        <a
-          class="trapezoid"
-          routerLink="/about"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >About</a
-        >
-      </li> -->
+
       <li>
         <a
           routerLink="/info"
+          home
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          >Info</a
+          >{{ navigation.info[lang()] }}</a
         >
       </li>
       <li>
@@ -46,9 +34,20 @@
           routerLink="/contacts"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
-          >Contact me</a
+          >{{ navigation.contactMe[lang()] }}</a
         >
       </li>
     </ul>
   </nav>
+
+  <mat-button-toggle-group
+    class="locale-toggle"
+    name="languages"
+    [value]="lang()"
+    (change)="onChangeLanguage($event)"
+  >
+    <mat-button-toggle value="en">EN</mat-button-toggle>
+    <mat-button-toggle value="lv">LV</mat-button-toggle>
+    <mat-button-toggle value="ru">RU</mat-button-toggle>
+  </mat-button-toggle-group>
 </header>

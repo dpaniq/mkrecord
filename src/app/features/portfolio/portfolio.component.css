@@ -171,6 +171,15 @@ section {
   }
 }
 
+dialog {
+  background-color: transparent;
+}
+
+dialog::backdrop {
+  background-image: linear-gradient(45deg, black, gray, tomato, black);
+  opacity: 0.75;
+}
+
 @keyframes trapezoid-animation {
   0% {
     clip-path: polygon(5% 0, 100% 5%, 95% 100%, 0% 95%);

@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { debounceTime, fromEvent, takeUntil } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+
+import { VideoService } from '../../services/video.service';
 
 const ITEM_WIDTH = 800;
 
@@ -19,8 +22,12 @@ const ITEM_WIDTH = 800;
   imports: [CommonModule, MatIconModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
+  providers: [],
 })
 export class PortfolioComponent implements AfterViewInit {
+  #videoService = inject(VideoService);
+  constructor(public dialog: MatDialog) {}
+
   // #destroyRef = inject(DestroyRef);
   @ViewChild('scrollContainer') scrollContainer: any;
 
@@ -37,6 +44,10 @@ export class PortfolioComponent implements AfterViewInit {
     if (event.key === 'ArrowRight') {
       this.onScrollRight();
     }
+  }
+
+  openDialog(videoUrl: string): void {
+    this.#videoService.set(videoUrl);
   }
 
   ngAfterViewInit() {

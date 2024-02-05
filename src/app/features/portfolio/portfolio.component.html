@@ -7,12 +7,13 @@
   >
     @for (_ of [1, 2]; track _; let idx = $index, even = $even) {
       <div class="content width__wv">
-        <!-- <span class="date">Road dream pack</span> -->
-
         <!-- <div class="substrate"></div> -->
 
         <div class="grid-row portfolio">
-          <div class="preview">
+          <div
+            class="preview"
+            (click)="openDialog('assets/video/test.mp4')"
+          >
             <img
               src="assets/img/gif/sky.webp"
               loading="lazy"
