@@ -13,32 +13,6 @@ app-root {
   justify-content: center;
 }
 
-video {
-  /* display: none; */
-}
-
-.height {
-  &__vh {
-    height: 100vh;
-  }
-  &__percent {
-    height: 100%;
-  }
-}
-
-.width {
-  &__vw {
-    width: 100vw;
-  }
-  &__percent {
-    width: 100%;
-  }
-}
-
-.section-box-shadow {
-  box-shadow: inset 0px 0px 50px 1px rgba(53, 30, 30, 0.1);
-}
-
 .grid-row {
   width: 100%;
   /* // display: grid;
