@@ -37,3 +37,6 @@ https://stackoverflow.com/questions/44373416/divide-a-rectangle-into-2-triangles
 
 https://formspree.io/plans
 https://www.emailjs.com/docs/user-guide/adding-captcha-verification/
+
+VIDEO
+https://github.com/ganatan/angular-ssr
