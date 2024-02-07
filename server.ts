@@ -4,16 +4,16 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
-import { cleanEnv, email, str, json } from 'envalid';
-import { config } from 'dotenv';
-config();
+// import { cleanEnv, email, str, json } from 'envalid';
+// import { config } from 'dotenv';
+// config();
 
-const env = cleanEnv(process.env, {
-  API_KEY: str(),
-  ADMIN_EMAIL: email({ default: 'admin@example.com' }),
-  EMAIL_CONFIG_JSON: json({ desc: 'Additional email parameters' }),
-  NODE_ENV: str({ choices: ['development', 'test', 'production', 'staging'] }),
-});
+// const env = cleanEnv(process.env, {
+//   API_KEY: str(),
+//   ADMIN_EMAIL: email({ default: 'admin@example.com' }),
+//   EMAIL_CONFIG_JSON: json({ desc: 'Additional email parameters' }),
+//   NODE_ENV: str({ choices: ['development', 'test', 'production', 'staging'] }),
+// });
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -41,7 +41,7 @@ export function app(): express.Express {
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
-    console.log(env);
+    // console.log(env);
 
     commonEngine
       .render({
