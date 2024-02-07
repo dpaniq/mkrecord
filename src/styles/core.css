@@ -30,7 +30,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: none;
-  backdrop-filter: grayscale(1) opacity(1) brightness(50%);
+  backdrop-filter: grayscale(1) opacity(1) brightness(50%) blur(2px);
 }
 
 /* 

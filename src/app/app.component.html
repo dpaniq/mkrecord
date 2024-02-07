@@ -4,21 +4,23 @@
 </main>
 <app-footer />
 
-<dialog #videoDialog>
+<dialog #dialog>
   <video
+    #video
     width="800"
     controls
+    autoplay
   >
-    <!-- <source
-      [src]="'/' + videoURLSignal()"
-      type="video/mp4"
-    /> -->
-
     <source
-      src="https://www.w3schools.com/html/mov_bbb.mp4"
+      #source
+      [src]="videoURL$ | async | safe: 'resourceUrl'"
       type="video/mp4"
     />
 
     Your browser does not support HTML video.
   </video>
+
+  <button (click)="dialog.close()">
+    <mat-icon fontIcon="close"></mat-icon>
+  </button>
 </dialog>

@@ -5,44 +5,28 @@
     #scrollContainer
     class="scroll-container"
   >
-    @for (_ of [1, 2]; track _; let idx = $index, even = $even) {
+    @for (
+      portfolios of portfolioList;
+      track portfolios;
+      let idx = $index, even = $even
+    ) {
       <div class="content width__wv">
         <!-- <div class="substrate"></div> -->
 
         <div class="grid-row portfolio">
-          <div
-            class="preview"
-            (click)="openDialog('assets/video/test.mp4')"
-          >
-            <img
-              src="assets/img/gif/sky.webp"
-              loading="lazy"
-            />
-          </div>
-          <div class="preview">
-            <img
-              src="assets/img/gif/american-gods.gif"
-              loading="lazy"
-            />
-          </div>
-          <div class="preview">
-            <img
-              src="assets/img/gif/joker.webp"
-              loading="lazy"
-            />
-          </div>
-          <div class="preview">
-            <img
-              src="assets/img/gif/coin.gif"
-              loading="lazy"
-            />
-          </div>
-          <div class="preview">
-            <img
-              src="assets/img/gif/american-gods-2.gif"
-              loading="lazy"
-            />
-          </div>
+          @for (portfolio of portfolios; track portfolio) {
+            <div
+              class="preview"
+              (click)="openDialog(portfolio.videoUrl)"
+            >
+              <img
+                width="600"
+                height="900"
+                [ngSrc]="portfolio.preview"
+                loading="lazy"
+              />
+            </div>
+          }
         </div>
         <!-- <div class="overlay"></div> -->
       </div>

@@ -9,22 +9,25 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { debounceTime, fromEvent, takeUntil } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 
 import { VideoService } from '../../services/video.service';
+import { PORTFOLIO_LIST } from './constants';
 
 const ITEM_WIDTH = 800;
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, NgOptimizedImage],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
   providers: [],
 })
 export class PortfolioComponent implements AfterViewInit {
+  readonly portfolioList = PORTFOLIO_LIST;
+
   #videoService = inject(VideoService);
   constructor(public dialog: MatDialog) {}
 
@@ -54,7 +57,6 @@ export class PortfolioComponent implements AfterViewInit {
     const container = this.scrollContainer.nativeElement as HTMLElement;
     const scrollWidth = container.scrollWidth;
     const scrolled = container.scrollLeft;
-    console.log('initial:', { scrollWidth, scrolled });
   }
 
   onScrollLeft() {

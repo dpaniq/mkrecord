@@ -55,7 +55,6 @@ header {
   position: fixed;
   top: 0;
   right: 0;
-  border: 1px solid tomato;
 
   ::ng-deep mat-button-toggle {
     padding: 6px;
