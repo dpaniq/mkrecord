@@ -1,0 +1,39 @@
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.brand-wrapper {
+  img {
+    object-fit: contain;
+
+    animation: rec 2s infinite;
+  }
+}
+
+@keyframes rec {
+  0% {
+    filter: none;
+  }
+
+  39% {
+    filter: none;
+  }
+
+  50% {
+    filter: grayscale(1) brightness(1);
+  }
+
+  89% {
+    filter: grayscale(1) brightness(1);
+  }
+
+  100% {
+    filter: none;
+  }
+}

@@ -1,0 +1,28 @@
+number: {{ activePreview() }}
+<section>
+  <div
+    #scrollContainer
+    class="scroll-container"
+  >
+    <div class="content width__wv">
+      <div class="grid-row portfolio">
+        @for (
+          portfolio of portfolioList;
+          track portfolio;
+          let idx = $index, even = $even
+        ) {
+          <div
+            class="preview"
+            [class.show]="idx === activePreview()"
+          >
+            <img
+              width="300"
+              [src]="portfolio.preview"
+              loading="lazy"
+            />
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

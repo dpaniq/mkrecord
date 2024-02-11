@@ -1,3 +1,4 @@
+import { HomeBrandComponent } from './../features/home-brand/home-brand.component';
 import { Component } from '@angular/core';
 import { IntroComponent } from '../features/intro/intro.component';
 import { AboutComponent } from '../features/about/about.component';
@@ -5,7 +6,7 @@ import { AboutComponent } from '../features/about/about.component';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [IntroComponent, AboutComponent],
+  imports: [IntroComponent, AboutComponent, HomeBrandComponent],
   styles: `
   :host {
     app-intro {
@@ -20,6 +21,9 @@ import { AboutComponent } from '../features/about/about.component';
     }
   }
  `,
-  template: `<app-about /> <app-intro /> `,
+  template: `
+    <!-- <app-about /> <app-intro /> -->
+    <app-home-brand />
+  `,
 })
 export class HomePageComponent {}

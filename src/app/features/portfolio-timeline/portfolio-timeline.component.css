@@ -1,0 +1,80 @@
+@import url('../../../styles/colors.css');
+
+:host {
+  position: relative;
+}
+
+section {
+  /* margin: 50px 0; */
+  overflow-x: auto;
+  width: 100%;
+
+  .scroll-container {
+    display: flex;
+    /* slides */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--color_black_1);
+      background-color: color-mix(in srgb, whitesmoke 20%, black);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color-mix(in srgb, whitesmoke 30%, black);
+      outline: 1px solid black;
+    }
+
+    .portfolio {
+      overflow: hidden;
+      height: 140px;
+      /* To scroll */
+      width: 800px;
+
+      div.preview {
+        position: relative;
+        width: 240px;
+
+        filter: grayscale(1) blur(1px);
+        transition-delay: 0.5s;
+        transition:
+          width 1s,
+          height 1s;
+
+        img {
+          z-index: 11;
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &:not(:hover) {
+        .preview.show {
+          width: 60%;
+          filter: none;
+          transition:
+            filter ease 2s,
+            width ease 2s;
+        }
+      }
+
+      &:hover {
+        .preview:hover {
+          cursor: pointer;
+          width: 60%;
+          filter: none;
+          transition:
+            filter ease 2s,
+            width ease 2s;
+        }
+      }
+    }
+  }
+}

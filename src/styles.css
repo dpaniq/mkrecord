@@ -20,10 +20,6 @@ app-root {
   display: flex;
 }
 
-.bg {
-  background-color: tomato;
-}
-
 /* Links */
 .link {
   color: #b318f0;
