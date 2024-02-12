@@ -8,26 +8,21 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 
   img.brand-image {
     padding: 20px;
     object-fit: contain;
     animation: rec 5s infinite forwards step-end;
     mix-blend-mode: multiply;
+    z-index: 11;
   }
 
   img.timeline-active-image {
     position: absolute;
-    /* top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; */
     object-fit: cover !important;
     transition: object-fit 2s;
     opacity: 0.8;
-
     animation: switch 5s infinite forwards step-end;
   }
 
