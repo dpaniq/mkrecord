@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal, signal } from '@angular/core';
 import { PortfolioTimelineComponent } from '../portfolio-timeline/portfolio-timeline.component';
 import { ParallaxItemDirective } from '../../shared/directives/parrallax-item.directive';
 
@@ -9,4 +9,6 @@ import { ParallaxItemDirective } from '../../shared/directives/parrallax-item.di
   templateUrl: './home-brand.component.html',
   styleUrl: './home-brand.component.css',
 })
-export class HomeBrandComponent {}
+export class HomeBrandComponent {
+  readonly timelineImageSignal = signal<string | null>(null);
+}

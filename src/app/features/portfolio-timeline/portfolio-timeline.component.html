@@ -1,5 +1,19 @@
-number: {{ activePreview() }}
 <section>
+  <div class="brand-wrapper">
+    <img
+      width="800"
+      height="560"
+      class="timeline-active-image"
+      [src]="timelineImage()"
+    />
+    <img
+      class="brand-image"
+      src="assets/brand/mk-white.svg"
+    />
+    <br />
+    <br />
+  </div>
+
   <div
     #scrollContainer
     class="scroll-container"
@@ -14,6 +28,7 @@ number: {{ activePreview() }}
           <div
             class="preview"
             [class.show]="idx === activePreview()"
+            (click)="activePreview.set(idx)"
           >
             <img
               width="300"

@@ -43,7 +43,7 @@ export class ParallaxItemDirective implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: MouseEvent) {
-    this.movement = this.movement ? this.movement : 0.025;
+    this.movement = this.movement ? this.movement : 0.015;
 
     const screenX = window.innerWidth;
     const screenY = window.innerHeight;

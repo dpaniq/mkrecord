@@ -4,14 +4,21 @@ import {
   ChangeDetectorRef,
   Component,
   DestroyRef,
+  EventEmitter,
   HostListener,
+  Inject,
   NgZone,
   OnDestroy,
   OnInit,
+  Output,
+  PLATFORM_ID,
+  Signal,
   ViewChild,
+  computed,
   inject,
   signal,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {
   Subject,
@@ -37,28 +44,37 @@ import { PORTFOLIO_TIMELINE_LIST } from './constants';
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PortfolioTimelineComponent implements OnInit, OnDestroy {
+export class PortfolioTimelineComponent implements OnInit {
+  private readonly destroyRef = inject(DestroyRef);
+
   activePreview = signal<number>(0);
+  timelineImage = computed(() => {
+    const index = this.activePreview();
+    const portfolio = PORTFOLIO_TIMELINE_LIST[index];
+    const preview = portfolio?.preview;
+    console.log(index, portfolio, preview);
+    return preview;
+  });
 
   readonly portfolioList = PORTFOLIO_TIMELINE_LIST;
 
   private readonly unsubscribe = new Subject<void>();
 
-  ngOnInit() {
-    // this.x = interval(3000)
-    //   .pipe(takeUntil(this.unsubscribe))
-    //   .subscribe(x => {
-    //     this.activePreview.update(currentIndex => {
-    //       if (currentIndex === PORTFOLIO_TIMELINE_LIST.length) {
-    //         return 0;
-    //       }
-    //       return currentIndex + 1;
-    //     });
-    //   });
-  }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
+  ngOnInit() {
+    // SSR
+    if (isPlatformBrowser(this.platformId)) {
+      interval(5000)
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(x => {
+          this.activePreview.update(currentIndex => {
+            if (currentIndex === PORTFOLIO_TIMELINE_LIST.length - 1) {
+              return 0;
+            }
+            return currentIndex + 1;
+          });
+        });
+    }
   }
 }
