@@ -54,3 +54,110 @@ dialog {
     box-shadow: 0 0 300px 0 black;
   }
 }
+
+body {
+}
+
+.camera {
+  pointer-events: none;
+
+  .camera-corners {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 50px;
+    mix-blend-mode: color;
+
+    --lineWidth: 5px;
+    --lineLength: 140px;
+    --lineLength: calc(100px + 5%);
+    --lineColor: whitesmoke;
+    --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
+    --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
+    --lineHorizontal: var(--lineLength) var(--lineWidth);
+    --lineVertical: var(--lineWidth) var(--lineLength);
+
+    background-image: var(--lineColorPair), var(--lineColorPair),
+      var(--lineColorPair), var(--lineColorPair);
+    background-repeat: no-repeat;
+    background-size: var(--lineVertical), var(--lineHorizontal),
+      var(--lineVertical), var(--lineHorizontal), var(--lineVertical),
+      var(--lineHorizontal), var(--lineVertical), var(--lineHorizontal);
+    background-position:
+      left top,
+      left top,
+      left bottom,
+      left bottom,
+      right top,
+      right top,
+      right bottom,
+      right bottom;
+  }
+
+  .rec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    position: absolute;
+    margin: 120px;
+    top: 0;
+    right: 0;
+
+    color: whitesmoke;
+    font-size: 60px;
+
+    animation: rec 3s infinite forwards step-end;
+    z-index: 20px;
+  }
+
+  /* .brand-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    img.timeline-active-image {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover !important;
+      transition: object-fit 2s;
+      opacity: 0.8;
+      animation: switch 10s infinite forwards step-end;
+    }
+  } */
+}
+
+@keyframes rec {
+  0% {
+    filter: none;
+    filter: grayscale(1) brightness(1);
+  }
+
+  25% {
+    filter: grayscale(1) brightness(1);
+  }
+
+  50% {
+    filter: none;
+  }
+
+  100% {
+    filter: none;
+  }
+}
+
+@keyframes switch {
+  0% {
+    visibility: hidden;
+  }
+
+  50% {
+    visibility: visible;
+  }
+}

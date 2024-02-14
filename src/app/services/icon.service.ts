@@ -10,13 +10,29 @@ export class IconService {
   constructor() {
     const brandSvgs: { name: string; path: string }[] = [
       {
-        name: 'mkWhite',
-        path: 'brand/mk-white.svg',
+        name: 'mk',
+        path: 'brand/mk.svg',
       },
       {
-        name: 'mkBlack',
-        path: 'brand/mk-black.svg',
+        name: 'rec',
+        path: 'brand/rec.svg',
       },
+      {
+        name: 'dot',
+        path: 'brand/dot.svg',
+      },
+      {
+        name: 'studio',
+        path: 'brand/studio.svg',
+      },
+      // {
+      //   name: 'mkWhite',
+      //   path: 'brand/mk-white.svg',
+      // },
+      // {
+      //   name: 'mkBlack',
+      //   path: 'brand/mk-black.svg',
+      // },
     ];
 
     for (const { name, path } of brandSvgs) {

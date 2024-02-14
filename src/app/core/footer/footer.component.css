@@ -1,8 +1,12 @@
 @import '../../../styles/colors.css';
 
+:host {
+  z-index: 100;
+}
+
 footer {
   position: fixed;
-  padding: 25px 0 25px;
+  padding: 0 0 60px;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -57,5 +61,40 @@ footer {
 
   a:hover ::ng-deep mat-icon svg {
     fill: tomato;
+  }
+}
+
+.locale-toggle {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  justify-content: center;
+
+  ::ng-deep mat-button-toggle {
+    padding: 6px;
+  }
+
+  ::ng-deep mat-button-toggle:hover {
+    background-color: color-mix(in srgb, tomato 80%, black);
+    color: whitesmoke;
+  }
+
+  ::ng-deep mat-button-toggle.mat-button-toggle-checked span {
+    color: whitesmoke;
+  }
+
+  mat-button-toggle:hover {
+    color: tomato;
+  }
+
+  button:hover {
+    color: tomato;
+  }
+
+  .mat-button-toggle-checked {
+    background-color: tomato;
+    color: whitesmoke;
   }
 }

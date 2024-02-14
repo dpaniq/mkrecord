@@ -29,8 +29,8 @@ import { PortfolioTimelineComponent } from '../features/portfolio-timeline/portf
  `,
   template: `
     <!-- <app-about /> <app-intro /> -->
-    <!-- <app-home-brand /> -->
-    <app-portfolio-timeline />
+    <app-home-brand />
+    <!-- <app-portfolio-timeline /> -->
   `,
 })
 export class HomePageComponent {}

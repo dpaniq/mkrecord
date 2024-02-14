@@ -19,8 +19,4 @@ export class HeaderComponent {
   readonly lang = this.i18nService.langSignal;
   readonly navigation = NAVIGATION;
   constructor(private i18nService: I18nService) {}
-
-  onChangeLanguage({ value }: MatButtonToggleChange) {
-    this.i18nService.set(value);
-  }
 }

@@ -1,9 +1,4 @@
 <footer>
-  <!-- <div class="logotype">
-    <a routerLink="/">
-      <mat-icon svgIcon="mkWhite"></mat-icon>
-    </a>
-  </div> -->
   <div>
     <p class="fullname">Marek Kondratjev</p>
     <div class="social">
@@ -50,34 +45,53 @@
         <mat-icon svgIcon="gmail"></mat-icon>
       </a>
     </div>
-    <p>Copyright © <span class="brand">MK Rec Studio</span> ‒ 2024</p>
+    <p>
+      Copyright ©
+      <span class="brand">MK Rec Studio</span>
+      ‒ 2024
+    </p>
     <p>
       Developed by
       <span>
         <a
           href="#"
           target="_blank"
-          >&#64;dpaniq</a
         >
+          &#64;dpaniq
+        </a>
         /
         <a
           href="#"
           target="_blank"
-          >&#64;Nastya</a
         >
+          &#64;Nastya
+        </a>
         /
         <a
           href="#"
           target="_blank"
-          >&#64;mkrec_studio</a
         >
+          &#64;mkrec_studio
+        </a>
         /
         <a
           href="#"
           target="_blank"
-          >&#64;Valletta</a
         >
+          &#64;Valletta
+        </a>
       </span>
     </p>
   </div>
+
+  <mat-button-toggle-group
+    class="locale-toggle"
+    name="languages"
+    [value]="lang()"
+    (change)="onChangeLanguage($event)"
+  >
+    <mat-button-toggle value="en">EN</mat-button-toggle>
+    <mat-button-toggle value="lv">LV</mat-button-toggle>
+    <mat-button-toggle value="ru">RU</mat-button-toggle>
+  </mat-button-toggle-group>
 </footer>
