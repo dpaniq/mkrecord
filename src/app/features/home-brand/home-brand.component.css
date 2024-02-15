@@ -15,4 +15,33 @@
   gap: 10px;
   flex-direction: column;
   width: calc(100vh - 80%);
+  filter: blur(3px);
+
+  animation: zoom ease-in-out 5s infinite;
+  animation-direction: alternate;
+  animation-timing-function: both;
+}
+
+@keyframes zoom {
+  0% {
+    filter: none;
+  }
+
+  33% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    filter: blur(1px);
+    transform: scale(1.02);
+  }
+
+  33% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    filter: blur(3px);
+    transform: scale(1);
+  }
 }

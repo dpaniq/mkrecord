@@ -45,4 +45,6 @@ Thumbs.db
 .env
 
 # big files
+/_source
 /media
+/ideas

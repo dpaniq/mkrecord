@@ -55,9 +55,6 @@ dialog {
   }
 }
 
-body {
-}
-
 .camera {
   pointer-events: none;
 
@@ -72,7 +69,6 @@ body {
 
     --lineWidth: 5px;
     --lineLength: 140px;
-    --lineLength: calc(100px + 5%);
     --lineColor: whitesmoke;
     --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
     --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
