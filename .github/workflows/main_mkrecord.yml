@@ -60,9 +60,6 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B0F31153161E4B68970E57B487C0F0D4 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EFD51116AB6C47CA8233B07822DD5D8C }}
 
-      - name: Delete existing files in Azure Web App deployment slot
-        run: az webapp deployment source delete --name 'mkrecord' --slot 'Production' --resource-group 'mkrecord'
-
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
