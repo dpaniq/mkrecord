@@ -69,6 +69,7 @@ dialog {
 
     --lineWidth: 5px;
     --lineLength: 140px;
+    --lineLength: calc(100px + 2vh);
     --lineColor: whitesmoke;
     --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
     --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
@@ -103,7 +104,7 @@ dialog {
     top: 0;
     right: 0;
 
-    color: whitesmoke;
+    color: rgba(245, 245, 245, 0.5);
     font-size: 60px;
 
     animation: rec 3s infinite forwards step-end;
