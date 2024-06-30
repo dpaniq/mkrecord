@@ -5,6 +5,8 @@ import { PortfolioComponent } from '../features/portfolio/portfolio.component';
   selector: 'app-portfolio-page',
   standalone: true,
   imports: [PortfolioComponent],
-  template: `<app-portfolio />`,
+  template: `
+    <app-portfolio />
+  `,
 })
 export class PortfolioPageComponent {}
