@@ -1,24 +1,53 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+} from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipListboxChange, MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { PortfolioBlockComponent } from '../../features/portfolio-block/portfolio-block.component';
+import { CategoryEnum, Portfolio, PORTFOLIO_CATEGORY_LIST } from './constants';
 
 @Component({
   selector: 'app-portfolio-block-page',
   standalone: true,
-  imports: [MatButtonToggleModule, MatCheckboxModule],
+  imports: [
+    MatChipsModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    PortfolioBlockComponent,
+    MatIconModule,
+  ],
   templateUrl: './portfolio-block-page.component.html',
   styleUrl: './portfolio-block-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioBlockPageComponent {
-  hideSingleSelectionIndicator = signal(false);
-  hideMultipleSelectionIndicator = signal(false);
+  public readonly actualCategory = signal<CategoryEnum[]>([]);
 
-  toggleSingleSelectionIndicator() {
-    this.hideSingleSelectionIndicator.update(value => !value);
+  public readonly gridView = signal<number>(1);
+
+  public readonly portfoliosFiltered = computed(() => {
+    if (!this.actualCategory().length) {
+      return Object.values(PORTFOLIO_CATEGORY_LIST).flat();
+    }
+
+    return this.actualCategory().reduce((acc, category) => {
+      acc.push(...PORTFOLIO_CATEGORY_LIST[category]);
+      return acc;
+    }, [] as Portfolio[]);
+  });
+
+  public readonly categories = Object.values(CategoryEnum);
+
+  changeCategory($event: MatChipListboxChange) {
+    this.actualCategory.set($event.value);
   }
 
-  toggleMultipleSelectionIndicator() {
-    this.hideMultipleSelectionIndicator.update(value => !value);
+  onUpdateGridSize(gridSize: 1 | 2 | 3) {
+    this.gridView.update(() => Number(gridSize));
   }
 }

@@ -1,1 +1,41 @@
-<p>portfolio-block works!</p>
+@switch (gridView()) {
+  @case (1) {
+    <section class="grid view-1">
+      @for (portfolio of portfolios(); track portfolio) {
+        <img
+          width="920"
+          height="500"
+          [ngSrc]="portfolio.preview"
+          loading="lazy"
+        />
+      }
+    </section>
+  }
+  @case (2) {
+    <section class="grid view-2">
+      @for (portfolio of portfolios(); track portfolio) {
+        <img
+          width="450"
+          height="330"
+          [ngSrc]="portfolio.preview"
+          loading="lazy"
+        />
+      }
+    </section>
+  }
+  @case (3) {
+    <section class="grid view-3">
+      @for (portfolio of portfolios(); track portfolio) {
+        <img
+          width="300"
+          height="130"
+          [ngSrc]="portfolio.preview"
+          loading="lazy"
+        />
+      }
+    </section>
+  }
+  @default {
+    No content at the moment
+  }
+}

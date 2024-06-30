@@ -1,0 +1,33 @@
+.mat-mdc-chip-set-stacked {
+  width: min-content;
+}
+
+section.grid-view {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+section.content {
+  display: flex;
+  gap: 30px;
+}
+
+.mat-mdc-standard-chip {
+  border-radius: 0;
+
+  button::before {
+    border-radius: 0 !important;
+  }
+}
+
+:host {
+  ::ng-deep
+    .mat-mdc-standard-chip
+    .mdc-evolution-chip__action--primary::before {
+    color: blue;
+    border-radius: 0 !important;
+  }
+
+  
+}

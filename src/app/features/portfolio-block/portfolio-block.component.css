@@ -1,0 +1,39 @@
+:host {
+  width: 920px;
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: auto;
+
+  scrollbar-color: tomato rgba(0, 0, 0, 0.3);
+
+  section {
+    &.grid {
+      display: grid;
+      gap: 10px;
+      grid-template-rows: min-content;
+
+      img {
+        object-fit: cover;
+        filter: grayscale(1);
+
+        &:hover {
+          cursor: pointer;
+          filter: none;
+          transition: filter 0.5s;
+        }
+      }
+
+      &.view-1 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &.view-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &.view-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

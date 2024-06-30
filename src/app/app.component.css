@@ -4,7 +4,7 @@ app-header {
 
 main {
   width: 800px;
-  height: 75vh;
+  /* height: 75vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@ dialog {
 
     --lineWidth: 5px;
     --lineLength: 140px;
-    --lineLength: calc(100px + 2vh);
+    --lineLength: calc(50px + 2vh);
     --lineColor: whitesmoke;
     --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
     --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
