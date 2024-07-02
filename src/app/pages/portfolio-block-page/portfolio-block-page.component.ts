@@ -26,7 +26,11 @@ import { CategoryEnum, Portfolio, PORTFOLIO_CATEGORY_LIST } from './constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioBlockPageComponent {
-  public readonly actualCategory = signal<CategoryEnum[]>([]);
+  public readonly actualCategory = signal<CategoryEnum[]>([
+    CategoryEnum.Commercial,
+    CategoryEnum.Food,
+    CategoryEnum.Fashion,
+  ]);
 
   public readonly gridView = signal<number>(1);
 

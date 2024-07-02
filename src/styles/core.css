@@ -10,15 +10,59 @@ body {
   height: 100%;
 }
 
-*::-webkit-scrollbar {
+body {
+  .camera {
+    pointer-events: none;
+
+    .camera-corners {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin: 50px;
+      mix-blend-mode: color;
+
+      --lineWidth: 5px;
+      --lineLength: 140px;
+      --lineLength: calc(50px + 2vh);
+      --lineColor: whitesmoke;
+      --linearGradientColor: linear-gradient(
+        var(--lineColor),
+        var(--lineColor)
+      );
+      --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
+      --lineHorizontal: var(--lineLength) var(--lineWidth);
+      --lineVertical: var(--lineWidth) var(--lineLength);
+
+      background-image: var(--lineColorPair), var(--lineColorPair),
+        var(--lineColorPair), var(--lineColorPair);
+      background-repeat: no-repeat;
+      background-size: var(--lineVertical), var(--lineHorizontal),
+        var(--lineVertical), var(--lineHorizontal), var(--lineVertical),
+        var(--lineHorizontal), var(--lineVertical), var(--lineHorizontal);
+      background-position:
+        left top,
+        left top,
+        left bottom,
+        left bottom,
+        right top,
+        right top,
+        right bottom,
+        right bottom;
+    }
+  }
+}
+
+body::-webkit-scrollbar {
   width: 1em;
 }
 
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.3);
 }
 
-*::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background-color: tomato;
   outline: 1px solid #c74d38;
 }

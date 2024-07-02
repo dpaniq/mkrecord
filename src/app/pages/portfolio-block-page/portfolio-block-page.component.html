@@ -25,7 +25,9 @@
       (change)="changeCategory($event)"
     >
       @for (category of categories; track category) {
-        <mat-chip-option>{{ category }}</mat-chip-option>
+        <mat-chip-option [selected]="actualCategory().includes(category)">
+          {{ category }}
+        </mat-chip-option>
       }
     </mat-chip-listbox>
   </aside>

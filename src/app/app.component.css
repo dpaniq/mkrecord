@@ -1,10 +1,10 @@
 app-header {
-  height: 10vh;
+  height: 16vh;
 }
 
 main {
-  width: 800px;
-  /* height: 75vh; */
+  /* width: 800px; */
+  height: 69vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +58,7 @@ dialog {
 .camera {
   pointer-events: none;
 
-  .camera-corners {
+  /* .camera-corners {
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -91,7 +91,7 @@ dialog {
       right top,
       right bottom,
       right bottom;
-  }
+  } */
 
   .rec {
     display: flex;

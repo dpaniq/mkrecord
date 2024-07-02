@@ -1,13 +1,18 @@
 @switch (gridView()) {
   @case (1) {
-    <section class="grid view-1">
+    <section
+      class="grid view-1"
+      dir="ltr"
+    >
       @for (portfolio of portfolios(); track portfolio) {
-        <img
-          width="920"
-          height="500"
-          [ngSrc]="portfolio.preview"
-          loading="lazy"
-        />
+        <div>
+          <img
+            width="920"
+            height="500"
+            [ngSrc]="portfolio.preview"
+            loading="lazy"
+          />
+        </div>
       }
     </section>
   }
