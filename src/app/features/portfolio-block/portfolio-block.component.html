@@ -19,24 +19,28 @@
   @case (2) {
     <section class="grid view-2">
       @for (portfolio of portfolios(); track portfolio) {
-        <img
-          width="450"
-          height="330"
-          [ngSrc]="portfolio.preview"
-          loading="lazy"
-        />
+        <div>
+          <img
+            width="450"
+            height="330"
+            [ngSrc]="portfolio.preview"
+            loading="lazy"
+          />
+        </div>
       }
     </section>
   }
   @case (3) {
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
-        <img
-          width="300"
-          height="130"
-          [ngSrc]="portfolio.preview"
-          loading="lazy"
-        />
+        <div>
+          <img
+            width="300"
+            height="160"
+            [ngSrc]="portfolio.preview"
+            loading="lazy"
+          />
+        </div>
       }
     </section>
   }

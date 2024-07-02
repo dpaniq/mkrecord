@@ -1,5 +1,6 @@
 :host {
-  position: absolute;
+  position: relative;
+  width: 100%;
   left: 0;
   right: 0;
   top: 0;
@@ -14,24 +15,46 @@
   display: flex;
   gap: 10px;
   flex-direction: column;
-  width: calc(100vh - 80%);
-
-  padding: 40px;
+  width: calc(100vh - 60%);
 
   img.studio {
     padding: 10px 0;
     border-top: 5px solid whitesmoke;
   }
 
-  animation: zoom ease-in-out 5s;
+  animation: zoom ease-in-out 5s infinite;
   animation-direction: alternate;
   animation-timing-function: both;
+}
+/* 
+.pic-1 {
+  background-image: linear-gradient(
+    to top,
+    rgba(239, 239, 239, 255),
+    rgba(239, 239, 239, 0)
+  );
+  transform: perspective(1000px) rotateY(0deg);
+  animation: fade 2s ease-in-out infinite alternate;
+} */
+
+@keyframes fade {
+  from {
+    opacity: 1; /* Полностью видимо */
+  }
+  to {
+    opacity: 0.5; /* Наполовину прозрачно */
+  }
 }
 
 @keyframes zoom {
   0% {
-    filter: blur(10px);
+    filter: blur(10px) brightness(0.5);
     transform: scale3d(1.02, 1.02, 1);
+  }
+
+  12% {
+    filter: blur(6px) brightness(0.2);
+    transform: scale3d(1.02, 1, 2);
   }
 
   33% {
@@ -41,11 +64,21 @@
   50% {
     filter: blur(1px);
     transform: scale(1.02);
-    transform: scale3d(1.02, 1.02, 1);
+    transform: scale3d(1.04, 1.06, 1);
   }
 
   66% {
     transform: scale(1.01);
+  }
+
+  75% {
+    filter: blur(6px) brightness(0.2) contrast(0.5);
+    transform: scale3d(1.02, 1, 2);
+  }
+
+  90% {
+    filter: none;
+    transform: none;
   }
 
   100% {

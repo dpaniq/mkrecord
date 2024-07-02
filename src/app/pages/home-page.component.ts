@@ -1,8 +1,8 @@
-import { HomeBrandComponent } from './../features/home-brand/home-brand.component';
 import { Component } from '@angular/core';
-import { IntroComponent } from '../features/intro/intro.component';
 import { AboutComponent } from '../features/about/about.component';
+import { IntroComponent } from '../features/intro/intro.component';
 import { PortfolioTimelineComponent } from '../features/portfolio-timeline/portfolio-timeline.component';
+import { HomeBrandComponent } from './../features/home-brand/home-brand.component';
 
 @Component({
   selector: 'app-home-page',
@@ -15,6 +15,7 @@ import { PortfolioTimelineComponent } from '../features/portfolio-timeline/portf
   ],
   styles: `
   :host {
+    width:100%;
     app-intro {
       z-index: 9999;
     }

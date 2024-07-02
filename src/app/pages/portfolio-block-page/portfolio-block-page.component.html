@@ -1,36 +1,37 @@
-<section class="content">
-  <aside>
-    <section class="grid-view">
-      <mat-button-toggle-group
-        (change)="onUpdateGridSize($event.value)"
-        value="1"
-      >
-        <mat-button-toggle value="1">
-          <mat-icon fontIcon="splitscreen"></mat-icon>
-        </mat-button-toggle>
-        <mat-button-toggle value="2">
-          <mat-icon fontIcon="view_column_2"></mat-icon>
-        </mat-button-toggle>
-        <mat-button-toggle value="3">
-          <mat-icon fontIcon="view_column"></mat-icon>
-        </mat-button-toggle>
-      </mat-button-toggle-group>
-    </section>
-
-    <br />
-
-    <mat-chip-listbox
-      class="mat-mdc-chip-set-stacked"
-      multiple="true"
-      (change)="changeCategory($event)"
+<div align="right">
+  <section class="grid-view">
+    <mat-button-toggle-group
+      [appearance]="'standard'"
+      (change)="onUpdateGridSize($event.value)"
+      value="1"
     >
-      @for (category of categories; track category) {
-        <mat-chip-option [selected]="actualCategory().includes(category)">
-          {{ category }}
-        </mat-chip-option>
-      }
-    </mat-chip-listbox>
-  </aside>
+      <mat-button-toggle value="1">
+        <mat-icon fontIcon="splitscreen"></mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="2">
+        <mat-icon fontIcon="view_column_2"></mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="3">
+        <mat-icon fontIcon="view_column"></mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </section>
+</div>
+
+<br />
+
+<section class="content">
+  <mat-chip-listbox
+    class="mat-mdc-chip-set-stacked"
+    multiple="true"
+    (change)="changeCategory($event)"
+  >
+    @for (category of categories; track category) {
+      <mat-chip-option [selected]="actualCategory().includes(category)">
+        {{ category }}
+      </mat-chip-option>
+    }
+  </mat-chip-listbox>
 
   <app-portfolio-block
     [gridView]="gridView()"

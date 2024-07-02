@@ -1,16 +1,11 @@
 .mat-mdc-chip-set-stacked {
-  width: min-content;
-}
-
-section.grid-view {
   width: 100%;
-  display: flex;
-  justify-content: end;
 }
 
 section.content {
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 200px max-content;
+  justify-content: center;
 }
 
 .mat-mdc-standard-chip {
@@ -29,5 +24,9 @@ section.content {
     border-radius: 0 !important;
   }
 
-  
+  ::ng-deep
+    mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+    border-radius: 0;
+    /* border: solid 1px tomato; */
+  }
 }
