@@ -14,6 +14,7 @@ $theme: mat.define-theme(
     ),
   )
 );
+@include mat.core();
 
 body {
   @include mat.checkbox-theme($theme);
@@ -32,9 +33,19 @@ body {
 //   height: 100%;
 // }
 
-@include mat.core();
 // @include mat.color-variants-backwards-compatibility($theme);
 // @include mat.checkbox-theme($theme);
 // @include mat.list-theme($theme);
 
 // @include mat.typography($theme);
+
+::ng-deep {
+  .mat-button-toggle-group-appearance-standard {
+    border: solid 1px tomato;
+  }
+}
+
+::ng-deep mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
+  border-radius: 0;
+  border: solid 1px tomato;
+}

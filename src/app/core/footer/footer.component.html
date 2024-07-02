@@ -85,10 +85,9 @@
   </div>
 
   <mat-button-toggle-group
-    class="locale-toggle"
-    name="languages"
-    [value]="lang()"
-    (change)="onChangeLanguage($event)"
+    appearance="legacy"
+    (change)="onChangeLanguage($event.value)"
+    value="lv"
   >
     <mat-button-toggle value="en">EN</mat-button-toggle>
     <mat-button-toggle value="lv">LV</mat-button-toggle>

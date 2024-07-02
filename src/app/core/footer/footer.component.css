@@ -63,38 +63,3 @@ footer {
     fill: tomato;
   }
 }
-
-.locale-toggle {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  justify-content: center;
-
-  ::ng-deep mat-button-toggle {
-    padding: 6px;
-  }
-
-  ::ng-deep mat-button-toggle:hover {
-    background-color: color-mix(in srgb, tomato 80%, black);
-    color: whitesmoke;
-  }
-
-  ::ng-deep mat-button-toggle.mat-button-toggle-checked span {
-    color: whitesmoke;
-  }
-
-  mat-button-toggle:hover {
-    color: tomato;
-  }
-
-  button:hover {
-    color: tomato;
-  }
-
-  .mat-button-toggle-checked {
-    background-color: tomato;
-    color: whitesmoke;
-  }
-}
