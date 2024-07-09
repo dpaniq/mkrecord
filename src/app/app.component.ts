@@ -1,26 +1,27 @@
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
+  computed,
   DestroyRef,
   ElementRef,
   Inject,
-  PLATFORM_ID,
-  ViewChild,
-  ViewRef,
-  computed,
   inject,
+  PLATFORM_ID,
   signal,
+  ViewChild,
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './core/header/header.component';
+import { filter } from 'rxjs';
+import { PORTFOLIO_TIMELINE_LIST } from './constants';
 import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
+import { CameraBatteryComponent } from './features/camera-battery/camera-battery.component';
+import { CameraTimerComponent } from './features/camera-timer/camera-timer.component';
 import { VideoService } from './services/video.service';
 import { SafePipe } from './shared/pipes/safe.pipe';
-import { MatIconModule } from '@angular/material/icon';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { filter, interval } from 'rxjs';
-import { PORTFOLIO_TIMELINE_LIST } from './constants';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,9 @@ import { PORTFOLIO_TIMELINE_LIST } from './constants';
     // Custom
     HeaderComponent,
     FooterComponent,
+
+    CameraTimerComponent,
+    CameraBatteryComponent,
 
     SafePipe,
   ],

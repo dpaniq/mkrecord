@@ -20,5 +20,5 @@ import { Portfolio } from '../../pages/portfolio-block-page/constants';
 })
 export class PortfolioBlockComponent {
   public readonly portfolios = input.required<Portfolio[]>();
-  public readonly gridView = input.required<number>();
+  public readonly gridView = input.required<string>();
 }

@@ -1,11 +1,9 @@
-.mat-mdc-chip-set-stacked {
-  width: 100%;
+section.content {
 }
 
-section.content {
-  display: grid;
-  grid-template-columns: 200px max-content;
-  justify-content: center;
+.categories {
+  display: flex;
+  justify-content: space-between;
 }
 
 .mat-mdc-standard-chip {
@@ -17,16 +15,53 @@ section.content {
 }
 
 :host {
+  width: 1200px;
+
+  mat-icon {
+    color: tomato;
+  }
+
+  mat-chip-listbox {
+    max-width: 100%;
+  }
+
+  ::ng-deep
+    .mat-mdc-standard-chip.mdc-evolution-chip--selected.mdc-evolution-chip--disabled {
+    background-color: tomato;
+  }
+
+  ::ng-deep .mat-mdc-chip-set-stacked .mdc-evolution-chip-set__chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 4px 6px;
+  }
+
+  ::ng-deep
+    .mat-mdc-chip-set-stacked
+    .mdc-evolution-chip__text-label.mat-mdc-chip-action-label {
+    color: tomato;
+  }
+
+  ::ng-deep
+    .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(
+      .mdc-evolution-chip--disabled
+    ) {
+    background-color: tomato;
+    color: black;
+    border-color: tomato;
+  }
+
   ::ng-deep
     .mat-mdc-standard-chip
     .mdc-evolution-chip__action--primary::before {
     color: blue;
     border-radius: 0 !important;
+    border-color: tomato;
   }
 
   ::ng-deep
     mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     border-radius: 0;
-    /* border: solid 1px tomato; */
+    border: solid 1px tomato;
   }
 }

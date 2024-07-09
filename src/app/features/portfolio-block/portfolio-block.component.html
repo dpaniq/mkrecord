@@ -1,5 +1,5 @@
 @switch (gridView()) {
-  @case (1) {
+  @case ('1') {
     <section
       class="grid view-1"
       dir="ltr"
@@ -16,7 +16,7 @@
       }
     </section>
   }
-  @case (2) {
+  @case ('2') {
     <section class="grid view-2">
       @for (portfolio of portfolios(); track portfolio) {
         <div>
@@ -30,17 +30,15 @@
       }
     </section>
   }
-  @case (3) {
+  @case ('3') {
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
-        <div>
-          <img
-            width="300"
-            height="160"
-            [ngSrc]="portfolio.preview"
-            loading="lazy"
-          />
-        </div>
+        <img
+          width="300"
+          height="160"
+          [ngSrc]="portfolio.preview"
+          loading="lazy"
+        />
       }
     </section>
   }

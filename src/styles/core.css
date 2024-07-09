@@ -24,16 +24,16 @@ body {
       mix-blend-mode: color;
 
       --lineWidth: 5px;
-      --lineLength: 140px;
-      --lineLength: calc(50px + 2vh);
+      --line1Length: calc(50px + 8vh);
+      --line2Length: calc(50px + 4vh);
       --lineColor: rgb(59, 59, 59);
       --linearGradientColor: linear-gradient(
         var(--lineColor),
         var(--lineColor)
       );
       --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
-      --lineHorizontal: var(--lineLength) var(--lineWidth);
-      --lineVertical: var(--lineWidth) var(--lineLength);
+      --lineHorizontal: var(--line1Length) var(--lineWidth);
+      --lineVertical: var(--lineWidth) var(--line2Length);
 
       background-image: var(--lineColorPair), var(--lineColorPair),
         var(--lineColorPair), var(--lineColorPair);
