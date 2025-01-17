@@ -21,6 +21,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { CameraBatteryComponent } from './features/camera-battery/camera-battery.component';
 import { CameraTimerComponent } from './features/camera-timer/camera-timer.component';
 import { VideoService } from './services/video.service';
+import { I18nService } from './shared/i18n.service';
 import { SafePipe } from './shared/pipes/safe.pipe';
 
 @Component({
@@ -44,7 +45,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [VideoService, SafePipe],
+  providers: [VideoService, SafePipe, I18nService],
 })
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);

@@ -1,12 +1,8 @@
 import { Component, inject } from '@angular/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { IconService } from '../../services/icon.service';
-import { NAVIGATION } from '../header/constants';
 import { I18nService } from '../../shared/i18n.service';
-import {
-  MatButtonToggleChange,
-  MatButtonToggleModule,
-} from '@angular/material/button-toggle';
 // import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -15,7 +11,7 @@ import {
   imports: [MatIconModule, MatButtonToggleModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
-  providers: [IconService, I18nService],
+  providers: [IconService],
 })
 export class FooterComponent {
   private iconService = inject(IconService);
@@ -23,7 +19,7 @@ export class FooterComponent {
 
   readonly lang = this.i18nService.langSignal;
 
-  onChangeLanguage({ value }: MatButtonToggleChange) {
-    this.i18nService.set(value);
+  onChangeLanguage(lang: Language) {
+    this.i18nService.set(lang);
   }
 }

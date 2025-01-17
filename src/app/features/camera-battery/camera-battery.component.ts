@@ -24,6 +24,12 @@ const initialDate = new Date().setHours(0, 0, 0, 0);
     }
   `,
   styles: `
+  :host {
+    z-index: -1;
+    point-events: none;
+    max-width: max-content;
+    max-height: max-content;
+  }
     mat-icon {
       transform: scale(4);
     }
@@ -40,7 +46,7 @@ export class CameraBatteryComponent {
     if (isPlatformBrowser(this.platformId)) {
       const date = new Date(Date.UTC(2024, 0, 1, 0, 0, 0, 0));
 
-      interval(1000)
+      interval(1500)
         .pipe(
           map(timer => timer % 2 === 0),
           takeUntilDestroyed(this.destroyRef),
