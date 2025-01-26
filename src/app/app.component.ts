@@ -24,6 +24,10 @@ import { VideoService } from './services/video.service';
 import { I18nService } from './shared/i18n.service';
 import { SafePipe } from './shared/pipes/safe.pipe';
 
+import { PlatformModule } from '@angular/cdk/platform';
+import { NavMobileComponent } from './core/nav-mobile/nav-mobile.component';
+import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -37,11 +41,14 @@ import { SafePipe } from './shared/pipes/safe.pipe';
     // Custom
     HeaderComponent,
     FooterComponent,
+    NavMobileComponent,
 
     CameraTimerComponent,
     CameraBatteryComponent,
+    CameraQualityResolutionComponent,
 
     SafePipe,
+    PlatformModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

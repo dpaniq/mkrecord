@@ -15,7 +15,8 @@ section.content {
 }
 
 :host {
-  width: 1200px;
+  overflow: scroll;
+  height: 100%;
 
   mat-icon {
     color: tomato;

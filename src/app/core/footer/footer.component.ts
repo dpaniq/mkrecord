@@ -3,12 +3,13 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { IconService } from '../../services/icon.service';
 import { I18nService } from '../../shared/i18n.service';
+import { NavMobileComponent } from '../nav-mobile/nav-mobile.component';
 // import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [MatIconModule, MatButtonToggleModule],
+  imports: [MatIconModule, MatButtonToggleModule, NavMobileComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   providers: [IconService],

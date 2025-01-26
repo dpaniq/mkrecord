@@ -55,48 +55,95 @@ dialog {
   }
 }
 
-:host {
-  position: relative;
+#battery,
+#quality-resolution,
+#timer {
+  position: absolute;
+  bottom: 70px;
+  right: 90px;
+  color: rgba(245, 245, 245, 0.5);
+  font-size: 30px;
+  font-weight: 700;
+}
 
-  #battery,
-  #quality,
-  #timer {
-    position: absolute;
-    bottom: 70px;
-    right: 90px;
-    color: rgba(245, 245, 245, 0.5);
-    font-size: 30px;
-    font-weight: 700;
+#quality-resolution {
+  right: unset;
+  left: 90px;
+}
+
+#battery {
+  top: 80px;
+  bottom: unset;
+  right: unset;
+  left: 110px;
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+#rec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  position: absolute;
+  top: 70px;
+  right: 90px;
+
+  color: rgba(245, 245, 245, 0.5);
+  font-size: 40px;
+
+  animation: rec 3s infinite forwards step-end;
+}
+
+@media (max-width: 768px) {
+  app-header,
+  app-footer {
+    display: none;
   }
 
-  #quality {
+  main {
+    width: 90%;
+    height: 85vh;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  #timer {
+    bottom: 105px;
+    right: 25px;
+    color: rgba(245, 245, 245, 0.5);
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 9999;
+  }
+
+  #quality-resolution {
     right: unset;
-    left: 90px;
+    left: 25px;
+    bottom: 105px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(245, 245, 245, 0.5);
   }
 
   #battery {
-    top: 80px;
-    bottom: unset;
-    right: unset;
-    left: 110px;
-    writing-mode: vertical-lr;
-    text-orientation: sideways-right;
+    top: 25px;
+    left: 25px;
   }
 
   #rec {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+    top: 25px;
+    right: 25px;
 
-    position: absolute;
-    top: 70px;
-    right: 90px;
+    gap: 5px;
 
-    color: rgba(245, 245, 245, 0.5);
-    font-size: 40px;
-
-    animation: rec 3s infinite forwards step-end;
+    img.rec-dot {
+      width: 15px;
+    }
+    img.rec-text {
+      width: 25px;
+    }
   }
 }
 
@@ -126,5 +173,11 @@ dialog {
 
   50% {
     visibility: visible;
+  }
+}
+
+@media (min-width: 768px) {
+  app-nav-mobile {
+    display: none;
   }
 }

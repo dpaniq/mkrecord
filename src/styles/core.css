@@ -7,50 +7,64 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
 }
 
-body {
-  .camera {
-    pointer-events: none;
+:root {
+  --lineWidth: 5px;
+  --marginCameraCorners: 50px;
+  --line1Length: calc(50px + 8vh);
+  --line2Length: calc(50px + 4vh);
+}
 
-    .camera-corners {
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      margin: 50px;
-      mix-blend-mode: color;
+app-root {
+  position: relative;
+}
 
-      --lineWidth: 5px;
-      --line1Length: calc(50px + 8vh);
-      --line2Length: calc(50px + 4vh);
-      --lineColor: rgb(59, 59, 59);
-      --linearGradientColor: linear-gradient(
-        var(--lineColor),
-        var(--lineColor)
-      );
-      --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
-      --lineHorizontal: var(--line1Length) var(--lineWidth);
-      --lineVertical: var(--lineWidth) var(--line2Length);
+.camera {
+  pointer-events: none;
 
-      background-image: var(--lineColorPair), var(--lineColorPair),
-        var(--lineColorPair), var(--lineColorPair);
-      background-repeat: no-repeat;
-      background-size: var(--lineVertical), var(--lineHorizontal),
-        var(--lineVertical), var(--lineHorizontal), var(--lineVertical),
-        var(--lineHorizontal), var(--lineVertical), var(--lineHorizontal);
-      background-position:
-        left top,
-        left top,
-        left bottom,
-        left bottom,
-        right top,
-        right top,
-        right bottom,
-        right bottom;
-    }
+  .camera-corners {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: var(--marginCameraCorners);
+    mix-blend-mode: color;
+
+    --lineColor: rgb(59, 59, 59);
+    --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
+    --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
+    --lineHorizontal: var(--line1Length) var(--lineWidth);
+    --lineVertical: var(--lineWidth) var(--line2Length);
+
+    background-image: var(--lineColorPair), var(--lineColorPair),
+      var(--lineColorPair), var(--lineColorPair);
+    background-repeat: no-repeat;
+    background-size: var(--lineVertical), var(--lineHorizontal),
+      var(--lineVertical), var(--lineHorizontal), var(--lineVertical),
+      var(--lineHorizontal), var(--lineVertical), var(--lineHorizontal);
+    background-position:
+      left top,
+      left top,
+      left bottom,
+      left bottom,
+      right top,
+      right top,
+      right bottom,
+      right bottom;
+  }
+}
+
+@media (max-width: 768px) {
+  .camera-corners {
+    --lineWidth: 1px;
+    --marginCameraCorners: 15px 10px 90px;
+    --line1Length: calc(20px + 8vh);
+    --line2Length: calc(20px + 8vh);
   }
 }
 

@@ -33,6 +33,12 @@ const initialDate = new Date().setHours(0, 0, 0, 0);
     mat-icon {
       transform: scale(4);
     }
+
+    @media (max-width: 768px) {
+      mat-icon {
+        transform: scale(2);
+      }
+    }
   `,
 })
 export class CameraBatteryComponent {
