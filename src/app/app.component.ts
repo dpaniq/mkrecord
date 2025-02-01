@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -13,8 +13,14 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { filter } from 'rxjs';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
+import { filter, skip } from 'rxjs';
 import { PORTFOLIO_TIMELINE_LIST } from './constants';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -57,6 +63,7 @@ import { CameraQualityResolutionComponent } from './features/camera-quality-reso
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);
   #videoService = inject(VideoService);
+  #router = inject(Router);
   #safePipe = inject(SafePipe);
   videoURL$ = this.#videoService.videoURL$;
 
@@ -107,18 +114,28 @@ export class AppComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
-    // SSR
-    // if (isPlatformBrowser(this.platformId)) {
-    //   interval(10_000)
-    //     .pipe(takeUntilDestroyed(this.destroyRef))
-    //     .subscribe(_ => {
-    //       this.activePreview.update(currentIndex => {
-    //         if (currentIndex === PORTFOLIO_TIMELINE_LIST.length - 1) {
-    //           return 0;
-    //         }
-    //         return currentIndex + 1;
-    //       });
-    //     });
-    // }
+    if (isPlatformBrowser(this.platformId)) {
+      this.initPhoneEvents();
+    }
+  }
+
+  private initPhoneEvents() {
+    this.#router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        skip(1),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe(() => {
+        this.triggerVibration();
+      });
+  }
+
+  private triggerVibration() {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(100);
+    } else {
+      console.warn('Vibration API is not supported');
+    }
   }
 }
