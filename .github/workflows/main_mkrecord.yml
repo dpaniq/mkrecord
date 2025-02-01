@@ -46,7 +46,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: node-app
 
@@ -54,7 +54,7 @@ jobs:
         run: unzip release.zip
 
       - name: Login to Azure
-        uses: Azure/login@v2.2.0
+        uses: Azure/login@v2
         with:
           tenant-id: ${{ secrets.BLG_AZURE_TENANT_ID }}
           client-id: ${{ secrets.MKRECORD_AZURE_REG_APP_ID }}
