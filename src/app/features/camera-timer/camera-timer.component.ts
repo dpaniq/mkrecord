@@ -12,18 +12,17 @@ import { interval, map, scan } from 'rxjs';
 const initialDate = new Date().setHours(0, 0, 0, 0);
 
 @Component({
-  selector: 'app-camera-timer',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-camera-timer',
+    imports: [CommonModule],
+    template: `
     {{ timerSignal() | date: 'HH:mm:ss:SSS' }}
   `,
-  styles: `
+    styles: `
     :host {
       font-size: 40px;
       font-weight: 900;
     }
-  `,
+  `
 })
 export class CameraTimerComponent {
   private readonly destroyRef = inject(DestroyRef);

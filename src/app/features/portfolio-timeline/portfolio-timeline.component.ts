@@ -36,13 +36,12 @@ import { VideoService } from '../../services/video.service';
 import { PORTFOLIO_TIMELINE_LIST } from './constants';
 
 @Component({
-  selector: 'app-portfolio-timeline',
-  standalone: true,
-  imports: [CommonModule, MatIconModule, NgOptimizedImage],
-  templateUrl: './portfolio-timeline.component.html',
-  styleUrl: './portfolio-timeline.component.css',
-  providers: [],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-portfolio-timeline',
+    imports: [CommonModule, MatIconModule, NgOptimizedImage],
+    templateUrl: './portfolio-timeline.component.html',
+    styleUrl: './portfolio-timeline.component.css',
+    providers: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioTimelineComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);

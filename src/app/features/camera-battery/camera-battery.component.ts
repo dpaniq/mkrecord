@@ -13,17 +13,16 @@ import { interval, map } from 'rxjs';
 const initialDate = new Date().setHours(0, 0, 0, 0);
 
 @Component({
-  selector: 'app-camera-battery',
-  standalone: true,
-  imports: [CommonModule, MatIconModule],
-  template: `
+    selector: 'app-camera-battery',
+    imports: [CommonModule, MatIconModule],
+    template: `
     @if (batterySignal()) {
       <mat-icon fontIcon="battery_5_bar"></mat-icon>
     } @else {
       <mat-icon fontIcon="battery_4_bar"></mat-icon>
     }
   `,
-  styles: `
+    styles: `
   :host {
     z-index: -1;
     point-events: none;
@@ -39,7 +38,7 @@ const initialDate = new Date().setHours(0, 0, 0, 0);
         transform: scale(2);
       }
     }
-  `,
+  `
 })
 export class CameraBatteryComponent {
   private readonly destroyRef = inject(DestroyRef);

@@ -3,11 +3,10 @@ import { PortfolioTimelineComponent } from '../portfolio-timeline/portfolio-time
 import { ParallaxItemDirective } from '../../shared/directives/parrallax-item.directive';
 
 @Component({
-  selector: 'app-home-brand',
-  standalone: true,
-  imports: [PortfolioTimelineComponent, ParallaxItemDirective],
-  templateUrl: './home-brand.component.html',
-  styleUrl: './home-brand.component.css',
+    selector: 'app-home-brand',
+    imports: [PortfolioTimelineComponent, ParallaxItemDirective],
+    templateUrl: './home-brand.component.html',
+    styleUrl: './home-brand.component.css'
 })
 export class HomeBrandComponent {
   readonly timelineImageSignal = signal<string | null>(null);

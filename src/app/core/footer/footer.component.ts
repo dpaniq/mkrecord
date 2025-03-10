@@ -7,12 +7,11 @@ import { NavMobileComponent } from '../nav-mobile/nav-mobile.component';
 // import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [MatIconModule, MatButtonToggleModule, NavMobileComponent],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
-  providers: [IconService],
+    selector: 'app-footer',
+    imports: [MatIconModule, MatButtonToggleModule, NavMobileComponent],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.css',
+    providers: [IconService]
 })
 export class FooterComponent {
   private iconService = inject(IconService);

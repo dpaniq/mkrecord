@@ -13,19 +13,18 @@ import { PortfolioBlockComponent } from '../../features/portfolio-block/portfoli
 import { CategoryEnum, PORTFOLIO_CATEGORY_LIST } from './constants';
 
 @Component({
-  selector: 'app-portfolio-block-page',
-  standalone: true,
-  imports: [
-    MatChipsModule,
-    MatButtonToggleModule,
-    MatCheckboxModule,
-    PortfolioBlockComponent,
-    MatIconModule,
-    MatDividerModule,
-  ],
-  templateUrl: './portfolio-block-page.component.html',
-  styleUrl: './portfolio-block-page.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-portfolio-block-page',
+    imports: [
+        MatChipsModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        PortfolioBlockComponent,
+        MatIconModule,
+        MatDividerModule,
+    ],
+    templateUrl: './portfolio-block-page.component.html',
+    styleUrl: './portfolio-block-page.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioBlockPageComponent {
   public readonly actualCategory = signal<CategoryEnum>(
