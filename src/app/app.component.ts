@@ -35,30 +35,26 @@ import { NavMobileComponent } from './core/nav-mobile/nav-mobile.component';
 import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    MatIconModule,
-
-    // Custom
-    HeaderComponent,
-    FooterComponent,
-    NavMobileComponent,
-
-    CameraTimerComponent,
-    CameraBatteryComponent,
-    CameraQualityResolutionComponent,
-
-    SafePipe,
-    PlatformModule,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  providers: [VideoService, SafePipe, I18nService],
+    selector: 'app-root',
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        RouterLink,
+        RouterLinkActive,
+        MatIconModule,
+        // Custom
+        HeaderComponent,
+        FooterComponent,
+        NavMobileComponent,
+        CameraTimerComponent,
+        CameraBatteryComponent,
+        CameraQualityResolutionComponent,
+        SafePipe,
+        PlatformModule,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    providers: [VideoService, SafePipe, I18nService]
 })
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);

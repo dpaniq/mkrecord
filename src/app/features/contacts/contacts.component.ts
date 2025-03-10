@@ -8,11 +8,10 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-contacts',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './contacts.component.html',
-  styleUrl: './contacts.component.css',
+    selector: 'app-contacts',
+    imports: [CommonModule, ReactiveFormsModule],
+    templateUrl: './contacts.component.html',
+    styleUrl: './contacts.component.css'
 })
 export class ContactsComponent {
   formGroup = new FormGroup({

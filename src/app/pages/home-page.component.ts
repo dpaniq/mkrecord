@@ -5,15 +5,14 @@ import { PortfolioTimelineComponent } from '../features/portfolio-timeline/portf
 import { HomeBrandComponent } from './../features/home-brand/home-brand.component';
 
 @Component({
-  selector: 'app-home-page',
-  standalone: true,
-  imports: [
-    IntroComponent,
-    AboutComponent,
-    HomeBrandComponent,
-    PortfolioTimelineComponent,
-  ],
-  styles: `
+    selector: 'app-home-page',
+    imports: [
+        IntroComponent,
+        AboutComponent,
+        HomeBrandComponent,
+        PortfolioTimelineComponent,
+    ],
+    styles: `
   :host {
     width:100%;
     app-intro {
@@ -28,10 +27,10 @@ import { HomeBrandComponent } from './../features/home-brand/home-brand.componen
     }
   }
  `,
-  template: `
+    template: `
     <!-- <app-about /> <app-intro /> -->
     <app-home-brand />
     <!-- <app-portfolio-timeline /> -->
-  `,
+  `
 })
 export class HomePageComponent {}

@@ -6,11 +6,10 @@ import { I18nService } from '../../shared/i18n.service';
 import { NAVIGATION } from './constants';
 
 @Component({
-  selector: 'app-nav',
-  standalone: true,
-  imports: [MatIconModule, RouterLink, RouterLinkActive, MatButtonToggleModule],
-  templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css',
+    selector: 'app-nav',
+    imports: [MatIconModule, RouterLink, RouterLinkActive, MatButtonToggleModule],
+    templateUrl: './nav.component.html',
+    styleUrl: './nav.component.css'
 })
 export class NavComponent {
   protected readonly i18nService = inject(I18nService);

@@ -14,7 +14,8 @@ $theme: mat.define-theme(
     ),
   )
 );
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 body {
   @include mat.checkbox-theme($theme);

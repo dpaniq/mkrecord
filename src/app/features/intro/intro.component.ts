@@ -3,11 +3,10 @@ import { toggleFullscreen } from '../../shared/utils/fullscreen-api';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-intro',
-  standalone: true,
-  imports: [MatIconModule],
-  templateUrl: './intro.component.html',
-  styleUrl: './intro.component.css',
+    selector: 'app-intro',
+    imports: [MatIconModule],
+    templateUrl: './intro.component.html',
+    styleUrl: './intro.component.css'
 })
 export class IntroComponent {
   onPlay(event: MouseEvent) {
