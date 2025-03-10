@@ -22,13 +22,7 @@
     border-top: 5px solid whitesmoke;
   }
 
-  img.shutter {
-    mix-blend-mode: darken;
-    border-radius: 50%;
-    object-fit: contain;
-  }
-
-  animation: cameraFocus 4s ease-in-out infinite;
+  animation: cameraFocus 5s ease-in-out;
   animation-direction: alternate;
   /* animation-timing-function: both; */
   transform-origin: center;
