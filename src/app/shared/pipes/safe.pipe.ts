@@ -2,14 +2,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {
   DomSanitizer,
   SafeHtml,
-  SafeStyle,
-  SafeScript,
-  SafeUrl,
   SafeResourceUrl,
+  SafeScript,
+  SafeStyle,
+  SafeUrl,
 } from '@angular/platform-browser';
 
 @Pipe({
-  standalone: true,
   name: 'safe',
 })
 export class SafePipe implements PipeTransform {

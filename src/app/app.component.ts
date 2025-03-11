@@ -28,6 +28,8 @@ import { NavMobileComponent } from './core/nav-mobile.component';
 import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
 import { IconService } from './services/icon.service';
 
+import { DeviceDetectorService } from 'ngx-device-detector';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -46,7 +48,7 @@ import { IconService } from './services/icon.service';
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [VideoService, SafePipe, IconService],
+  providers: [VideoService, SafePipe, IconService, DeviceDetectorService],
 })
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);

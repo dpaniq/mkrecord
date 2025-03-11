@@ -17,6 +17,24 @@ $theme: mat.define-theme(
 @include mat.elevation-classes();
 @include mat.app-background();
 
+:root {
+  @include mat.tabs-overrides(
+    (
+      label-text-font: 'Roboto',
+      active-indicator-color: tomato,
+      active-focus-indicator-color: tomato,
+      active-hover-indicator-color: tomato,
+      inactive-hover-label-text-color: tomato,
+      divider-color: tomato,
+      // text
+      label-text-size: 20px,
+      label-text-weight: 600,
+      active-label-text-color: tomato,
+      active-focus-label-text-color: tomato,
+    )
+  );
+}
+
 body {
   @include mat.checkbox-theme($theme);
   @include mat.list-theme($theme);
@@ -40,13 +58,4 @@ body {
 
 // @include mat.typography($theme);
 
-::ng-deep {
-  .mat-button-toggle-group-appearance-standard {
-    border: solid 1px tomato;
-  }
-}
-
-::ng-deep mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
-  border-radius: 0;
-  border: solid 1px tomato;
-}
+// Customize the entire app. Change :root to your selector if you want to scope the styles.

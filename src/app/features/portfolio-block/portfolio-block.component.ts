@@ -1,21 +1,21 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { Portfolio } from '../../pages/portfolio-block-page/constants';
+import { Portfolio } from '../../pages/portfolio-page.component';
 
 @Component({
-    selector: 'app-portfolio-block',
-    imports: [
-        CommonModule,
-        MatIconModule,
-        NgOptimizedImage,
-        MatButtonToggleModule,
-        MatCheckboxModule,
-    ],
-    templateUrl: './portfolio-block.component.html',
-    styleUrl: './portfolio-block.component.css'
+  selector: 'app-portfolio-block',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    NgOptimizedImage,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+  ],
+  templateUrl: './portfolio-block.component.html',
+  styleUrl: './portfolio-block.component.css',
 })
 export class PortfolioBlockComponent {
   public readonly portfolios = input.required<Portfolio[]>();

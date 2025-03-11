@@ -7,7 +7,6 @@ import {
   EventEmitter,
   HostListener,
   Inject,
-  NgZone,
   OnDestroy,
   OnInit,
   Output,
