@@ -39,6 +39,6 @@ export const ROUTES: Routes = [
   {
     path: '**',
     loadComponent: () =>
-      import('./core/empty/empty.component').then(m => m.EmptyComponent),
+      import('./core/empty.component').then(m => m.EmptyComponent),
   },
 ];

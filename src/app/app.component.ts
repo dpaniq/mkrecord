@@ -13,48 +13,39 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  NavigationEnd,
-  Router,
-  RouterLink,
-  RouterLinkActive,
-  RouterOutlet,
-} from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, skip } from 'rxjs';
 import { PORTFOLIO_TIMELINE_LIST } from './constants';
-import { FooterComponent } from './core/footer/footer.component';
-import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './core/footer.component';
+import { HeaderComponent } from './core/header.component';
 import { CameraBatteryComponent } from './features/camera-battery/camera-battery.component';
 import { CameraTimerComponent } from './features/camera-timer/camera-timer.component';
 import { VideoService } from './services/video.service';
-import { I18nService } from './shared/i18n.service';
 import { SafePipe } from './shared/pipes/safe.pipe';
 
 import { PlatformModule } from '@angular/cdk/platform';
-import { NavMobileComponent } from './core/nav-mobile/nav-mobile.component';
+import { NavMobileComponent } from './core/nav-mobile.component';
 import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-        CommonModule,
-        RouterOutlet,
-        RouterLink,
-        RouterLinkActive,
-        MatIconModule,
-        // Custom
-        HeaderComponent,
-        FooterComponent,
-        NavMobileComponent,
-        CameraTimerComponent,
-        CameraBatteryComponent,
-        CameraQualityResolutionComponent,
-        SafePipe,
-        PlatformModule,
-    ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css',
-    providers: [VideoService, SafePipe, I18nService]
+  selector: 'app-root',
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MatIconModule,
+    // Custom
+    HeaderComponent,
+    FooterComponent,
+    NavMobileComponent,
+    CameraTimerComponent,
+    CameraBatteryComponent,
+    CameraQualityResolutionComponent,
+    SafePipe,
+    PlatformModule,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+  providers: [VideoService, SafePipe],
 })
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);
