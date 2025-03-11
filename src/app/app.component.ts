@@ -26,6 +26,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 import { PlatformModule } from '@angular/cdk/platform';
 import { NavMobileComponent } from './core/nav-mobile.component';
 import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
+import { IconService } from './services/icon.service';
 
 @Component({
   selector: 'app-root',
@@ -45,13 +46,15 @@ import { CameraQualityResolutionComponent } from './features/camera-quality-reso
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [VideoService, SafePipe],
+  providers: [VideoService, SafePipe, IconService],
 })
 export class AppComponent implements AfterViewInit {
   #destroyRef = inject(DestroyRef);
   #videoService = inject(VideoService);
   #router = inject(Router);
   #safePipe = inject(SafePipe);
+  private readonly iconService = inject(IconService);
+
   videoURL$ = this.#videoService.videoURL$;
 
   @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;
