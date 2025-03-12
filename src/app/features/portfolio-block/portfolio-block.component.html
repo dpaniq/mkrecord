@@ -33,7 +33,10 @@
   @case ('3') {
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
-        <div>
+        <div
+          class="preview"
+          (click)="openDialog(portfolio)"
+        >
           <img
             width="300"
             height="160"

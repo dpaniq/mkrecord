@@ -6,6 +6,11 @@
 @import './styles/transition-api.css';
 @import './styles/keyframes.css';
 
+.backdrop-dialog {
+  background-color: #000000d1;
+  backdrop-filter: blur(2px);
+}
+
 app-root {
   position: fixed;
   top: 0;

@@ -26,6 +26,7 @@
     "@angular/router": "^19.2.1",
     "@angular/service-worker": "^19.2.1",
     "@angular/ssr": "^19.2.1",
+    "@angular/youtube-player": "19.2.2",
     "dotenv": "^16.4.7",
     "envalid": "^8.0.0",
     "express": "^4.21.2",

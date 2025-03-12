@@ -181,7 +181,7 @@ textarea {
   box-shadow: inset 0px 0px 1px 1px var(--color_whitesmoke_darken_4);
 }
 
-button {
+/* button {
   border: 1px solid var(--color_whitesmoke);
   width: 150px;
   background-color: var(--footer-color);
@@ -205,4 +205,4 @@ button {
     cursor: not-allowed;
     background-color: var(--color_whitesmoke_darken_4);
   }
-}
+} */
