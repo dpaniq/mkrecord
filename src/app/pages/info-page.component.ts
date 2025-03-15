@@ -6,7 +6,6 @@ import { InfoComponent } from '../features/info.component';
   imports: [InfoComponent],
   template: ` <app-info /> `,
   styles: `:host {
-    width: 80vw;
     display: flex;
     justify-content: center;
     align-items: center;

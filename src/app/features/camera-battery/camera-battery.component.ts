@@ -31,7 +31,7 @@ const initialDate = new Date().setHours(0, 0, 0, 0);
         max-height: max-content;
       }
       mat-icon {
-        transform: scale(1.4);
+        transform: scale(2);
       }
 
       @media (max-width: 768px) {

@@ -3,56 +3,17 @@ app-header {
 }
 
 main {
-  width: 1100px;
+  width: 1000px;
   height: 80vh;
   display: flex;
-  align-items: center;
+  align-items: Start;
   justify-content: center;
   position: relative;
+  padding: 60px 0 0;
 }
 
 app-footer {
   height: 10vh;
-}
-
-/* TODO mobile; use  https://tproger.ru/articles/novye-edinicy-izmereniya-svh-lvh-dvh-dlya-adaptivnoj-verstki */
-
-dialog {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-
-  button {
-    width: min-content;
-    height: 24px;
-    border: 0;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: black;
-
-    mat-icon {
-      font-weight: 700;
-    }
-  }
-
-  animation: boxShadow 2s ease-out alternate infinite;
-
-  &::backdrop {
-    filter: blur(1);
-    backdrop-filter: blur(5px);
-  }
-}
-
-@keyframes boxShadow {
-  0% {
-    box-shadow: 0 0 100px 0 black;
-  }
-
-  100% {
-    box-shadow: 0 0 300px 0 black;
-  }
 }
 
 #battery,
@@ -75,8 +36,8 @@ dialog {
 #battery {
   bottom: unset;
   right: 110px;
-  top: 65px;
-  right: 80px;
+  top: 70px;
+  left: 140px;
   writing-mode: vertical-lr;
   text-orientation: sideways-right;
 }
@@ -92,7 +53,6 @@ dialog {
   right: 120px;
 
   color: rgba(245, 245, 245, 0.5);
-  font-size: 40px;
 
   animation: rec 3s infinite forwards step-end;
 }

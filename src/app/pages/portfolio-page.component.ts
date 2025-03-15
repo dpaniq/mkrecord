@@ -382,7 +382,6 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
     `
       :host {
         z-index: 9999;
-        min-width: 85vw;
         min-height: 65vh;
         overflow: hidden;
       }
@@ -454,8 +453,7 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
         <mat-tab [label]="category">
           <app-portfolio-block
             [gridView]="gridView()"
-            [portfolios]="categoryTree[category]"
-          />
+            [portfolios]="categoryTree[category]" />
         </mat-tab>
       }
     </mat-tab-group>
@@ -466,11 +464,11 @@ export class PortfolioPageComponent {
   private readonly deviceSerivce = inject(DeviceDetectorService);
 
   public readonly actualCategory = signal<CategoryEnum>(
-    CategoryEnum.Commercial,
+    CategoryEnum.Commercial
   );
 
   public readonly gridView = signal<string>(
-    this.deviceSerivce.isMobile() ? '1' : '3',
+    this.deviceSerivce.isMobile() ? '1' : '3'
   );
 
   public readonly portfoliosFiltered = computed(() => {

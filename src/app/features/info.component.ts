@@ -8,7 +8,6 @@ import { MatDivider } from '@angular/material/divider';
   styles: [
     `
       :host {
-        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
