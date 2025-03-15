@@ -7,22 +7,38 @@
 // Note: Color palettes are generated from primary: #000, secondary: #ccc, neutral: fff
 $_palettes: (
   primary: (
-    0: #000000,
-    10: #3e001d,
-    20: #5e1133,
-    25: #6c1d3e,
-    30: #7b2949,
-    35: #893455,
-    40: #984061,
-    50: #b6587a,
-    60: #d57193,
-    70: #f48bae,
-    80: #ffb1c8,
-    90: #ffd9e2,
-    95: #ffecf0,
-    98: #fff8f8,
-    99: #fffbff,
+    0: #ff6347,
+    // Tomato
+    10: #ff755f,
+    // Lighter shade
+    20: #ff8761,
+    // Lighter shade
+    25: #ff9a66,
+    // Lighter shade
+    30: #ffad6a,
+    // Lighter shade
+    35: #ffbf6e,
+    // Lighter shade
+    40: #ffc872,
+    // Lighter shade
+    50: #ffd176,
+    // Lighter shade
+    60: #ffdc7a,
+    // Lighter shade
+    70: #ffe67e,
+    // Lighter shade
+    80: #ffec82,
+    // Lighter shade
+    90: #fff186,
+    // Lighter shade
+    95: #fff58a,
+    // Lighter shade
+    98: #fff9a1,
+    // Lighter shade
+    99: #fffcb0,
+    // Lighter shade
     100: #ffffff,
+    // White (lightest tone)
   ),
   secondary: (
     0: #000000,
@@ -129,22 +145,25 @@ $_palettes: (
 $_rest: (
   secondary: map.get($_palettes, secondary),
   neutral: map.get($_palettes, neutral),
-  neutral-variant: map.get($_palettes,  neutral-variant),
+  neutral-variant: map.get($_palettes, neutral-variant),
   error: map.get($_palettes, error),
 );
+
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: $_primary,
-    tertiary: $_tertiary,
-    use-system-variables: true,
-    system-variables-prefix: sys,
-  ),
-  typography: (
-    use-system-variables: true,
-    system-variables-prefix: sys,
-  ),
-));
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: $_primary,
+      tertiary: $_tertiary,
+      use-system-variables: true,
+      system-variables-prefix: sys,
+    ),
+    typography: (
+      use-system-variables: true,
+      system-variables-prefix: sys,
+    ),
+  )
+);

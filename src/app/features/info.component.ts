@@ -1,18 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-info',
-  imports: [CommonModule],
+  imports: [CommonModule, MatDivider],
   styles: [
     `
       :host {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       section {
         display: flex;
-        align-items: end;
-        align-content: end;
         justify-content: center;
         flex-direction: column;
         width: 100%;
@@ -22,31 +26,41 @@ import { Component } from '@angular/core';
         }
 
         h2 {
-          font-weight: 500;
-          text-shadow: 1px 1px 1px black;
+          font-weight: 600;
+          font-size: 22px;
+          text-align: center;
         }
 
         h5 {
           color: tomato;
           font-weight: 300;
-          font-size: 28px;
+          font-size: 16px;
           margin-bottom: 12px;
         }
 
         p {
-          font-size: 20px;
+          font-size: 14px;
+        }
+
+        & > div {
+          padding: 20px;
+          // border-left: 1px solid whitesmoke;
+          // border-right: 1px solid whitesmoke;
+          // border-bottom: 1px solid whitesmoke;
+          // border-radius: 5px;
+          // box-shadow: 2px 2px 2px 0px whitesmoke;
         }
 
         .regalias-container {
           .regalias {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px 12px;
+            gap: 12px;
           }
 
           .regalia {
-            margin: 5px;
-            padding: 5px;
+            margin: 15px;
+            padding: 10px 15px;
             background-color: rgba(0, 0, 0, 0.6);
           }
         }
@@ -55,12 +69,12 @@ import { Component } from '@angular/core';
           .experiences {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px 12px;
+            gap: 12px;
           }
 
           .experience {
-            margin: 5px;
-            padding: 5px;
+            margin: 15px;
+            padding: 10px 15px;
             background-color: rgba(0, 0, 0, 0.6);
           }
         }
@@ -88,7 +102,7 @@ import { Component } from '@angular/core';
           }
 
           p {
-            font-size: 12px;
+            font-size: 14px;
           }
 
           .regalias-container {
@@ -99,8 +113,8 @@ import { Component } from '@angular/core';
             }
 
             .regalia {
-              margin: 3px;
-              padding: 5px;
+              margin: 10px;
+              padding: 10px 5px;
               background-color: rgba(0, 0, 0, 0.6);
             }
           }
@@ -114,7 +128,7 @@ import { Component } from '@angular/core';
 
             .experience {
               margin: 5px;
-              padding: 5px;
+              padding: 10px 5px;
               background-color: rgba(0, 0, 0, 0.6);
             }
           }
@@ -126,6 +140,9 @@ import { Component } from '@angular/core';
     <section>
       <div class="regalias-container">
         <h2>Regalias</h2>
+        <br />
+        <mat-divider />
+        <br />
         <div class="regalias">
           @for (regalia of regalias; track regalia.subject) {
             <div class="regalia">
@@ -136,12 +153,11 @@ import { Component } from '@angular/core';
         </div>
       </div>
 
-      <br />
-      <br />
-
       <div class="experiences-container">
         <h2>Experience</h2>
-
+        <br />
+        <mat-divider />
+        <br />
         <div class="experiences">
           @for (exp of experiences; track exp.subject) {
             <div class="experience">

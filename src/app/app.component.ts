@@ -1,19 +1,10 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import {
-  Component,
-  computed,
-  DestroyRef,
-  Inject,
-  inject,
-  PLATFORM_ID,
-  signal,
-} from '@angular/core';
+import { Component, computed, DestroyRef, Inject, inject, PLATFORM_ID, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, skip } from 'rxjs';
 import { PORTFOLIO_TIMELINE_LIST } from './constants';
-import { FooterComponent } from './core/footer.component';
 import { HeaderComponent } from './core/header.component';
 import { CameraBatteryComponent } from './features/camera-battery/camera-battery.component';
 import { CameraTimerComponent } from './features/camera-timer/camera-timer.component';
@@ -36,7 +27,6 @@ import { DeviceDetectorService } from 'ngx-device-detector';
     MatIconModule,
     // Custom
     HeaderComponent,
-    FooterComponent,
     NavMobileComponent,
     CameraTimerComponent,
     CameraBatteryComponent,
@@ -81,7 +71,7 @@ export class AppComponent {
       .pipe(
         filter(event => event instanceof NavigationEnd),
         skip(1),
-        takeUntilDestroyed(this.destroyRef),
+        takeUntilDestroyed(this.destroyRef)
       )
       .subscribe(() => {
         this.triggerVibration();

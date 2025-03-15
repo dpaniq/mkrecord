@@ -38,7 +38,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
             a {
               font-weight: 700;
-              filter: blur(1px);
               text-shadow: 1px 1px 0 rgb(0, 0, 0);
               text-align: center;
 
@@ -66,44 +65,19 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <nav>
       <ul>
         <li>
-          <a
-            class="page-header"
-            routerLink="/"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page"
-          >
+          <a class="page-header" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
             Home
           </a>
         </li>
         <li>
-          <a
-            routerLink="/portfolio"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            Portfolio
-          </a>
+          <a routerLink="/portfolio" routerLinkActive="active" ariaCurrentWhenActive="page"> Portfolio </a>
         </li>
 
         <li>
-          <a
-            routerLink="/info"
-            home
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            Info
-          </a>
+          <a routerLink="/info" home routerLinkActive="active" ariaCurrentWhenActive="page"> Info </a>
         </li>
         <li>
-          <a
-            routerLink="/contacts"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-          >
-            Contact me
-          </a>
+          <a routerLink="/contacts" routerLinkActive="active" ariaCurrentWhenActive="page"> Contact me </a>
         </li>
       </ul>
     </nav>

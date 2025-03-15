@@ -40,6 +40,7 @@
     "@types/express": "^4.17.21",
     "@types/jasmine": "~5.1.5",
     "@types/node": "^18.19.71",
+    "eslint-config-prettier": "^10.1.1",
     "jasmine-core": "~5.1.2",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
