@@ -2,6 +2,7 @@
 
 :host {
   position: relative;
+  max-width: 800px;
 }
 
 section {

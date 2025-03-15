@@ -1,5 +1,7 @@
 # Mkrecord
 
+node --max_old_space_size=2048 ./node_modules/@angular/cli/bin/ng serve
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
 ## Todo

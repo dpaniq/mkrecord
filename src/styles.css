@@ -6,6 +6,11 @@
 @import './styles/transition-api.css';
 @import './styles/keyframes.css';
 
+.backdrop-dialog {
+  background-color: #000000d1;
+  backdrop-filter: blur(2px);
+}
+
 app-root {
   position: fixed;
   top: 0;
@@ -51,102 +56,4 @@ app-root {
       background-color: var(--gray);
     }
   }
-}
-
-.toSection {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 0;
-
-  &:last-child {
-    padding: 0;
-    margin: 0;
-  }
-
-  & > .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & > .content {
-      max-width: 1200px;
-      position: relative;
-
-      img {
-        /* mix-blend-mode: luminosity; */
-        filter: grayscale(100%);
-      }
-
-      img:hover {
-        mix-blend-mode: normal;
-        filter: none;
-      }
-
-      .block {
-        position: relative;
-        height: 600px;
-        display: grid;
-        grid-column: 1;
-        grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
-
-        > div {
-          position: relative;
-          text-align: left;
-        }
-
-        .text {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-
-          h1 {
-            margin: 0;
-            padding: 0;
-            font-size: 45px;
-            color: var(--color_whitesmoke);
-            line-height: 50px;
-            font-weight: 900;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* TODO ?Povtor */
-
-/* Block */
-.block {
-  .block__text {
-    z-index: 12;
-  }
-}
-
-/* Trapezoid shape */
-.trapezoid {
-  clip-path: polygon(
-    0 0,
-    100% var(--trapezoid-degree),
-    100% 100%,
-    0 calc(100% - var(--trapezoid-degree))
-  );
-}
-.trapezoid-reverse {
-  clip-path: polygon(
-    0 var(--trapezoid-degree),
-    100% 0,
-    100% calc(100% - var(--trapezoid-degree)),
-    0 100%
-  );
-}
-
-/* TODO (needed, used) Noisy / grainy */
-.noise {
-  filter: contrast(170%) brightness(1000%) invert(100%);
-  background: linear-gradient(45deg, rgb(33 33 36 / 75%), rgb(0 0 0 / 75%)),
-    url(/assets/background/noise.svg);
 }

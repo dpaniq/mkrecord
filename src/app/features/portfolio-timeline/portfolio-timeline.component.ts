@@ -1,47 +1,32 @@
 import {
-  AfterViewInit,
+  CommonModule,
+  NgOptimizedImage,
+  isPlatformBrowser,
+} from '@angular/common';
+import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   DestroyRef,
-  EventEmitter,
-  HostListener,
   Inject,
-  NgZone,
-  OnDestroy,
   OnInit,
-  Output,
   PLATFORM_ID,
-  Signal,
-  ViewChild,
   computed,
   inject,
   signal,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import {
-  Subject,
-  Subscription,
-  debounceTime,
-  fromEvent,
-  interval,
-  takeUntil,
-} from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { Subject, interval } from 'rxjs';
 
-import { VideoService } from '../../services/video.service';
 import { PORTFOLIO_TIMELINE_LIST } from './constants';
 
 @Component({
-    selector: 'app-portfolio-timeline',
-    imports: [CommonModule, MatIconModule, NgOptimizedImage],
-    templateUrl: './portfolio-timeline.component.html',
-    styleUrl: './portfolio-timeline.component.css',
-    providers: [],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-portfolio-timeline',
+  imports: [CommonModule, MatIconModule, NgOptimizedImage],
+  templateUrl: './portfolio-timeline.component.html',
+  styleUrl: './portfolio-timeline.component.css',
+  providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PortfolioTimelineComponent implements OnInit {
   private readonly destroyRef = inject(DestroyRef);

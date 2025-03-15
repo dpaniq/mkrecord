@@ -1,28 +1,81 @@
 @use '@angular/material' as mat;
+@use '../_theme-colors' as my-theme;
 
 $theme: mat.define-theme(
   (
     color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
       theme-type: dark,
-      primary: mat.$magenta-palette,
     ),
     typography: (
+      plain-family: Roboto,
+      brand-family: Open Sans,
       bold-weight: 900,
+      medium-weight: 500,
+      regular-weight: 300,
     ),
-    density: (
-      scale: -1,
-    ),
+    // ✅ Corrected typography
   )
 );
-@include mat.elevation-classes();
-@include mat.app-background();
 
-body {
+html {
+  // @include mat.all-component-themes($custom-theme);
+
+  --mdc-outlined-text-field-caret-color: tomato !important;
+  --mdc-outlined-text-field-focus-outline-color: tomato !important;
+  --mdc-outlined-text-field-focus-label-text-color: tomato !important;
+
+  @include mat.button-theme($theme);
+  @include mat.form-field-theme($theme);
+  @include mat.input-theme($theme);
   @include mat.checkbox-theme($theme);
   @include mat.list-theme($theme);
   @include mat.chips-theme($theme);
   @include mat.button-toggle-theme($theme);
+  @include mat.tabs-theme($theme);
+  @include mat.tabs-overrides(
+    (
+      label-text-font: 'Roboto',
+      active-indicator-color: tomato,
+      active-focus-indicator-color: tomato,
+      active-hover-indicator-color: tomato,
+      inactive-hover-label-text-color: tomato,
+      divider-color: tomato,
+      // text
+      // label-text-size: 20px,
+      // label-text-weight: 600,
+      active-label-text-color: tomato,
+      active-focus-label-text-color: tomato,
+    )
+  );
 }
+
+// Apply theme to all Angular Material components
+
+// $theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: mat.$magenta-palette,
+//     ),
+//     typography: (
+//       bold-weight: 900,
+//     ),
+//     density: (
+//       scale: -1,
+//     ),
+//   )
+// );
+// @include mat.elevation-classes();
+// @include mat.app-background();
+
+// :root {
+// }
+
+// body {
+
+// }
 //   @include mat.all-component-themes($theme);
 //   font-family: Roboto, 'Helvetica Neue', sans-serif;
 //   margin: 0;
@@ -40,13 +93,4 @@ body {
 
 // @include mat.typography($theme);
 
-::ng-deep {
-  .mat-button-toggle-group-appearance-standard {
-    border: solid 1px tomato;
-  }
-}
-
-::ng-deep mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
-  border-radius: 0;
-  border: solid 1px tomato;
-}
+// Customize the entire app. Change :root to your selector if you want to scope the styles.

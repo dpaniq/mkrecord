@@ -8,38 +8,10 @@
 <app-camera-battery id="battery" />
 <app-camera-quality-resolution id="quality-resolution" />
 <div id="rec">
-  <img
-    class="rec-dot"
-    width="35px"
-    src="assets/brand/dot.svg"
-  />
-  <img
-    class="rec-text"
-    width="80px"
-    src="assets/brand/rec.svg"
-  />
+  <img class="rec-dot" width="25px" src="assets/brand/dot.svg" />
+  <img class="rec-text" width="40px" src="assets/brand/rec.svg" />
 </div>
 
-<app-footer />
 <app-nav-mobile />
 
-<dialog #dialog>
-  <video
-    #video
-    width="800"
-    controls
-    autoplay
-  >
-    <source
-      #source
-      [src]="videoURL$ | async | safe: 'resourceUrl'"
-      type="video/mp4"
-    />
-
-    Your browser does not support HTML video.
-  </video>
-
-  <button (click)="dialog.close()">
-    <mat-icon fontIcon="close"></mat-icon>
-  </button>
-</dialog>
+<noscript>You need to enable JavaScript to run this app.</noscript>

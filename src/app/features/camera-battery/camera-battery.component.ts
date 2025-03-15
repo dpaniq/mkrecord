@@ -13,32 +13,34 @@ import { interval, map } from 'rxjs';
 const initialDate = new Date().setHours(0, 0, 0, 0);
 
 @Component({
-    selector: 'app-camera-battery',
-    imports: [CommonModule, MatIconModule],
-    template: `
+  selector: 'app-camera-battery',
+  imports: [CommonModule, MatIconModule],
+  template: `
     @if (batterySignal()) {
       <mat-icon fontIcon="battery_5_bar"></mat-icon>
     } @else {
       <mat-icon fontIcon="battery_4_bar"></mat-icon>
     }
   `,
-    styles: `
-  :host {
-    z-index: -1;
-    point-events: none;
-    max-width: max-content;
-    max-height: max-content;
-  }
-    mat-icon {
-      transform: scale(4);
-    }
-
-    @media (max-width: 768px) {
+  styles: [
+    `
+      :host {
+        z-index: -1;
+        point-events: none;
+        max-width: max-content;
+        max-height: max-content;
+      }
       mat-icon {
         transform: scale(2);
       }
-    }
-  `
+
+      @media (max-width: 768px) {
+        mat-icon {
+          transform: scale(2);
+        }
+      }
+    `,
+  ],
 })
 export class CameraBatteryComponent {
   private readonly destroyRef = inject(DestroyRef);
@@ -54,7 +56,7 @@ export class CameraBatteryComponent {
       interval(1500)
         .pipe(
           map(timer => timer % 2 === 0),
-          takeUntilDestroyed(this.destroyRef),
+          takeUntilDestroyed(this.destroyRef)
         )
         .subscribe(timer => {
           this.batterySignal.update(() => timer);

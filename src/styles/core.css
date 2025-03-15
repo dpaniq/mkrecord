@@ -13,10 +13,10 @@ body {
 }
 
 :root {
-  --lineWidth: 5px;
+  --lineWidth: 1px;
   --marginCameraCorners: 50px;
-  --line1Length: calc(50px + 8vh);
-  --line2Length: calc(50px + 4vh);
+  --line1Length: calc(50px + 4vh);
+  --line2Length: calc(50px + 2vh);
 }
 
 app-root {
@@ -35,7 +35,7 @@ app-root {
     margin: var(--marginCameraCorners);
     mix-blend-mode: color;
 
-    --lineColor: rgb(59, 59, 59);
+    --lineColor: rgba(60, 60, 60, 0.6);
     --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
     --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
     --lineHorizontal: var(--line1Length) var(--lineWidth);
@@ -173,36 +173,4 @@ p {
   color: whitesmoke;
   font-weight: 300;
   text-wrap: balance;
-}
-
-/* Forms */
-input,
-textarea {
-  box-shadow: inset 0px 0px 1px 1px var(--color_whitesmoke_darken_4);
-}
-
-button {
-  border: 1px solid var(--color_whitesmoke);
-  width: 150px;
-  background-color: var(--footer-color);
-  color: whitesmoke;
-  padding: 10px 15px;
-
-  &.form-btn {
-    border: 1px solid var(--color_whitesmoke);
-  }
-
-  &:hover {
-    color: tomato;
-    transition:
-      border ease 0.2s,
-      color ease 0.2s;
-  }
-
-  &:disabled {
-    color: var(--color_whitesmoke_darken_3);
-    border: 1px solid var(--color_whitesmoke_darken_3);
-    cursor: not-allowed;
-    background-color: var(--color_whitesmoke_darken_4);
-  }
 }

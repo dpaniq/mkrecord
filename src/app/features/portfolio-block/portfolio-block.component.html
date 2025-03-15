@@ -33,12 +33,18 @@
   @case ('3') {
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
-        <img
-          width="300"
-          height="160"
-          [ngSrc]="portfolio.preview"
-          loading="lazy"
-        />
+        <div
+          class="preview"
+          (click)="openDialog(portfolio)"
+        >
+          <img
+            width="300"
+            height="160"
+            [ngSrc]="portfolio.preview"
+            loading="lazy"
+          />
+          <p>{{ portfolio.title }}</p>
+        </div>
       }
     </section>
   }

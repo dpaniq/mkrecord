@@ -18,9 +18,9 @@ export const ROUTES: Routes = [
     path: 'portfolio',
     title: 'Portfolio',
     loadComponent: () =>
-      import(
-        './pages/portfolio-block-page/portfolio-block-page.component'
-      ).then(m => m.PortfolioBlockPageComponent),
+      import('./pages/portfolio-page.component').then(
+        m => m.PortfolioPageComponent,
+      ),
   },
   // {
   //   path: 'about',
@@ -39,6 +39,6 @@ export const ROUTES: Routes = [
   {
     path: '**',
     loadComponent: () =>
-      import('./core/empty/empty.component').then(m => m.EmptyComponent),
+      import('./core/empty.component').then(m => m.EmptyComponent),
   },
 ];

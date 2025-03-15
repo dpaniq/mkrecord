@@ -1,4 +1,3 @@
-import { str } from 'envalid';
 import {
   Directive,
   ElementRef,
@@ -8,7 +7,6 @@ import {
 } from '@angular/core';
 
 @Directive({
-  standalone: true,
   selector: '[parallaxItem]',
 })
 export class ParallaxItemDirective implements OnInit {
