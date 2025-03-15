@@ -16,7 +16,7 @@ body {
   --lineWidth: 1px;
   --marginCameraCorners: 50px;
   --line1Length: calc(50px + 8vh);
-  --line2Length: calc(50px + 4vh);
+  --line2Length: calc(50px + 5vh);
 }
 
 app-root {

@@ -60,22 +60,23 @@ dialog {
 #timer {
   position: absolute;
   bottom: 70px;
-  right: 90px;
+  right: 100px;
   color: rgba(245, 245, 245, 0.5);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
 }
 
 #quality-resolution {
   right: unset;
-  left: 90px;
+  left: 115px;
+  color: rgba(245, 245, 245, 0.5);
 }
 
 #battery {
-  top: 80px;
   bottom: unset;
-  right: unset;
-  left: 110px;
+  right: 110px;
+  top: 65px;
+  right: 80px;
   writing-mode: vertical-lr;
   text-orientation: sideways-right;
 }
@@ -84,11 +85,11 @@ dialog {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 5px;
 
   position: absolute;
   top: 70px;
-  right: 90px;
+  right: 120px;
 
   color: rgba(245, 245, 245, 0.5);
   font-size: 40px;

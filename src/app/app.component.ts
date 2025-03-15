@@ -1,5 +1,13 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, computed, DestroyRef, Inject, inject, PLATFORM_ID, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  DestroyRef,
+  Inject,
+  inject,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
@@ -13,7 +21,7 @@ import { SafePipe } from './shared/pipes/safe.pipe';
 
 import { PlatformModule } from '@angular/cdk/platform';
 import { NavMobileComponent } from './core/nav-mobile.component';
-import { CameraQualityResolutionComponent } from './features/camera-quality-resolution/camera-quality-resolution.component';
+import { CameraQualityResolutionComponent } from './features/camera-quality-resolution.component';
 import { IconService } from './services/icon.service';
 
 import { YouTubePlayer } from '@angular/youtube-player';
