@@ -1,21 +1,20 @@
 @use '@angular/material' as mat;
-// @use './_theme-colors' as my-theme;
+@use '_custom_palette' as my-theme;
 
 $theme: mat.define-theme(
   (
-    // color: (
-    //   primary: my-theme.$primary-palette,
-    //   tertiary: my-theme.$tertiary-palette,
-    //   theme-type: dark,
-    // ),
-    typography:
-      (
-        plain-family: Roboto,
-        brand-family: Open Sans,
-        bold-weight: 900,
-        medium-weight: 500,
-        regular-weight: 300,
-      ),
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+      theme-type: dark,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Open Sans,
+      bold-weight: 900,
+      medium-weight: 500,
+      regular-weight: 300,
+    ),
     // ✅ Corrected typography
   )
 );

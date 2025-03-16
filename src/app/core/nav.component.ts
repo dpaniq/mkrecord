@@ -42,18 +42,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
               text-align: center;
 
               &.active {
-                color: tomato;
+                color: var(--c_red);
 
-                /* border-bottom: 1px solid; */
                 filter: none;
-                border-bottom: 1px solid tomato;
-                /* border-image: linear-gradient(
-                0.25turn,
-                rgba(56, 2, 155, 0),
-                rgba(255, 99, 71, 0.7),
-                rgba(56, 2, 155, 0)
-              ); */
-                /* border-image-slice: 1; */
+                border-bottom: 1px solid var(--c_red);
               }
             }
           }

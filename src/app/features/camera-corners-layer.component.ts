@@ -19,7 +19,7 @@ import { CameraTimerComponent } from './camera-timer/camera-timer.component';
         padding: 50px;
         width: 100%;
         height: 100%;
-        // pointer-events: none;
+        pointer-events: none;
 
         div.corners-container {
           position: relative;

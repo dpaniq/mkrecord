@@ -102,7 +102,7 @@ section {
         font-size: 24px;
         color: var(--color_whitesmoke_darken_2);
         filter: blur(1px);
-        text-shadow: 0 0 20px tomato;
+        text-shadow: 0 0 20px var(--c_red);
         .year {
           font-weight: 200;
         }

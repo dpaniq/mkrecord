@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
@@ -399,7 +399,7 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
 
       :host {
         mat-icon {
-          color: tomato;
+          color: var(--c_red);
         }
 
         mat-chip-listbox {
@@ -408,7 +408,7 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
 
         ::ng-deep
           .mat-mdc-standard-chip.mdc-evolution-chip--selected.mdc-evolution-chip--disabled {
-          background-color: tomato;
+          background-color: var(--c_red);
         }
 
         ::ng-deep .mat-mdc-chip-set-stacked .mdc-evolution-chip-set__chips {
@@ -420,16 +420,16 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
         ::ng-deep
           .mat-mdc-chip-set-stacked
           .mdc-evolution-chip__text-label.mat-mdc-chip-action-label {
-          color: tomato;
+          color: var(--c_red);
         }
 
         ::ng-deep
           .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(
             .mdc-evolution-chip--disabled
           ) {
-          background-color: tomato;
+          background-color: var(--c_red);
           color: black;
-          border-color: tomato;
+          border-color: var(--c_red);
         }
 
         ::ng-deep
@@ -437,7 +437,7 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
           .mdc-evolution-chip__action--primary::before {
           color: blue;
           border-radius: 0 !important;
-          border-color: tomato;
+          border-color: var(--c_red);
         }
       }
     `,
@@ -471,19 +471,6 @@ export class PortfolioPageComponent {
     this.deviceSerivce.isMobile() ? '1' : '3'
   );
 
-  public readonly portfoliosFiltered = computed(() => {
-    return PORTFOLIO_CATEGORY_LIST[this.actualCategory()];
-  });
-
   public readonly categories = Object.values(CategoryEnum);
   protected readonly categoryTree = PORTFOLIO_CATEGORY_LIST;
-
-  changeCategory(value: CategoryEnum) {
-    this.actualCategory.set(value);
-  }
-
-  onUpdateGridSize(gridSize: '2' | '3') {
-    // TODO 1 for phone, 3 for desktop
-    this.gridView.update(() => gridSize);
-  }
 }

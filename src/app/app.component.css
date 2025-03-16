@@ -2,6 +2,10 @@ app-header {
   height: 10vh;
 }
 
+app-footer {
+  height: 10vh;
+}
+
 main {
   width: 1000px;
   height: 80vh;
@@ -10,10 +14,6 @@ main {
   justify-content: center;
   position: relative;
   padding: 60px 0 0;
-}
-
-app-footer {
-  height: 10vh;
 }
 
 @media (min-width: 768px) {
@@ -33,28 +33,5 @@ app-footer {
     height: 85vh;
     overflow: hidden;
     align-items: center;
-  }
-
-  #timer {
-    bottom: 105px;
-    right: 25px;
-    color: var(--color_whitesmoke_darken_4);
-    font-size: 15px;
-    font-weight: 500;
-    z-index: 9999;
-  }
-
-  #quality-resolution {
-    right: unset;
-    left: 25px;
-    bottom: 105px;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--color_whitesmoke_darken_4);
-  }
-
-  #battery {
-    top: 25px;
-    left: 25px;
   }
 }

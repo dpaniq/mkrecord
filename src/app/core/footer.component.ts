@@ -39,7 +39,7 @@ import { IconService } from '../services/icon.service';
           color: var(--color_whitesmoke_darken_1);
 
           .brand {
-            color: tomato;
+            color: var(--c_red);
             font-weight: 300;
           }
 
@@ -53,7 +53,7 @@ import { IconService } from '../services/icon.service';
             color: var(--color_whitesmoke_darken_2);
 
             &:hover {
-              color: tomato;
+              color: var(--c_red);
             }
           }
         }
@@ -71,7 +71,7 @@ import { IconService } from '../services/icon.service';
         }
 
         a:hover ::ng-deep mat-icon svg {
-          fill: tomato;
+          fill: var(--c_red);
         }
       }
     `,
@@ -105,7 +105,7 @@ import { IconService } from '../services/icon.service';
           <span class="brand">MK Rec Studio</span>
           ‒ 2024
         </p>
-        <p>
+        <!-- <p>
           Developed by
           <span>
             <a href="#" target="_blank"> &#64;dpaniq </a>
@@ -116,7 +116,7 @@ import { IconService } from '../services/icon.service';
             /
             <a href="#" target="_blank"> &#64;Valletta </a>
           </span>
-        </p>
+        </p> -->
       </div>
     </footer>
   `,

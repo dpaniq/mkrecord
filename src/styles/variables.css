@@ -1,6 +1,13 @@
 :root {
   --c_primary: tomato;
 
+  --c_red: red;
+  --c_red_l1: #f25d50;
+  --c_red_l2: #f27052;
+  --c_white: #f2f2f2;
+  --c_gray: #8c8c8c;
+  --c_black: #0d0d0d;
+
   --color_whitesmoke: rgba(245, 245, 245, 1);
   --color_whitesmoke_darken_1: rgba(245, 245, 245, 0.8);
   --color_whitesmoke_darken_2: rgba(245, 245, 245, 0.6);
