@@ -12,60 +12,8 @@ body {
   height: 100%;
 }
 
-:root {
-  --lineWidth: 1px;
-  --marginCameraCorners: 50px;
-  --line1Length: calc(50px + 4vh);
-  --line2Length: calc(50px + 2vh);
-}
-
 app-root {
   position: relative;
-}
-
-.camera {
-  pointer-events: none;
-
-  .camera-corners {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin: var(--marginCameraCorners);
-    mix-blend-mode: color;
-
-    --lineColor: rgba(60, 60, 60, 0.6);
-    --linearGradientColor: linear-gradient(var(--lineColor), var(--lineColor));
-    --lineColorPair: var(--linearGradientColor), var(--linearGradientColor);
-    --lineHorizontal: var(--line1Length) var(--lineWidth);
-    --lineVertical: var(--lineWidth) var(--line2Length);
-
-    background-image: var(--lineColorPair), var(--lineColorPair),
-      var(--lineColorPair), var(--lineColorPair);
-    background-repeat: no-repeat;
-    background-size: var(--lineVertical), var(--lineHorizontal),
-      var(--lineVertical), var(--lineHorizontal), var(--lineVertical),
-      var(--lineHorizontal), var(--lineVertical), var(--lineHorizontal);
-    background-position:
-      left top,
-      left top,
-      left bottom,
-      left bottom,
-      right top,
-      right top,
-      right bottom,
-      right bottom;
-  }
-}
-
-@media (max-width: 768px) {
-  .camera-corners {
-    --lineWidth: 1px;
-    --marginCameraCorners: 15px 10px 90px;
-    --line1Length: calc(20px + 8vh);
-    --line2Length: calc(20px + 8vh);
-  }
 }
 
 body::-webkit-scrollbar {
@@ -91,36 +39,6 @@ body {
   background-attachment: fixed;
 }
 
-/* 
-
-https://pixexid.com/image/a-minimalist-composition-with-a-single-white-line-on-a-black-background-9vxer53u
-*/
-body:has(app-home-page) {
-  /* background-image: url('../assets/bg/bg2.gif'); */
-  /* background-image: url('../assets/bg/video_lines.gif'); */
-  /* background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExODU4OWVkY2U4ODg5NGU2YzZkYTNlMzkzNjQzMWM3OWQ3YjVlYmJkMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/j3PbynAZgdGnpzh3Ua/giphy.gif'); */
-
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: blur(1px) grayscale(1); */
-}
-
-body:has(app-info-page) {
-  /* background-image: url('../assets/img/png/video-everglow.jpg'); */
-  /* background-image: url('../assets/bg/video_lines.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: none; */
-}
-
-body:has(app-about-page) {
-  /* background-image: url('../assets/img/png/video-everglow.jpg'); */
-  /* background-image: url('../assets/bg/video_lines.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: none; */
-}
-
 a {
   color: var(--color_whitesmoke);
   text-decoration: none;
@@ -143,11 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: whitesmoke;
-
-  /* &::first-letter {
-    color: tomato;
-  } */
+  color: var(--color_whitesmoke);
 }
 
 h1 {
@@ -170,7 +84,7 @@ h6 {
 }
 
 p {
-  color: whitesmoke;
+  color: var(--color_whitesmoke);
   font-weight: 300;
   text-wrap: balance;
 }

@@ -1,15 +1,9 @@
 @import './styles/reset.css';
 @import './styles/font.css';
-@import './styles/colors.css';
 @import './styles/variables.css';
 @import './styles/core.css';
 @import './styles/transition-api.css';
 @import './styles/keyframes.css';
-
-.backdrop-dialog {
-  background-color: #000000d1;
-  backdrop-filter: blur(2px);
-}
 
 app-root {
   position: fixed;
@@ -25,35 +19,10 @@ app-root {
 
 .grid-row {
   width: 100%;
-  /* // display: grid;
-  // grid-template-columns: repeat(5, 20%); */
   display: flex;
 }
 
-/* Links */
-.link {
-  color: #b318f0;
-}
-
-.container {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-
-  .bg {
-    &:__black {
-      background-color: black;
-    }
-    &:__carbon {
-      background-color: black;
-      box-shadow: inset 60px -100px 165px 55px #070707;
-      /* background-image: url('/public/img/patterns/micro_carbon.png'); */
-    }
-    &:__red {
-      background-color: tomato;
-    }
-    &:__gray {
-      background-color: var(--gray);
-    }
-  }
+.backdrop-dialog {
+  background-color: #000000d1;
+  backdrop-filter: blur(2px);
 }

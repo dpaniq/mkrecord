@@ -1,20 +1,21 @@
 @use '@angular/material' as mat;
-@use '../_theme-colors' as my-theme;
+// @use './_theme-colors' as my-theme;
 
 $theme: mat.define-theme(
   (
-    color: (
-      primary: my-theme.$primary-palette,
-      tertiary: my-theme.$tertiary-palette,
-      theme-type: dark,
-    ),
-    typography: (
-      plain-family: Roboto,
-      brand-family: Open Sans,
-      bold-weight: 900,
-      medium-weight: 500,
-      regular-weight: 300,
-    ),
+    // color: (
+    //   primary: my-theme.$primary-palette,
+    //   tertiary: my-theme.$tertiary-palette,
+    //   theme-type: dark,
+    // ),
+    typography:
+      (
+        plain-family: Roboto,
+        brand-family: Open Sans,
+        bold-weight: 900,
+        medium-weight: 500,
+        regular-weight: 300,
+      ),
     // ✅ Corrected typography
   )
 );
@@ -36,7 +37,6 @@ html {
   @include mat.tabs-theme($theme);
   @include mat.tabs-overrides(
     (
-      label-text-font: 'Roboto',
       active-indicator-color: tomato,
       active-focus-indicator-color: tomato,
       active-hover-indicator-color: tomato,
@@ -47,6 +47,11 @@ html {
       // label-text-weight: 600,
       active-label-text-color: tomato,
       active-focus-label-text-color: tomato,
+    )
+  );
+  @include mat.divider-overrides(
+    (
+      color: var(--color_whitesmoke_darken_4),
     )
   );
 }

@@ -26,6 +26,7 @@ import { IconService } from './services/icon.service';
 
 import { YouTubePlayer } from '@angular/youtube-player';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { CameraCornersLayerComponent } from './features/camera-corners-layer.component';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
     SafePipe,
     YouTubePlayer,
     PlatformModule,
+    CameraCornersLayerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

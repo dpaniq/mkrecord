@@ -43,7 +43,7 @@ import { FooterComponent } from '../core/footer.component';
           text-align: center;
         }
 
-        border: 1px solid whitesmoke;
+        border: 1px solid var(--color_whitesmoke_darken_4);
 
         padding: 20px;
 

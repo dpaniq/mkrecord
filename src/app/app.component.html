@@ -1,17 +1,11 @@
 <app-header />
+
 <main>
   <router-outlet />
 </main>
 
-<!-- Corners symbols -->
-<app-camera-timer id="timer" />
-<app-camera-battery id="battery" />
-<app-camera-quality-resolution id="quality-resolution" />
-<div id="rec">
-  <img class="rec-dot" width="25px" src="assets/brand/dot.svg" />
-  <img class="rec-text" width="40px" src="assets/brand/rec.svg" />
-</div>
+<!-- Layers -->
+<app-camera-corners-layer />
 
+<!-- Mobile -->
 <app-nav-mobile />
-
-<noscript>You need to enable JavaScript to run this app.</noscript>

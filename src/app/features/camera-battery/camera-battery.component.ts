@@ -10,27 +10,28 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { interval, map } from 'rxjs';
 
-const initialDate = new Date().setHours(0, 0, 0, 0);
+const batteryIcons = [
+  'battery_1_bar',
+  'battery_2_bar',
+  'battery_3_bar',
+  'battery_4_bar',
+  'battery_5_bar',
+  'battery_full',
+];
 
 @Component({
   selector: 'app-camera-battery',
   imports: [CommonModule, MatIconModule],
-  template: `
-    @if (batterySignal()) {
-      <mat-icon fontIcon="battery_5_bar"></mat-icon>
-    } @else {
-      <mat-icon fontIcon="battery_4_bar"></mat-icon>
-    }
-  `,
   styles: [
     `
       :host {
-        z-index: -1;
-        point-events: none;
-        max-width: max-content;
-        max-height: max-content;
+        writing-mode: vertical-lr;
+        text-orientation: sideways-right;
+        padding-right: 10px;
       }
+
       mat-icon {
+        color: var(--color_whitesmoke_darken_4);
         transform: scale(2);
       }
 
@@ -41,18 +42,18 @@ const initialDate = new Date().setHours(0, 0, 0, 0);
       }
     `,
   ],
+  template: ` <mat-icon [fontIcon]="batteryIcon()" /> `,
 })
 export class CameraBatteryComponent {
   private readonly destroyRef = inject(DestroyRef);
   private readonly platformId = inject(PLATFORM_ID);
 
   protected readonly batterySignal = signal<boolean>(true);
+  protected readonly batteryIcon = signal<string>(batteryIcons.at(3)!);
 
   ngOnInit() {
     // Run on browser;
     if (isPlatformBrowser(this.platformId)) {
-      const date = new Date(Date.UTC(2024, 0, 1, 0, 0, 0, 0));
-
       interval(1500)
         .pipe(
           map(timer => timer % 2 === 0),
@@ -60,6 +61,8 @@ export class CameraBatteryComponent {
         )
         .subscribe(timer => {
           this.batterySignal.update(() => timer);
+
+          this.batteryIcon.set(batteryIcons.at(timer ? 2 : 3)!);
         });
     }
   }

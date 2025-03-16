@@ -9,7 +9,7 @@ import { IconService } from '../services/icon.service';
   providers: [IconService],
   styles: [
     `
-      @import '../../styles/colors.css';
+      // @import '../../styles/colors.css';
 
       :host {
         z-index: 100;
@@ -81,46 +81,22 @@ import { IconService } from '../services/icon.service';
       <div>
         <p class="fullname">Marek Kondratjev</p>
         <div class="social">
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="telegram"></mat-icon>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="youtube"></mat-icon>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="facebook"></mat-icon>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="instagram"></mat-icon>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="linkedin"></mat-icon>
           </a>
-          <a
-            href="#"
-            target="_blank"
-            class="social-group"
-          >
+          <a href="#" target="_blank" class="social-group">
             <mat-icon svgIcon="gmail"></mat-icon>
           </a>
         </div>
@@ -132,33 +108,13 @@ import { IconService } from '../services/icon.service';
         <p>
           Developed by
           <span>
-            <a
-              href="#"
-              target="_blank"
-            >
-              &#64;dpaniq
-            </a>
+            <a href="#" target="_blank"> &#64;dpaniq </a>
             /
-            <a
-              href="#"
-              target="_blank"
-            >
-              &#64;Nastya
-            </a>
+            <a href="#" target="_blank"> &#64;Nastya </a>
             /
-            <a
-              href="#"
-              target="_blank"
-            >
-              &#64;mkrec_studio
-            </a>
+            <a href="#" target="_blank"> &#64;mkrec_studio </a>
             /
-            <a
-              href="#"
-              target="_blank"
-            >
-              &#64;Valletta
-            </a>
+            <a href="#" target="_blank"> &#64;Valletta </a>
           </span>
         </p>
       </div>
