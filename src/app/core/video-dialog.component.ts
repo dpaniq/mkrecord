@@ -19,6 +19,7 @@ export interface DialogData {
   title: string;
   preview: string;
   videoUrl: string;
+  videoId: string;
   category: string;
 }
 
@@ -65,7 +66,6 @@ export interface DialogData {
 
       youtube-player {
         display: block;
-        height: 390px;
         overflow: hidden;
       }
 
@@ -90,23 +90,24 @@ export interface DialogData {
     `,
   ],
   template: `
-    <button
-      class="close-button"
-      mat-dialog-close
-      mat-icon-button
-    >
-      ✖
-    </button>
+    <button class="close-button" mat-dialog-close mat-icon-button>✖</button>
 
     <!-- <h1 mat-dialog-title>{{ data.title | uppercase }}</h1> -->
 
     @if (data.url) {
       <youtube-player
-        videoId="jYlosSo79YY"
+        videoId="rFGxVhX-cIo"
         [playerVars]="{ autoplay: 0, controls: 1, color: 'red' }"
         placeholderImageQuality="high"
+        [disablePlaceholder]="false" />
+    } @else {
+      <youtube-player
+        [videoId]="data.videoId"
+        [playerVars]="{ autoplay: 1, controls: 1, color: 'red', showinfo: 1 }"
+        placeholderImageQuality="high"
         [disablePlaceholder]="false"
-      />
+        [width]="960"
+        [height]="540" />
     }
   `,
   providers: [

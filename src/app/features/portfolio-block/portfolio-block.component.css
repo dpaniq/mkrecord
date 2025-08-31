@@ -38,8 +38,10 @@
 
       &.view-3 {
         grid-template-columns: repeat(3, 1fr);
+        aspect-ratio: 16 / 9;
+
         div {
-          height: 160px;
+          /* height: 160px; */
           position: relative;
 
           display: flex;
@@ -52,10 +54,13 @@
             }
           }
 
+          video,
           img {
             width: 100%;
             object-fit: cover;
             filter: grayscale(1);
+
+            aspect-ratio: 16 / 9;
 
             text-align: center;
             scroll-snap-align: center;

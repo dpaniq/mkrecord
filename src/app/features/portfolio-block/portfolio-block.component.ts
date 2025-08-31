@@ -28,7 +28,10 @@ export class PortfolioBlockComponent {
 
   openDialog(portfolio: Portfolio): void {
     const dialogRef = this.dialog.open(VideoDialogComponent, {
-      data: { url: 'GST8we5uABo', ...portfolio },
+      data: {
+        // url: 'GST8we5uABo',
+        ...portfolio,
+      },
       minWidth: 'max-content',
       maxHeight: 'max-content',
       // width: 640,

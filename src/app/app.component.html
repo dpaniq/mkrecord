@@ -9,3 +9,18 @@
 
 <!-- Mobile -->
 <app-nav-mobile />
+
+<div class="video-brackground">
+  @if (videoBackground().isOn) {
+    <video
+      [src]="videoBackground().videoSrc"
+      autoplay
+      muted
+      loop
+      playsinline
+      [playbackRate]="0.5"
+      class="video"></video>
+  }
+
+  <div class="video-overlay"></div>
+</div>

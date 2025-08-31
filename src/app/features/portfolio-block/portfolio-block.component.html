@@ -1,17 +1,25 @@
 @switch (gridView()) {
   @case ('1') {
-    <section
-      class="grid view-1"
-      dir="ltr"
-    >
+    <section class="grid view-1" dir="ltr">
       @for (portfolio of portfolios(); track portfolio) {
         <div>
-          <img
+          <video
+            [src]="portfolio.preview"
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="{{ portfolio.preview }}"></video>
+          <!-- <img
+            type="image/webp"
             width="920"
             height="500"
             [ngSrc]="portfolio.preview"
             loading="lazy"
-          />
+            decoding="async"
+            fetchpriority="high"
+            [alt]="portfolio.title"
+            ngOptimizedImage /> -->
         </div>
       }
     </section>
@@ -24,8 +32,7 @@
             width="450"
             height="330"
             [ngSrc]="portfolio.preview"
-            loading="lazy"
-          />
+            loading="lazy" />
         </div>
       }
     </section>
@@ -33,16 +40,19 @@
   @case ('3') {
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
-        <div
-          class="preview"
-          (click)="openDialog(portfolio)"
-        >
-          <img
+        <div class="preview" (click)="openDialog(portfolio)">
+          <!-- <img
             width="300"
             height="160"
             [ngSrc]="portfolio.preview"
-            loading="lazy"
-          />
+            loading="lazy" /> -->
+          <video
+            [src]="portfolio.preview"
+            autoplay
+            loop
+            muted
+            playsinline
+            poster="{{ portfolio.preview }}"></video>
           <p>{{ portfolio.title }}</p>
         </div>
       }

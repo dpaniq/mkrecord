@@ -1,18 +1,14 @@
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import {
   AfterViewInit,
   Component,
-  DestroyRef,
   HostListener,
   ViewChild,
   inject,
 } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { debounceTime, fromEvent, takeUntil } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
-import { VideoService } from '../../services/video.service';
 import { PORTFOLIO_LIST } from './constants';
 
 const ITEM_WIDTH = 800;
@@ -50,7 +46,7 @@ export class PortfolioComponent implements AfterViewInit {
   }
 
   openDialog(videoUrl: string): void {
-    this.#videoService.set(videoUrl);
+    // this.#videoService.set(videoUrl);
   }
 
   ngAfterViewInit() {
@@ -66,7 +62,7 @@ export class PortfolioComponent implements AfterViewInit {
     // Ensure scrolled is a multiple of ITEM_WIDTH to avoid misalignment
     const finalWidth = Math.max(
       0,
-      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH - ITEM_WIDTH,
+      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH - ITEM_WIDTH
     );
     container.scrollLeft = finalWidth;
 
@@ -85,7 +81,7 @@ export class PortfolioComponent implements AfterViewInit {
     // Ensure scrolled is a multiple of ITEM_WIDTH to avoid misalignment
     const finalWidth = Math.min(
       scrollWidth - container.clientWidth,
-      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH + ITEM_WIDTH,
+      Math.floor(scrolled / ITEM_WIDTH) * ITEM_WIDTH + ITEM_WIDTH
     );
     container.scrollLeft = finalWidth;
 

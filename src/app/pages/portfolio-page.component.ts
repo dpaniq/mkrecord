@@ -8,364 +8,37 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { PortfolioBlockComponent } from '../features/portfolio-block/portfolio-block.component';
 
+export type PortfolioResolution =
+  | '480x270'
+  | '640x360'
+  | '800x450'
+  | '960x540'
+  | '1920x1080';
+
 export type Portfolio = {
   title: string;
   preview: string;
-  videoUrl: string;
-  category: string;
+  videoId: string;
+  category: 'horizontal' | 'vertical';
 };
 
 export enum CategoryEnum {
-  Commercial = 'Commercial',
-  Luxury = 'Luxury',
-  Corporate = 'Corporate',
-  Industrial = 'Industrial',
-  Videoclip = 'Videoclip',
-  Food = 'Food',
-  Fashion = 'Fashion',
-  Documentary = 'Documentary',
-  ShortFilms = 'Short films',
-  Sport = 'Sport',
-  Backstage = 'Backstage',
+  Old = 'Old',
+  New = 'New',
+  // Commercial = 'Commercial',
+  // Luxury = 'Luxury',
+  // Corporate = 'Corporate',
+  // Industrial = 'Industrial',
+  // Videoclip = 'Videoclip',
+  // Food = 'Food',
+  // Fashion = 'Fashion',
+  // Documentary = 'Documentary',
+  // ShortFilms = 'Short films',
+  // Sport = 'Sport',
+  // Backstage = 'Backstage',
 }
 
-export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
-  [CategoryEnum.Commercial]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Luxury]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Corporate]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Industrial]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Videoclip]: [
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Food]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Fashion]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Documentary]: [
-    {
-      title: 'Exploring the Hidden Gems of Tokyo: Off the Beaten Path',
-      preview: 'assets/img/gif/sky.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title: 'Mastering the Art of French Cuisine: Cooking Class Series',
-      preview: 'assets/img/gif/american-gods.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ].reverse(),
-  [CategoryEnum.ShortFilms]: [
-    {
-      title: 'The Science of Sleep: Tips for Better Rest and Productivity',
-      preview: 'assets/img/gif/joker.webp',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Sport]: [
-    {
-      title:
-        'Adventure in the Amazon: Exploring Wildlife and Indigenous Culture',
-      preview: 'assets/img/gif/coin.gif',
-      videoUrl: 'assets/videos/barber-shop-2.mp4',
-      category: '',
-    },
-  ],
-  [CategoryEnum.Backstage]: [
-    {
-      title: 'From Sketch to Screen: Behind the Scenes of Animation Production',
-      preview: 'assets/img/gif/american-gods-2.gif',
-      videoUrl: 'assets/videos/test.mp4',
-      category: '',
-    },
-  ],
-};
+const PORTFOLIO_ASSET_SOURCE_PATH = 'assets/img/portfolio/480x270';
 
 @Component({
   selector: 'app-portfolio-page',
@@ -380,6 +53,12 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
   ],
   styles: [
     `
+      ::ng-deep {
+        .mdc-tab--active {
+          background-color: var(--c_red);
+        }
+      }
+
       :host {
         z-index: 9999;
         min-height: 65vh;
@@ -453,7 +132,7 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
         <mat-tab [label]="category">
           <app-portfolio-block
             [gridView]="gridView()"
-            [portfolios]="categoryTree[category]" />
+            [portfolios]="portfolios" />
         </mat-tab>
       }
     </mat-tab-group>
@@ -463,14 +142,67 @@ export const PORTFOLIO_CATEGORY_LIST: Record<CategoryEnum, Portfolio[]> = {
 export class PortfolioPageComponent {
   private readonly deviceSerivce = inject(DeviceDetectorService);
 
-  public readonly actualCategory = signal<CategoryEnum>(
-    CategoryEnum.Commercial
-  );
+  public readonly actualCategory = signal<CategoryEnum>(CategoryEnum.New);
 
   public readonly gridView = signal<string>(
     this.deviceSerivce.isMobile() ? '1' : '3'
   );
 
   public readonly categories = Object.values(CategoryEnum);
-  protected readonly categoryTree = PORTFOLIO_CATEGORY_LIST;
+  protected readonly portfolios: Portfolio[] = [
+    {
+      title: 'Don Lounge Place DLP',
+      category: 'horizontal',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/bar_480x270.webm`,
+      videoId: 'rFGxVhX-cIo',
+    },
+    {
+      title: 'Chef card 2020',
+      category: 'horizontal',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/cookerdoc_480x270.webm`,
+      videoId: 'WpQ9We4P3SY',
+    },
+    {
+      title: 'EcoDoge Biodegradable Dog Waste Bags',
+      category: 'horizontal',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/dogcoin_480x270.webm`,
+      videoId: 'A_oNTNvIlk0',
+    },
+    {
+      title: 'Summer Event - Lucky Strike 2025',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/event_6_480x270.webm`,
+      videoId: 'PwYSRVlcPiQ',
+      category: 'horizontal',
+    },
+    {
+      title: 'Sheep - 1 minute short film',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/movie1min_480x270.webm`,
+      videoId: 'tfBvJPhKDC4',
+      category: 'horizontal',
+    },
+    {
+      title: 'The Heart Behind AMDA: Inspiring Youth Through Global Education',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/podcast1_480x270.webm`,
+      videoId: '8gb1c210VsI',
+      category: 'horizontal',
+    },
+    {
+      title: 'Right Here Waiting cover - Funky MAF',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/song_480x270.webm`,
+      videoId: 'iMm1RVvJQn8',
+      category: 'horizontal',
+    },
+    {
+      title: 'SAPRA: Global Alliance of Defence Product Manufacturers',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/speaker_480x270.webm`,
+      videoId: 'g3JLLp1EZxE',
+      category: 'horizontal',
+    },
+    {
+      title: 'Startup Event',
+      preview: `${PORTFOLIO_ASSET_SOURCE_PATH}/hacker_480x270.webm`,
+      videoId: 'Cui3R2zhiYs',
+      category: 'horizontal',
+    },
+  ];
 }

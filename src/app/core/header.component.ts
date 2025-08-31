@@ -12,8 +12,10 @@ import { NavComponent } from './nav.component';
         justify-content: center;
         position: relative;
         top: 0;
-        padding: 35px 0 !important;
+        padding: 35px;
         z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.3);
+        transform: perspective(1px) translateZ(0);
       }
 
       @media (max-width: 768px) {

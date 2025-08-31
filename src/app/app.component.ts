@@ -27,6 +27,7 @@ import { IconService } from './services/icon.service';
 import { YouTubePlayer } from '@angular/youtube-player';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { CameraCornersLayerComponent } from './features/camera-corners-layer.component';
+import { BackgroundService } from './services/background-service';
 
 @Component({
   selector: 'app-root',
@@ -47,15 +48,18 @@ import { CameraCornersLayerComponent } from './features/camera-corners-layer.com
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [SafePipe, IconService, DeviceDetectorService],
+  providers: [SafePipe, IconService, DeviceDetectorService, BackgroundService],
 })
 export class AppComponent {
   #destroyRef = inject(DestroyRef);
   #router = inject(Router);
   #safePipe = inject(SafePipe);
+  private readonly backgroundService = inject(BackgroundService);
   private readonly iconService = inject(IconService);
 
   private readonly destroyRef = inject(DestroyRef);
+
+  protected readonly videoBackground = this.backgroundService.videoBackground;
 
   activePreview = signal<number>(0);
   timelineImage = computed(() => {
@@ -73,6 +77,7 @@ export class AppComponent {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.initPhoneEvents();
+      this.backgroundService.run();
     }
   }
 
