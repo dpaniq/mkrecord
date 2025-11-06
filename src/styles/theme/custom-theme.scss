@@ -22,9 +22,9 @@ $theme: mat.define-theme(
 html {
   // @include mat.all-component-themes($custom-theme);
 
-  --mdc-outlined-text-field-caret-color: tomato !important;
-  --mdc-outlined-text-field-focus-outline-color: tomato !important;
-  --mdc-outlined-text-field-focus-label-text-color: tomato !important;
+  --mat-form-field-outlined-caret-color: tomato !important;
+  --mat-form-field-outlined-focus-outline-color: tomato !important;
+  --mat-form-field-outlined-focus-label-text-color: tomato !important;
 
   @include mat.button-theme($theme);
   @include mat.form-field-theme($theme);
