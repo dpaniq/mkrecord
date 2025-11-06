@@ -4,12 +4,13 @@
       @for (portfolio of portfolios(); track portfolio) {
         <div>
           <video
-            [src]="portfolio.preview"
-            autoplay
+            #video
             loop
             muted
+            autoplay
             playsinline
-            poster="{{ portfolio.preview }}"></video>
+            [src]="portfolio.preview"
+            [poster]="portfolio.preview"></video>
           <!-- <img
             type="image/webp"
             width="920"
@@ -47,13 +48,15 @@
             [ngSrc]="portfolio.preview"
             loading="lazy" /> -->
           <video
-            [src]="portfolio.preview"
-            autoplay
+            #video
             loop
             muted
+            autoplay
             playsinline
-            poster="{{ portfolio.preview }}"></video>
-          <p>{{ portfolio.title }}</p>
+            [attr.playbackRate]="0.25"
+            [src]="portfolio.preview"
+            [poster]="portfolio.preview"></video>
+          <p>{{ portfolio.title }} 123123</p>
         </div>
       }
     </section>

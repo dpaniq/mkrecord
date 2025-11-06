@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeBrandComponent } from './../features/home-brand/home-brand.component';
+import { HomeBrandComponent } from '../features/home-brand.component';
 
 @Component({
   selector: 'app-home-page',
@@ -11,6 +11,7 @@ import { HomeBrandComponent } from './../features/home-brand/home-brand.componen
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
  `,
   template: ` <app-home-brand /> `,

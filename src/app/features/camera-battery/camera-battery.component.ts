@@ -26,7 +26,7 @@ const batteryIcons = [
     `
       :host {
         writing-mode: vertical-lr;
-        text-orientation: sideways-right;
+        text-orientation: sideways-left;
         padding-right: 10px;
       }
 

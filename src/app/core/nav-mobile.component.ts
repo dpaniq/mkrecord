@@ -26,12 +26,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         /* background-color: black; */
         /* height: max-content; */
 
-        height: 80px; /* Задайте высоту панели */
+        height: 60px; /* Задайте высоту панели */
         z-index: 1000;
         padding-bottom: env(
           safe-area-inset-bottom
         ); /* Для учета вырезов экранов */
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Добавьте тень для визуального разделения */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Добавьте тень для визуального разделения */
       }
 
       nav {
@@ -61,9 +61,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       }
 
       .nav-mobile-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 30px;
+        width: 25px;
+        height: 25px;
+        font-size: 25px;
       }
     `,
   ],
@@ -74,46 +74,30 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-        ariaCurrentWhenActive="page"
-      >
-        <mat-icon
-          fontIcon="home_outlined"
-          class="nav-mobile-icon"
-        ></mat-icon>
+        ariaCurrentWhenActive="page">
+        <mat-icon fontIcon="home_outlined" class="nav-mobile-icon"></mat-icon>
       </a>
 
       <a
         routerLink="/portfolio"
         routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        <mat-icon
-          fontIcon="photo_library"
-          class="nav-mobile-icon"
-        ></mat-icon>
+        ariaCurrentWhenActive="page">
+        <mat-icon fontIcon="photo_library" class="nav-mobile-icon"></mat-icon>
       </a>
 
       <a
         routerLink="/info"
         home
         routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        <mat-icon
-          fontIcon="info"
-          class="nav-mobile-icon"
-        ></mat-icon>
+        ariaCurrentWhenActive="page">
+        <mat-icon fontIcon="info" class="nav-mobile-icon"></mat-icon>
       </a>
 
       <a
         routerLink="/contacts"
         routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-      >
-        <mat-icon
-          fontIcon="call"
-          class="nav-mobile-icon"
-        ></mat-icon>
+        ariaCurrentWhenActive="page">
+        <mat-icon fontIcon="call" class="nav-mobile-icon"></mat-icon>
       </a>
     </nav>
   `,

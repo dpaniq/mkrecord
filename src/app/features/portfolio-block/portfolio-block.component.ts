@@ -1,11 +1,17 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  input,
+  viewChildren,
+} from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { VideoDialogComponent } from '../../core/video-dialog.component';
-import { Portfolio } from '../../pages/portfolio-page.component';
+import { PortfolioCategory } from '../../types';
 
 @Component({
   selector: 'app-portfolio-block',
@@ -23,10 +29,18 @@ import { Portfolio } from '../../pages/portfolio-page.component';
 export class PortfolioBlockComponent {
   private readonly dialog = inject(MatDialog);
 
-  public readonly portfolios = input.required<Portfolio[]>();
+  public readonly portfolios = input.required<PortfolioCategory[]>();
   public readonly gridView = input.required<string>();
 
-  openDialog(portfolio: Portfolio): void {
+  videos = viewChildren<ElementRef<HTMLVideoElement>>('video');
+
+  ngAfterViewInit() {
+    this.videos().forEach(videoRef => {
+      videoRef.nativeElement.playbackRate = 0.5;
+    });
+  }
+
+  openDialog(portfolio: PortfolioCategory): void {
     const dialogRef = this.dialog.open(VideoDialogComponent, {
       data: {
         // url: 'GST8we5uABo',

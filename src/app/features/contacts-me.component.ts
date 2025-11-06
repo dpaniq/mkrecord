@@ -43,7 +43,7 @@ import { FooterComponent } from '../core/footer.component';
           text-align: center;
         }
 
-        border: 1px solid var(--color_whitesmoke_darken_4);
+        border: 1px solid var(--color_whitesmoke_darken_5);
 
         padding: 20px;
 
@@ -128,7 +128,6 @@ import { FooterComponent } from '../core/footer.component';
         Send
       </button>
     </form>
-
     <app-footer />
   `,
 })

@@ -16,81 +16,84 @@ import { CameraTimerComponent } from './camera-timer/camera-timer.component';
     `
       :host {
         position: absolute;
-        padding: 50px;
+        padding: 25px;
         width: 100%;
         height: 100%;
         pointer-events: none;
+      }
 
-        div.corners-container {
-          position: relative;
-          height: 100%;
+      .corners-container {
+        position: relative;
+        height: 100%;
 
-          & > .camera-corner {
-            position: absolute;
-            width: 110px;
-            aspect-ratio: 16 / 9;
-            padding: 20px;
-            display: flex;
-          }
-
-          #top-left {
-            top: 0;
-            left: 0;
-            border-top: 1px solid var(--color_whitesmoke_darken_4);
-            border-left: 1px solid var(--color_whitesmoke_darken_4);
-          }
-
-          #top-right {
-            top: 0;
-            right: 0;
-            border-top: 1px solid var(--color_whitesmoke_darken_4);
-            border-right: 1px solid var(--color_whitesmoke_darken_4);
-            align-items: start;
-            justify-content: end;
-          }
-
-          #bottom-left {
-            bottom: 0;
-            left: 0;
-            border-bottom: 1px solid var(--color_whitesmoke_darken_4);
-            border-left: 1px solid var(--color_whitesmoke_darken_4);
-          }
-
-          #bottom-right {
-            bottom: 0;
-            right: 0;
-            border-bottom: 1px solid var(--color_whitesmoke_darken_4);
-            border-right: 1px solid var(--color_whitesmoke_darken_4);
-            display: flex;
-            align-items: end;
-            justify-content: end;
-          }
+        & > .camera-corner {
+          position: absolute;
+          width: 110px;
+          aspect-ratio: 16 / 9;
+          padding: 20px;
+          display: flex;
         }
 
-        // TODO: individualize
-        @media (max-width: 768px) {
+        #top-left {
+          top: 0;
+          left: 0;
+          border-top: 1px solid var(--color_whitesmoke_darken_4);
+          border-left: 1px solid var(--color_whitesmoke_darken_4);
+        }
+
+        #top-right {
+          top: 0;
+          right: 0;
+          border-top: 1px solid var(--color_whitesmoke_darken_4);
+          border-right: 1px solid var(--color_whitesmoke_darken_4);
+          align-items: start;
+          justify-content: end;
+        }
+
+        #bottom-left {
+          bottom: 0;
+          left: 0;
+          border-bottom: 1px solid var(--color_whitesmoke_darken_4);
+          border-left: 1px solid var(--color_whitesmoke_darken_4);
+        }
+
+        #bottom-right {
+          bottom: 0;
+          right: 0;
+          border-bottom: 1px solid var(--color_whitesmoke_darken_4);
+          border-right: 1px solid var(--color_whitesmoke_darken_4);
+          display: flex;
+          align-items: end;
+          justify-content: end;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .corners-container {
+          --marginCorner: 0;
+
           #top-left {
-            top: 25px;
-            left: 25px;
+            top: var(--marginCorner);
+            left: var(--marginCorner);
           }
 
           #top-right {
-            top: 25px;
-            left: 25px;
+            top: var(--marginCorner);
+            right: var(--marginCorner);
           }
 
           #bottom-left {
             right: unset;
-            left: 25px;
-            bottom: 105px;
+            left: var(--marginCorner);
+            bottom: 45px;
             font-size: 15px;
             font-weight: 500;
             color: var(--color_whitesmoke_darken_4);
           }
 
           #bottom-right {
-            bottom: 105px;
-            right: 25px;
+            bottom: 45px;
+            right: var(--marginCorner);
             color: var(--color_whitesmoke_darken_4);
             font-size: 15px;
             font-weight: 500;

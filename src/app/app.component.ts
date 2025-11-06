@@ -1,18 +1,17 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
-  computed,
   DestroyRef,
-  Inject,
+  ElementRef,
   inject,
   PLATFORM_ID,
   signal,
+  viewChild,
 } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toObservable } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, skip } from 'rxjs';
-import { PORTFOLIO_TIMELINE_LIST } from './constants';
 import { HeaderComponent } from './core/header.component';
 import { CameraBatteryComponent } from './features/camera-battery/camera-battery.component';
 import { CameraTimerComponent } from './features/camera-timer/camera-timer.component';
@@ -26,6 +25,7 @@ import { IconService } from './services/icon.service';
 
 import { YouTubePlayer } from '@angular/youtube-player';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { FooterComponent } from './core/footer.component';
 import { CameraCornersLayerComponent } from './features/camera-corners-layer.component';
 import { BackgroundService } from './services/background-service';
 
@@ -37,6 +37,7 @@ import { BackgroundService } from './services/background-service';
     MatIconModule,
     // Custom
     HeaderComponent,
+    FooterComponent,
     NavMobileComponent,
     CameraTimerComponent,
     CameraBatteryComponent,
@@ -54,6 +55,7 @@ export class AppComponent {
   #destroyRef = inject(DestroyRef);
   #router = inject(Router);
   #safePipe = inject(SafePipe);
+  private readonly platformId = inject(PLATFORM_ID);
   private readonly backgroundService = inject(BackgroundService);
   private readonly iconService = inject(IconService);
 
@@ -62,23 +64,46 @@ export class AppComponent {
   protected readonly videoBackground = this.backgroundService.videoBackground;
 
   activePreview = signal<number>(0);
-  timelineImage = computed(() => {
-    const index = this.activePreview();
-    const portfolio = PORTFOLIO_TIMELINE_LIST[index];
-    const preview = portfolio?.preview;
-    console.log(index, portfolio, preview);
-    return preview;
-  });
+  // timelineImage = computed(() => {
+  //   const index = this.activePreview();
+  //   const portfolio = PORTFOLIO_TIMELINE_LIST[index];
+  //   const preview = portfolio?.preview;
+  //   console.log(index, portfolio, preview);
+  //   return preview;
+  // });
 
-  readonly portfolioList = PORTFOLIO_TIMELINE_LIST;
+  // readonly portfolioList = PORTFOLIO_TIMELINE_LIST;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  private readonly _video = viewChild<ElementRef<HTMLVideoElement>>('video');
+  private readonly video$ = toObservable(this.videoBackground).pipe(
+    filter(Boolean),
+    filter(() => !!this._video()),
+    filter(() => isPlatformBrowser(this.platformId)),
+    // take(1),
+    takeUntilDestroyed(this.destroyRef)
+  );
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.initPhoneEvents();
-      this.backgroundService.run();
+      this.backgroundService.init();
     }
+
+    this.video$.subscribe(() => {
+      const video = this._video()!;
+      console.log('Video element available');
+      if (isPlatformBrowser(this.platformId)) {
+        console.log(video, this.videoBackground().isOn);
+        if (video.nativeElement) {
+          video.nativeElement.playbackRate = 0.25;
+          console.log(
+            'Set playback rate',
+            video.nativeElement,
+            video.nativeElement.playbackRate
+          );
+        }
+      }
+    });
   }
 
   private initPhoneEvents() {
