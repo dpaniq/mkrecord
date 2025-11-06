@@ -43,11 +43,13 @@ import { MatDivider } from '@angular/material/divider';
 
         & > div {
           padding: 20px;
-          // border-left: 1px solid whitesmoke;
-          // border-right: 1px solid whitesmoke;
-          // border-bottom: 1px solid whitesmoke;
-          // border-radius: 5px;
-          // box-shadow: 2px 2px 2px 0px whitesmoke;
+          /*
+          border-left: 1px solid whitesmoke;
+          border-right: 1px solid whitesmoke;
+          border-bottom: 1px solid whitesmoke;
+          border-radius: 5px;
+          box-shadow: 2px 2px 2px 0px whitesmoke;
+          */
         }
 
         .regalias-container {

@@ -48,7 +48,7 @@ import { BackgroundService } from './services/background-service';
     CameraCornersLayerComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
   providers: [SafePipe, IconService, DeviceDetectorService, BackgroundService],
 })
 export class AppComponent {

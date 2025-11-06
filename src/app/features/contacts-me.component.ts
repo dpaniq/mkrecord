@@ -25,13 +25,6 @@ import { FooterComponent } from '../core/footer.component';
   ],
   styles: [
     `
-      /* ::ng-deep { */
-      /*   --mdc-outlined-text-field-caret-color: tomato; */
-      /*   --mdc-outlined-text-field-focus-outline-color: tomato; */
-      /*   --mdc-outlined-text-field-focus-label-text-color: tomato; */
-      /* } */
-      /**/
-
       :host {
         position: relative;
         display: flex;
@@ -58,25 +51,9 @@ import { FooterComponent } from '../core/footer.component';
         justify-content: center;
         flex-direction: column;
 
-        // font-size: 25px;
-
         fieldset {
           display: grid;
         }
-
-        // input,
-        // textarea {
-        //   border: 0;
-        //   margin: 26px 0;
-        //   padding: 10px 16px;
-        //   line-height: 40px;
-        //   color: tomato;
-        //   background: rgba(0, 0, 0, 0.8);
-
-        //   &::placeholder {
-        //     color: whitesmoke;
-        //   }
-        // }
 
         textarea {
           resize: vertical;

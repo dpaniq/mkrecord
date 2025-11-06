@@ -39,11 +39,9 @@ export interface DialogData {
   styles: [
     `
       :host {
-        // background-color: black;
         padding: 40px;
         overflow: hidden;
         border-radius: 10px;
-        // height: 420px;
         display: flex;
         align-items: center;
         align-content: center;
@@ -56,7 +54,6 @@ export interface DialogData {
 
       mat-dialog-container {
         background-color: transparent;
-        // padding: 20px;
         overflow: hidden;
       }
 

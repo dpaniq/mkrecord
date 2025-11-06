@@ -9,8 +9,6 @@ import { IconService } from '../services/icon.service';
   providers: [IconService],
   styles: [
     `
-      // @import '../../styles/colors.css';
-
       :host {
         z-index: 100;
       }
