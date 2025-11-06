@@ -1,8 +1,4 @@
-import {
-  CommonModule,
-  NgOptimizedImage,
-  isPlatformBrowser,
-} from '@angular/common';
+import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -22,7 +18,7 @@ import { PORTFOLIO_TIMELINE_LIST } from './constants';
 
 @Component({
   selector: 'app-portfolio-timeline',
-  imports: [CommonModule, MatIconModule, NgOptimizedImage],
+  imports: [MatIconModule, NgOptimizedImage],
   templateUrl: './portfolio-timeline.component.html',
   styleUrl: './portfolio-timeline.component.css',
   providers: [],

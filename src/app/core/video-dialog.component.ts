@@ -11,7 +11,7 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-import { CommonModule } from '@angular/common';
+
 import { YOUTUBE_PLAYER_CONFIG, YouTubePlayer } from '@angular/youtube-player';
 
 export interface DialogData {
@@ -26,7 +26,6 @@ export interface DialogData {
 @Component({
   selector: 'app-video-dialog',
   imports: [
-    CommonModule,
     MatFormFieldModule,
     FormsModule,
     MatDialogTitle,
@@ -34,8 +33,8 @@ export interface DialogData {
     MatDialogActions,
     MatDialogClose,
     YouTubePlayer,
-    MatButtonModule,
-  ],
+    MatButtonModule
+],
   styles: [
     `
       :host {

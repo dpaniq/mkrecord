@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   DestroyRef,
@@ -32,10 +32,8 @@ import { BackgroundService } from './services/background-service';
 @Component({
   selector: 'app-root',
   imports: [
-    CommonModule,
     RouterOutlet,
     MatIconModule,
-    // Custom
     HeaderComponent,
     FooterComponent,
     NavMobileComponent,
@@ -45,8 +43,8 @@ import { BackgroundService } from './services/background-service';
     SafePipe,
     YouTubePlayer,
     PlatformModule,
-    CameraCornersLayerComponent,
-  ],
+    CameraCornersLayerComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   providers: [SafePipe, IconService, DeviceDetectorService, BackgroundService],

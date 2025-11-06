@@ -1,4 +1,4 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   DestroyRef,
@@ -21,7 +21,7 @@ const batteryIcons = [
 
 @Component({
   selector: 'app-camera-battery',
-  imports: [CommonModule, MatIconModule],
+  imports: [MatIconModule],
   styles: [
     `
       :host {

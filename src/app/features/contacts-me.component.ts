@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import {
   FormControl,
@@ -15,14 +15,13 @@ import { FooterComponent } from '../core/footer.component';
 @Component({
   selector: 'app-contacts-me',
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    FooterComponent,
-  ],
+    FooterComponent
+],
   styles: [
     `
       :host {

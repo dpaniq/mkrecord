@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -16,12 +16,11 @@ import { PortfolioCategory } from '../../types';
 @Component({
   selector: 'app-portfolio-block',
   imports: [
-    CommonModule,
     MatIconModule,
     NgOptimizedImage,
     MatButtonToggleModule,
-    MatCheckboxModule,
-  ],
+    MatCheckboxModule
+],
   providers: [],
   templateUrl: './portfolio-block.component.html',
   styleUrl: './portfolio-block.component.css',
