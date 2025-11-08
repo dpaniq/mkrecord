@@ -2,7 +2,7 @@
   @case ('1') {
     <section class="grid view-1" dir="ltr">
       @for (portfolio of portfolios(); track portfolio) {
-        <div>
+        <div class="preview" (click)="openDialog(portfolio)">
           <video
             #video
             loop

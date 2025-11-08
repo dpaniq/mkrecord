@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {
@@ -11,8 +11,8 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-
 import { YOUTUBE_PLAYER_CONFIG, YouTubePlayer } from '@angular/youtube-player';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 export interface DialogData {
   url: string;
@@ -33,8 +33,8 @@ export interface DialogData {
     MatDialogActions,
     MatDialogClose,
     YouTubePlayer,
-    MatButtonModule
-],
+    MatButtonModule,
+  ],
   styles: [
     `
       :host {
@@ -102,8 +102,8 @@ export interface DialogData {
         [playerVars]="{ autoplay: 1, controls: 1, color: 'red', showinfo: 1 }"
         placeholderImageQuality="high"
         [disablePlaceholder]="false"
-        [width]="960"
-        [height]="540" />
+        [width]="xy().x"
+        [height]="xy().y" />
     }
   `,
   providers: [
@@ -117,5 +117,10 @@ export interface DialogData {
 })
 export class VideoDialogComponent {
   private readonly dialogRef = inject(MatDialogRef<VideoDialogComponent>);
+  private readonly deviceSerivce = inject(DeviceDetectorService);
   public readonly data = inject<DialogData>(MAT_DIALOG_DATA);
+
+  protected xy = computed(() =>
+    this.deviceSerivce.isMobile() ? { x: 320, y: 180 } : { x: 960, y: 540 }
+  );
 }
