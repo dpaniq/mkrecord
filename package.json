@@ -8,8 +8,8 @@
     "build:dev": "ng build --configuration development",
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "serve:dev:ssr:mkrecord": "NODE_ENV=development node dist/mkrecord/server/server.mjs",
-    "serve:prod:ssr:mkrecord": "NODE_ENV=production node dist/mkrecord/server/server.mjs"
+    "serve:dev:ssr:mkrecord": "cross-env NODE_ENV=development node dist/mkrecord/server/server.mjs",
+    "serve:prod:ssr:mkrecord": "cross-env NODE_ENV=production node dist/mkrecord/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +27,7 @@
     "@angular/service-worker": "^20.3.10",
     "@angular/ssr": "^20.3.9",
     "@angular/youtube-player": "20.2.12",
+    "cross-env": "^10.1.0",
     "dotenv": "^17.2.3",
     "envalid": "^8.1.1",
     "express": "^5.1.0",

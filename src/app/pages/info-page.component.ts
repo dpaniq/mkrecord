@@ -5,10 +5,13 @@ import { InfoComponent } from '../features/info.component';
   selector: 'app-info-page',
   imports: [InfoComponent],
   template: ` <app-info /> `,
-  styles: `:host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }`,
+  styles: `
+    :host {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  `,
 })
 export class InfoPageComponent {}

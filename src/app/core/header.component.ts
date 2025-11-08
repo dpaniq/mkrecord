@@ -18,7 +18,7 @@ import { NavComponent } from './nav.component';
         transform: perspective(1px) translateZ(0);
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 576px) {
         app-nav {
           display: none;
         }

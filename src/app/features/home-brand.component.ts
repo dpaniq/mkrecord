@@ -9,7 +9,7 @@ import { PortfolioTimelineComponent } from './portfolio-timeline/portfolio-timel
     `
       :host {
         position: relative;
-        width: calc(95% - 200px);
+        width: calc(45% - 150px);
         min-width: 230px;
         left: 0;
         right: 0;
@@ -22,8 +22,6 @@ import { PortfolioTimelineComponent } from './portfolio-timeline/portfolio-timel
 
         padding: 50px;
         border: 1px solid var(--color_whitesmoke_darken_5);
-        border-top: none;
-        border-left: none;
         background-color: rgba(0, 0, 0, 0.2);
       }
 
@@ -39,7 +37,7 @@ import { PortfolioTimelineComponent } from './portfolio-timeline/portfolio-timel
         }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 576px) {
         :host {
           width: calc(125% - 200px);
         }

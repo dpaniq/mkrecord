@@ -60,7 +60,7 @@ main {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   app-header,
   app-footer {
     display: none;

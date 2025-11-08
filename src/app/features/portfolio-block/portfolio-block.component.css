@@ -8,6 +8,16 @@
     color: yellow;
   }
 
+  video {
+    filter: grayscale(1);
+  }
+
+  video:hover {
+    cursor: pointer;
+    filter: none;
+    transition: filter 0.5s;
+  }
+
   section {
     padding: 20px 0;
     &.grid {

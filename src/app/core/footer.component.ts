@@ -14,8 +14,8 @@ import { IconService } from '../services/icon.service';
       }
 
       footer {
-        position: fixed;
-        padding: 0 0 60px;
+        // position: fixed;
+        // padding: 0 0 60px;
         width: 100%;
         bottom: 0;
         left: 0;

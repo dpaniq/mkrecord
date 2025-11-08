@@ -68,7 +68,7 @@ import { CameraTimerComponent } from './camera-timer/camera-timer.component';
         }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 576px) {
         .corners-container {
           --marginCorner: 0;
 

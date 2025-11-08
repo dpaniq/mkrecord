@@ -42,11 +42,6 @@
     <section class="grid view-3">
       @for (portfolio of portfolios(); track portfolio) {
         <div class="preview" (click)="openDialog(portfolio)">
-          <!-- <img
-            width="300"
-            height="160"
-            [ngSrc]="portfolio.preview"
-            loading="lazy" /> -->
           <video
             #video
             loop
@@ -56,7 +51,7 @@
             [attr.playbackRate]="0.25"
             [src]="portfolio.preview"
             [poster]="portfolio.preview"></video>
-          <p>{{ portfolio.title }} 123123</p>
+          <p>{{ portfolio.title }}</p>
         </div>
       }
     </section>

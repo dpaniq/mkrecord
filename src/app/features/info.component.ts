@@ -12,6 +12,7 @@ import { MatDivider } from '@angular/material/divider';
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        max-width: 1300px;
       }
 
       section {
@@ -26,30 +27,22 @@ import { MatDivider } from '@angular/material/divider';
 
         h2 {
           font-weight: 600;
-          font-size: 22px;
+          font-size: calc(15px + 1vw);
           text-align: center;
         }
 
         h5 {
           color: tomato;
           font-weight: 300;
-          font-size: 16px;
-          margin-bottom: 12px;
+          font-size: calc(13px + 1vw);
         }
 
         p {
-          font-size: 14px;
+          font-size: calc(12px + 1vw);
         }
 
         & > div {
-          padding: 20px;
-          /*
-          border-left: 1px solid whitesmoke;
-          border-right: 1px solid whitesmoke;
-          border-bottom: 1px solid whitesmoke;
-          border-radius: 5px;
-          box-shadow: 2px 2px 2px 0px whitesmoke;
-          */
+          padding: 10px;
         }
 
         .regalias-container {
@@ -62,7 +55,6 @@ import { MatDivider } from '@angular/material/divider';
           .regalia {
             margin: 15px;
             padding: 10px 15px;
-            background-color: rgba(0, 0, 0, 0.6);
           }
         }
 
@@ -76,14 +68,36 @@ import { MatDivider } from '@angular/material/divider';
           .experience {
             margin: 15px;
             padding: 10px 15px;
-            background-color: rgba(0, 0, 0, 0.6);
           }
         }
       }
 
-      @media (max-width: 768px) {
+      .regalia,
+      .experience {
+        transition: transform 0.3s ease;
+      }
+
+      .regalia:hover,
+      .experience:hover {
+        transform: scale(1.05) translateY(-3px);
+      }
+
+      @media (max-width: 576px) {
+        br {
+          display: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin: 4px 0;
+        }
+
         section {
-          --fontWeight: 500;
+          --fontWeight: 200;
           --gridGap: 0;
           position: relative;
 
@@ -107,6 +121,7 @@ import { MatDivider } from '@angular/material/divider';
           }
 
           .regalias-container {
+            padding: 0;
             .regalias {
               display: grid;
               grid-template-columns: 1fr;
@@ -114,13 +129,13 @@ import { MatDivider } from '@angular/material/divider';
             }
 
             .regalia {
-              margin: 10px;
-              padding: 10px 5px;
-              background-color: rgba(0, 0, 0, 0.6);
+              margin: 0px;
+              padding: 5px 5px;
             }
           }
 
           .experiences-container {
+            padding: 0;
             .experiences {
               display: grid;
               grid-template-columns: 1fr;
@@ -128,9 +143,8 @@ import { MatDivider } from '@angular/material/divider';
             }
 
             .experience {
-              margin: 5px;
-              padding: 10px 5px;
-              background-color: rgba(0, 0, 0, 0.6);
+              margin: 0px;
+              padding: 5px 5px;
             }
           }
         }
@@ -138,6 +152,8 @@ import { MatDivider } from '@angular/material/divider';
     `,
   ],
   template: `
+    <h1>About me</h1>
+    <br />
     <section>
       <div class="regalias-container">
         <h2>Regalias</h2>
@@ -147,7 +163,7 @@ import { MatDivider } from '@angular/material/divider';
         <div class="regalias">
           @for (regalia of regalias; track regalia.subject) {
             <div class="regalia">
-              <h5>{{ regalia.subject | uppercase }}</h5>
+              <h5>★ {{ regalia.subject | uppercase }}</h5>
               <p>{{ regalia.text | lowercase }}</p>
             </div>
           }
@@ -162,7 +178,7 @@ import { MatDivider } from '@angular/material/divider';
         <div class="experiences">
           @for (exp of experiences; track exp.subject) {
             <div class="experience">
-              <h5>{{ exp.subject | uppercase }}</h5>
+              <h5>★{{ exp.subject | uppercase }}</h5>
               <p>{{ exp.text | lowercase }}</p>
             </div>
           }
@@ -175,37 +191,37 @@ export class InfoComponent {
   readonly regalias = [
     {
       subject: 'Cinematography',
-      text: 'Participation in the creation of more than 30 projects covering various genres, from short films to documentaries.',
+      text: 'Participation in the creation of more than 30 projects covering various genres, from short films to documentaries',
     },
     {
       subject: 'Video Editing',
-      text: 'Edited 20 films using advanced editing techniques to achieve high quality and cinematic style.',
+      text: 'Edited 20 films using advanced editing techniques to achieve high quality and cinematic style',
     },
     {
       subject: 'Solo Expertise',
-      text: 'Unique ability to work individually, from conceptualization to final editing.',
+      text: 'Unique ability to work individually, from conceptualization to final editing',
     },
   ];
   readonly experiences = [
     {
       subject: 'International Projects',
-      text: 'First place at the Venice Film Festival.',
+      text: 'First place at the Venice Film Festival',
     },
     {
       subject: 'Corporate Filming',
-      text: 'Successful participation in the filming of more than 10 corporate events.',
+      text: 'Successful participation in the filming of more than 10 corporate events',
     },
     {
       subject: 'Individual Approach',
-      text: 'Effective work from project idea to final editing - over 30 projects.',
+      text: 'Effective work from project idea to final editing - over 30 projects',
     },
     {
       subject: 'Teamwork',
-      text: 'Successful collaboration with a professional team in over 30 projects.',
+      text: 'Successful collaboration with a professional team in over 30 projects',
     },
     {
       subject: 'Technologies',
-      text: 'Use of a drone for unique video perspectives.',
+      text: 'Use of a drone for unique video perspectives',
     },
   ];
 }

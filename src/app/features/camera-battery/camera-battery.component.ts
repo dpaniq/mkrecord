@@ -35,7 +35,7 @@ const batteryIcons = [
         transform: scale(2);
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 576px) {
         mat-icon {
           transform: scale(2);
         }

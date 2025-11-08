@@ -39,7 +39,11 @@ export type PortfolioResolution =
 
       :host {
         z-index: 9999;
-        min-height: 65vh;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         overflow: hidden;
       }
 
@@ -102,22 +106,36 @@ export type PortfolioResolution =
       .mat-tab-group {
         margin-bottom: 48px;
       }
+
+      .portofolio-container {
+        overflow: hidden;
+      }
+
+      @media (max-width: 576px) {
+        .portofolio-container {
+          max-height: 486px;
+        }
+      }
     `,
   ],
   template: `
-    <mat-tab-group animationDuration="1000ms">
-      <mat-tab [label]="categoryEnum.Horizontal | titlecase">
-        <app-portfolio-block
-          [gridView]="gridView()"
-          [portfolios]="portfolios[categoryEnum.Horizontal]" />
-      </mat-tab>
+    <h1>Portfolio</h1>
+    <br />
+    <div class="portofolio-container">
+      <mat-tab-group animationDuration="1000ms">
+        <mat-tab [label]="categoryEnum.Horizontal | titlecase">
+          <app-portfolio-block
+            [gridView]="gridView()"
+            [portfolios]="portfolios[categoryEnum.Horizontal]" />
+        </mat-tab>
 
-      <mat-tab [label]="categoryEnum.Vertical | titlecase">
-        <app-portfolio-block
-          [gridView]="gridView()"
-          [portfolios]="portfolios[categoryEnum.Vertical]" />
-      </mat-tab>
-    </mat-tab-group>
+        <mat-tab [label]="categoryEnum.Vertical | titlecase">
+          <app-portfolio-block
+            [gridView]="gridView()"
+            [portfolios]="portfolios[categoryEnum.Vertical]" />
+        </mat-tab>
+      </mat-tab-group>
+    </div>
   `,
   providers: [DeviceDetectorService],
 })

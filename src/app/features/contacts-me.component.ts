@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import {
   FormControl,
@@ -20,27 +19,53 @@ import { FooterComponent } from '../core/footer.component';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    FooterComponent
-],
+    FooterComponent,
+  ],
   styles: [
     `
       :host {
         position: relative;
         display: flex;
         justify-content: center;
-        max-width: 300px;
+        flex-direction: column;
+        max-width: 600px;
         text-wrap: balance;
+        align-items: center;
 
         q {
           text-align: center;
         }
 
-        border: 1px solid var(--color_whitesmoke_darken_5);
+        padding: 60px 20px;
 
-        padding: 20px;
+        border: 1px solid var(--color_whitesmoke_darken_5);
+        background-color: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.7)
+        );
 
         & mat-form-field {
           width: 100%;
+        }
+
+        app-footer {
+          display: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        :host {
+          padding: 20px 30px;
+          border: none;
+
+          app-footer {
+            display: block;
+          }
+        }
+
+        form textarea {
+          max-height: 10vh;
         }
       }
 
@@ -75,12 +100,14 @@ import { FooterComponent } from '../core/footer.component';
     `,
   ],
   template: `
+    <h1>Contact me</h1>
+    <br />
     <form
       id="contacts"
       [formGroup]="formGroup"
       (submit)="$event.preventDefault()">
       <q>Tell me about your project, and I’ll bring it to life.</q><br />
-      <q>Let’s make magic on camera! </q><br />
+      <q>Let’s film the magic on camera! </q><br />
 
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Email</mat-label>
@@ -104,6 +131,10 @@ import { FooterComponent } from '../core/footer.component';
         Send
       </button>
     </form>
+
+    <br />
+    <br />
+
     <app-footer />
   `,
 })
