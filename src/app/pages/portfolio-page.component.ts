@@ -33,7 +33,7 @@ export type PortfolioResolution =
     `
       ::ng-deep {
         .mdc-tab--active {
-          background-color: var(--c_red_l1);
+          background-color: var(--c_red);
         }
       }
 
@@ -57,7 +57,7 @@ export type PortfolioResolution =
 
       :host {
         mat-icon {
-          color: var(--c_red_l1);
+          color: var(--c_red);
         }
 
         mat-chip-listbox {
@@ -66,7 +66,7 @@ export type PortfolioResolution =
 
         ::ng-deep
           .mat-mdc-standard-chip.mdc-evolution-chip--selected.mdc-evolution-chip--disabled {
-          background-color: var(--c_red_l1);
+          background-color: var(--c_red);
         }
 
         ::ng-deep .mat-mdc-chip-set-stacked .mdc-evolution-chip-set__chips {
@@ -78,16 +78,16 @@ export type PortfolioResolution =
         ::ng-deep
           .mat-mdc-chip-set-stacked
           .mdc-evolution-chip__text-label.mat-mdc-chip-action-label {
-          color: var(--c_red_l1);
+          color: var(--c_red);
         }
 
         ::ng-deep
           .mat-mdc-standard-chip.mdc-evolution-chip--selected:not(
             .mdc-evolution-chip--disabled
           ) {
-          background-color: var(--c_red_l1);
+          background-color: var(--c_red);
           color: black;
-          border-color: var(--c_red_l1);
+          border-color: var(--c_red);
         }
 
         ::ng-deep
@@ -95,7 +95,7 @@ export type PortfolioResolution =
           .mdc-evolution-chip__action--primary::before {
           color: blue;
           border-radius: 0 !important;
-          border-color: var(--c_red_l1);
+          border-color: var(--c_red);
         }
       }
     `,

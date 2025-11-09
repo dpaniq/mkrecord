@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
 
         .rec-word {
           font-weight: 400;
-          color: var(--c_red_l1);
+          color: var(--c_red);
         }
       }
 

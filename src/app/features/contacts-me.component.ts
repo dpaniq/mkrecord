@@ -57,7 +57,7 @@ import { FooterComponent } from '../core/footer.component';
       }
 
       mat-form-field {
-        color: var(--c_red_l1);
+        color: var(--c_red);
       }
 
       /* does not */

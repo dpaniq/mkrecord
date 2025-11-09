@@ -47,7 +47,7 @@ export interface DialogData {
         flex-direction: column;
 
         h1 {
-          color: var(--c_red_l1);
+          color: var(--c_red);
         }
       }
 
@@ -80,7 +80,7 @@ export interface DialogData {
         text-shadow: 1px 1px 1px black;
 
         &:hover {
-          color: var(--c_red_l1);
+          color: var(--c_red);
         }
       }
     `,

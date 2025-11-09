@@ -32,7 +32,7 @@ import { MatDivider } from '@angular/material/divider';
         }
 
         h5 {
-          color: var(--c_red_l1);
+          color: var(--c_red);
           font-weight: 500;
           font-size: calc(11px + 1vw);
         }
@@ -112,7 +112,7 @@ import { MatDivider } from '@angular/material/divider';
           }
 
           h5 {
-            color: var(--c_red_l1);
+            color: var(--c_red);
             font-weight: 500;
             font-size: calc(9px + 1vw);
           }

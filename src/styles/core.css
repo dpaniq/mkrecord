@@ -28,7 +28,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--c_red);
-  outline: 1px solid var(--c_red_l1);
+  outline: 1px solid var(--c_red);
 }
 
 body {

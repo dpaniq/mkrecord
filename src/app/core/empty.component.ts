@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
 
         margin: 200px 100px;
         font-weight: 900;
-        text-shadow: 1px 2px 5px var(--c_red_l1);
+        text-shadow: 1px 2px 5px var(--c_red);
       }
 
       .container {

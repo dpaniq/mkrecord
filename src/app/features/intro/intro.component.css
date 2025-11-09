@@ -9,12 +9,12 @@
     width: max-content;
     font-size: 150px;
     font-weight: 900;
-    /* color: var(--c_red_l1); */
+    /* color: var(--c_red); */
     color: transparent;
     /* color: black; */
     line-height: 144px;
     text-decoration: 10px underline whitesmoke;
-    /* text-shadow: 0 0 2px var(--c_red_l1); */
+    /* text-shadow: 0 0 2px var(--c_red); */
     -webkit-text-stroke: 1px whitesmoke;
     /* mix-blend-mode: screen; */
     /* background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif); */
@@ -25,7 +25,7 @@
     -webkit-background-clip: text;
     /* text-shadow: 2px 2px 1px black; */
     /* filter: grayscale(1); */
-    filter: drop-shadow(1px 1px 0px var(--c_red_l1));
+    filter: drop-shadow(1px 1px 0px var(--c_red));
     &.name {
       margin-left: 97px;
     }
@@ -63,7 +63,7 @@
     align-items: center;
     justify-content: center;
     z-index: 101;
-    color: var(--c_red_l1);
+    color: var(--c_red);
 
     transform: translate(-50%, -50%);
     font-weight: 900;
