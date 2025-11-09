@@ -71,5 +71,6 @@ main {
     height: 85vh;
     overflow: hidden;
     align-items: center;
+    padding: 0 6px;
   }
 }

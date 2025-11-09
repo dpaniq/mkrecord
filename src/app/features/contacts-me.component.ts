@@ -32,6 +32,8 @@ import { FooterComponent } from '../core/footer.component';
         text-wrap: balance;
         align-items: center;
 
+        --filled-input-text-color: red;
+
         q {
           text-align: center;
         }
@@ -54,6 +56,22 @@ import { FooterComponent } from '../core/footer.component';
         }
       }
 
+      mat-form-field {
+        color: var(--c_red_l1);
+      }
+
+      /* does not */
+      ::ng-deep.mdc-floating-label--required:not(
+          .mdc-floating-label--hide-required-marker
+        )::after {
+        color: red;
+      }
+
+      .mat-mdc-raised-button:not(:disabled) {
+        background-color: var(--c_red_d1);
+        color: var(--color_whitesmoke);
+      }
+
       @media (max-width: 576px) {
         :host {
           padding: 20px 30px;
@@ -65,7 +83,7 @@ import { FooterComponent } from '../core/footer.component';
         }
 
         form textarea {
-          max-height: 10vh;
+          max-height: 5vh;
         }
       }
 
@@ -100,8 +118,6 @@ import { FooterComponent } from '../core/footer.component';
     `,
   ],
   template: `
-    <h1>Contact me</h1>
-    <br />
     <form
       id="contacts"
       [formGroup]="formGroup"
@@ -120,7 +136,7 @@ import { FooterComponent } from '../core/footer.component';
 
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Leave a comment</mat-label>
-        <textarea matInput rows="5" formControlName="text"></textarea>
+        <textarea matInput rows="3" formControlName="text"></textarea>
       </mat-form-field>
 
       <button

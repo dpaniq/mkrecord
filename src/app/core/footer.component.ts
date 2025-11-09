@@ -37,8 +37,8 @@ import { IconService } from '../services/icon.service';
           color: var(--color_whitesmoke_darken_1);
 
           .brand {
-            color: var(--c_red);
-            font-weight: 300;
+            color: var(--c_red_l1);
+            font-weight: 500;
           }
 
           &.fullname {
@@ -51,7 +51,7 @@ import { IconService } from '../services/icon.service';
             color: var(--color_whitesmoke_darken_2);
 
             &:hover {
-              color: var(--c_red);
+              color: var(--c_red_l1);
             }
           }
         }
@@ -62,14 +62,14 @@ import { IconService } from '../services/icon.service';
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: rgb(214, 85, 62);
+            color: var(--c_red_l1);
             padding: 10px;
             font-weight: 300;
           }
         }
 
         a:hover ::ng-deep mat-icon svg {
-          fill: var(--c_red);
+          fill: var(--c_red_l1);
         }
       }
     `,

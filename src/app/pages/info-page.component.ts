@@ -9,8 +9,9 @@ import { InfoComponent } from '../features/info.component';
     :host {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: start;
       height: 100%;
+      padding: calc(10% + 2vh) 0;
     }
   `,
 })

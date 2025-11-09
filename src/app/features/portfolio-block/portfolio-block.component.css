@@ -1,7 +1,7 @@
 :host {
   width: 100%;
 
-  scrollbar-color: tomato rgba(0, 0, 0, 0.3);
+  scrollbar-color: var(--c_red_l1) rgba(0, 0, 0, 0.3);
   scrollbar-width: 5em;
   ::-webkit-scrollbar-button {
     background-color: green;
@@ -60,7 +60,7 @@
 
           &:hover {
             p {
-              color: tomato;
+              color: var(--c_red_l1);
             }
           }
 

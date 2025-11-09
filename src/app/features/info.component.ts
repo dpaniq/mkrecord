@@ -26,23 +26,24 @@ import { MatDivider } from '@angular/material/divider';
         }
 
         h2 {
-          font-weight: 600;
-          font-size: calc(15px + 1vw);
+          font-weight: 700;
+          font-size: calc(12px + 1vw);
           text-align: center;
         }
 
         h5 {
-          color: tomato;
-          font-weight: 300;
-          font-size: calc(13px + 1vw);
+          color: var(--c_red_l1);
+          font-weight: 500;
+          font-size: calc(11px + 1vw);
         }
 
         p {
-          font-size: calc(12px + 1vw);
+          font-size: calc(10px + 1vw);
+          wrap: balance;
         }
 
         & > div {
-          padding: 10px;
+          padding: 5px;
         }
 
         .regalias-container {
@@ -93,11 +94,10 @@ import { MatDivider } from '@angular/material/divider';
         h4,
         h5,
         h6 {
-          margin: 4px 0;
+          margin: 2px 0;
         }
 
         section {
-          --fontWeight: 200;
           --gridGap: 0;
           position: relative;
 
@@ -106,22 +106,23 @@ import { MatDivider } from '@angular/material/divider';
           }
 
           h2 {
-            font-weight: var(--fontWeight);
+            font-weight: 500;
+            font-size: calc(11px + 1vw);
             text-shadow: 1px 1px 1px black;
           }
 
           h5 {
-            color: tomato;
-            font-weight: 300;
-            font-size: 14px;
+            color: var(--c_red_l1);
+            font-weight: 500;
+            font-size: calc(9px + 1vw);
           }
 
           p {
-            font-size: 14px;
+            font-size: calc(8px + 1vw);
           }
 
           .regalias-container {
-            padding: 0;
+            padding: 0 0 20px;
             .regalias {
               display: grid;
               grid-template-columns: 1fr;
@@ -152,8 +153,6 @@ import { MatDivider } from '@angular/material/divider';
     `,
   ],
   template: `
-    <h1>About me</h1>
-    <br />
     <section>
       <div class="regalias-container">
         <h2>Regalias</h2>

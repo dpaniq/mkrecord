@@ -55,7 +55,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
           &.active {
             color: var(--color_black_9);
-            background-color: tomato;
+            background-color: var(--c_red);
           }
         }
       }

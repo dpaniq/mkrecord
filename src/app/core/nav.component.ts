@@ -42,10 +42,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
               text-align: center;
 
               &.active {
-                color: var(--c_red);
+                color: var(--c_red_l1);
 
                 filter: none;
-                border-bottom: 1px solid var(--c_red);
+                border-bottom: 1px solid var(--c_red_l1);
               }
             }
           }
@@ -81,7 +81,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             home
             routerLinkActive="active"
             ariaCurrentWhenActive="page">
-            Info
+            About me
           </a>
         </li>
         <li>
